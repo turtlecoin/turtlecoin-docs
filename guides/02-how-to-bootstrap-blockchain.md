@@ -1,6 +1,6 @@
 # How to Bootstrap the TurtleCoin Blockchain
 
-This guide will help you install a recent copy of the Blockchain.  This should significantally speed up the task of getting the Blockchain synced up before you can use your wallet.
+This guide will help you install a recent copy of the Blockchain.  This should significantly speed up the task of getting the Blockchain synced up before you can use your wallet.
 
 ## Windows:
 1. Make sure TurtleCoind.exe is not running
@@ -33,8 +33,8 @@ This guide will help you install a recent copy of the Blockchain.  This should s
 ![findergoto.jpg](images/findergoto.jpg)
 
 4. Delete the files: blockindexes.bin and blocks.bin and "DB" folder if they exist
-5. Download this ZIP file:
-	* https://s3.amazonaws.com/trtlpeers/trtl_block_204235.zip
+5. Download the zip file with the largest block number here:
+	* https://turtle-blockchain.s3.amazonaws.com/index.html
 6. Extract the zip into your ~/.TurtleCoin/ folder, there should now be two files in there
 7. Start TurtleCoind like you normally do
 8. See [Expected Results](#ExpectedResults) section below
