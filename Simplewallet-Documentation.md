@@ -1,5 +1,5 @@
 # Simplewallet
-Simplewallet is most users portal to the TurtleCoin network. It is essentially a dumb pipe, which requests data from the RPC interface, TurtleCoind.exe, and then displays this data to the user when required.
+Simplewallet is most users's portal to the TurtleCoin network. It is essentially a dumb pipe, which requests data from the RPC interface, TurtleCoind.exe, and then displays this data to the user when required.
 
 Simplewallet unfortunately, along with a lot of the rest of the codebase, makes heavy use of global variables. They are fortunately only global to the .cpp/.h file, but it does make the code a lot harder to follow.
 
