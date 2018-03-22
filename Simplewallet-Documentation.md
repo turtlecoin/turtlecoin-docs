@@ -34,7 +34,7 @@ When we call one of the functions which require a callback, upon the function co
 
 ```
 /* Here we set up the std::function and the magical async thread things.
-   You can just copy these the next four lines into your program. */
+   You can just copy these next four lines into your program. */
 std::promise<std::error_code> errorPromise;
 std::future<std::error_code> f_error = errorPromise.get_future();
 auto callback = [&errorPromise](std::error_code e) {errorPromise.set_value(e); };
