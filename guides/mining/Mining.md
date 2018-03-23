@@ -112,4 +112,4 @@ Now, follow the [XMR-Stak Setup and Configuration](#xmr--stack-setup-and-configu
 
 ## Mining with RaspberryPi/SBC
 
-See [Mining with SBC](Mining-with-SBC).
+See [Mining with SBC](https://github.com/turtlecoin/turtlecoin-wiki/blob/master/guides/mining/Mining-with-SBC.md).
