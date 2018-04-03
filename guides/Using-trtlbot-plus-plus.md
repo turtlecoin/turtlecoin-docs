@@ -50,7 +50,7 @@ Then I'll copy the part after `-p`; that is, `ac8889dfb7c93471a9a43c287f3fa40854
 
 When the bot recieves the payment, it will send you a PM letting you know. Now you can tip people! 
 
- ![received](https://github.com/turtlecoin/turtlecoin-wiki/blob/master/images/dep.png)
+ ![received](master/images/dep.png)
 
 ## Checking your Balance
 
