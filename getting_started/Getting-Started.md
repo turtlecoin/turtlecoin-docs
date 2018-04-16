@@ -31,14 +31,18 @@ tar -xzf turtlecoin..-linux.tar.gz
 ## Synchronizing the Blockchain
 
 Running `TurtleCoind` will start the *TurtleCoind* network daemon, which will connect to the network and begin downloading and verifying the TurtleCoin blockchain.  
+
 Because the blockchain is constantly growing, the file size is always increasing, and *TurtleCoind* must verify each block (CPU intensive). To save time, consider downloading a cached 'bootstrap' of the blockchain (see [Bootstrapping the Blockchain](Bootstrapping-the-Blockchain) for more info).
+
+In **versions 0.4.3+** you can sync a fresh chain from 0 much quicker by using the `--load-checkpoints checkpoints.csv` argument of `TurtleCoind`. Download the latest checkpoints.csv here: https://github.com/turtlecoin/checkpoints/raw/master/checkpoints.csv
+
 
 ### Windows
 
 Run the `TurtleCoind.exe` executable extracted from the Windows binary zip:
 
 ```powershell
-PS C:\Downloads\turtlecoin-windows> TurtleCoind.exe
+TurtleCoind.exe
 ```
 
 ### Mac
@@ -46,7 +50,7 @@ PS C:\Downloads\turtlecoin-windows> TurtleCoind.exe
 Run the `TurtleCoind` binary extracted from the Mac binary tarball:
 
 ```bash
-:~/Downloads/turtlecoin-mac$ ./TurtleCoind
+./TurtleCoind
 ```
 
 ### Linux
@@ -54,7 +58,7 @@ Run the `TurtleCoind` binary extracted from the Mac binary tarball:
 Run the `TurtleCoind` binary extracted from the Linux binary tarball:
 
 ```bash
-:~/Downloads/turtlecoin-linux$ ./TurtleCoind
+./TurtleCoind
 ```
 
 ## Using Simplewallet
@@ -63,15 +67,23 @@ With `TurtleCoind` still running in the background or another terminal/shell/com
 
 #### Windows
 
-Run the `simplewallet.exe` executable from the Windows binary zip.
+Run the `simplewallet.exe` executable extracted from the Windows binary zip:
+
+```powershell
+simplewallet.exe
+```
 
 #### Mac
+
+Run the `simplewallet` binary extracted from the Mac binary tarball:
 
 ```bash
 ./simplewallet
 ```
 
 #### Linux
+
+Run the `simplewallet` binary extracted from the Linux binary tarball:
 
 ```bash
 ./simplewallet
@@ -82,24 +94,39 @@ Run the `simplewallet.exe` executable from the Windows binary zip.
 In the running *simplewallet* client:  
 Press `G` to generate new wallet.  
 Enter a filename for the wallet (default is _wallet.bin_).  
-Enter a passphrase for the wallet. *Warning:* There is no passphrase confirmation, so enter it carefully!
+Enter a passphrase for the wallet.
 
 ```
-[O]pen existing wallet, [G]enerate new wallet file, [I]mport wallet or [E]xit.
-G
-Specify wallet file name (e.g., wallet.bin).
-Wallet file name: mynewwallet
-password: ************
-Sync from timestamp: 1520712597
+Welcome, please choose an option below:
 
+        [G] - Generate a new wallet address
+        [O] - Open a wallet already on your system
+        [S] - Regenerate your wallet using a seed phrase of words
+        [I] - Import your wallet using a View Key and Spend Key
+        [V] - Import a view only wallet (Unable to send transactions)
+
+or, press CTRL_C to exit: G
+What would you like to call your new wallet?: MyWallet
+Give your new wallet a password: **********
+Confirm your new password: **********
 Welcome to your new wallet, here is your payment address:
 TRTLv_this_is_your_public_address_ok_to_share_key_Rq6WpB
 
-Please copy your secret keys and store them in a secure location:
-view key: really_long_random_view_key_do_not_share_this
-spend key: really_long_random_spend_key_do_not_share_this
+Please copy your secret keys and mnemonic seed and store them in a secure location:
+Private spend key: really_long_random_spend_key_do_not_share_this
+Private view key: really_long_random_view_key_do_not_share_this
+Mnemonic seed: random_words_mnemonic_seed_do_not_share_this
 
 If you lose these your wallet cannot be recreated!
+
+Your wallet is syncing with the network in the background.
+Until this is completed new transactions might not show up.
+Use bc_height to check the progress.
+
+Use the help command to see the list of available commands.
+Use exit when closing to ensure your wallet file doesn't get corrupted.
+
+[TRTL MyWallet]:
 ```
 
 ### Opening a Wallet
@@ -110,18 +137,31 @@ Enter the filename given for the wallet when it was created.
 Enter the passphrase given for the wallet when it was created.
 
 ```
-What do you want to do?
-[O]pen existing wallet, [G]enerate new wallet file, [I]mport wallet or [E]xit.
-O
-Specify wallet file name (e.g., wallet.bin).
-Wallet file name: mynewwallet
-password: ************
-2018-Mar-11 13:14:44.295114 INFO    Loading wallet...
-Sync from timestamp: 1520712597
-2018-Mar-11 13:14:44.376288 INFO    Opened wallet: TRTLv_this_is_your_public_address_ok_to_share_key_Rq6WpB
-2018-Mar-11 13:14:44.383305 INFO    **********************************************************************
-Use "help" command to see the list of available commands.
-**********************************************************************
+Welcome, please choose an option below:
+
+        [G] - Generate a new wallet address
+        [O] - Open a wallet already on your system
+        [S] - Regenerate your wallet using a seed phrase of words
+        [I] - Import your wallet using a View Key and Spend Key
+        [V] - Import a view only wallet (Unable to send transactions)
+
+or, press CTRL_C to exit: O
+What is the name of the wallet you want to open?: MyWallet
+Enter password: **********
+
+Making initial contact with TurtleCoind.
+Please wait, this sometimes can take a long time...
+
+Your wallet TRTLv_this_is_your_public_address_ok_to_share_key_Rq6WpB has been successfully opened!
+
+Scanning through the blockchain to find any new transactions you received whilst your wallet wasn't open.
+Please wait, this may take some time.
+
+XXX of XXXXXX
+...
+XXXXXX of XXXXXX
+
+[TRTL MyWallet]:
 ```
 
 ### Viewing Wallet Address
@@ -129,25 +169,29 @@ Use "help" command to see the list of available commands.
 To view a wallet's public address, in the running _simplewallet_ client, after opening a wallet, type `address` and press `enter`.
 
 ```
-[wallet TRTLv2]: address
-2018-Mar-11 13:16:14.995828 INFO    TRTLv_this_is_your_public_address_ok_to_share_key_Rq6WpB
-[wallet TRTLv2]:
+[TRTL MyWallet]: address
+TRTLv_this_is_your_public_address_ok_to_share_key_Rq6WpB
+[TRTL MyWallet]:
 ```
 
 ### Exporting Keys
 
-Each TurtleCoin  wallet is, essentially, just a pair of keys (*View Key* and *Spend Key*) from which the public address is derived.  
+Each TurtleCoin  wallet is, essentially, just a pair of keys (*View Key* and *Spend Key*) from which the public address is derived.
+
 It is **very** important to export these keys and back them up somewhere that is safe and secure (meaning somewhere reliable/permanent that no one else can access). In the event of a lost or corrupted wallet file, computer crash, etc., the *View Key* and *Spend Key* are the only way to restore a wallet and recover the funds it holds.
+
 Remember that **anyone with access to the View Key and Spend Keys will be able to access this wallet and take the funds it holds! Anyone with these keys will also be able to view all prior transactions from this wallet. Keep them secure!**
 
 In the running *simplewallet* client, after opening a wallet, type `export_keys` and press `enter`.  
 The *View Key* and *Spend Key* will appear. Copy them and store them **safely and securely**.
 
 ```
-[wallet TRTLv2]: export_keys
-Spend secret key: really_long_random_spend_key_do_not_share_this
-View secret key: really_long_random_view_key_do_not_share_this
-[wallet TRTLv2]:
+[TRTL MyWallet]: export_keys
+Enter password: **********
+Private spend key: really_long_random_spend_key_do_not_share_this
+Private view key: really_long_random_view_key_do_not_share_this
+Mnemonic seed: random_words_mnemonic_seed_do_not_share_this
+[TRTL MyWallet]:
 ```
 
 ### Viewing Wallet Balance
@@ -155,9 +199,11 @@ View secret key: really_long_random_view_key_do_not_share_this
 In the running _simplewallet_ client, after opening a wallet, type `balance` and press enter to see the wallet's balance.
 
 ```
-[wallet TRTLv2]: balance
-2018-Mar-11 13:23:47.265365 INFO    available balance: 1000.10, locked amount: 100.10
-[wallet TRTLv2]:
+[TRTL MyWallet]: balance
+Available balance: 1000.10 TRTL
+Locked (unconfirmed) balance: 100.10 TRTL
+Total balance: 1100.10 TRTL
+[TRTL MyWallet]:
 ```
 
 ### Sending TurtleCoin Transactions
@@ -175,6 +221,8 @@ transfer 8 TRTLuy1h55aUuVp7HUcv16biZEArk8RRH93KMWBFCMjijj5iSraHyCMd3Eu1H7b8aZQTe
 ```
 
 Mixin is how many times a transaction is "mixed" with others for obfuscation and privacy. Most people suggest a mixin of 5 or more. Larger mixin's will take longer to be confirmed unless a higher fee is used. A mixin of 0 can be used to have a non private transaction.
+
+You can also just type `transfer` and press `enter` to be walked through a wizard that makes transfers easier.
 
 #### Payment ID
 
@@ -194,31 +242,32 @@ Note that, typically, the service/recipient will generate and provide the requir
 To save a wallet's data, in the running *simplewallet* client, with an open wallet, type `save` and press `enter`
 
 ```
-[wallet TRTLv2]: save
-2018-Mar-11 13:24:40.473511 INFO    Wallet data saved
-[wallet TRTLv2]:
+[TRTL MyWallet]: save
+Saving.
+Saved.
+[TRTL MyWallet]:
 ```
 
 ### Help
 
-You can always type 'help' to see a list of commands and a short description of each command.
+You can always type `help` to see a list of commands and a short description of each command.
 
 ```
-[wallet TRTLv2]: help
-2018-Mar-11 13:26:00.953478 INFO    Commands:
-  address              Show current wallet public address
-  balance              Show current wallet balance
-  bc_height            Show blockchain height
-  exit                 Close wallet
-  export_keys          Show the secret keys of the opened wallet
-  help                 Show this help
-  incoming_transfers   Show incoming transfers
-  list_transfers       Show all known transfers
-  payments             payments <payment_id_1> [<payment_id_2> ... <payment_id_N>] - Show payments <payment_id_1>, ... <payment_id_N>
-  reset                Discard cache data and start synchronizing from the start
-  save                 Save wallet synchronized data
-  set_log              set_log <level> - Change current log level, <level> is a number 0-4
-  transfer             transfer <mixin_count> <addr_1> <amount_1> [<addr_2> <amount_2> ... <addr_N> <amount_N>] [-p payment_id] [-f fee] - Transfer <amount_1>,... <amount_N> to <address_1>,... <address_N>, respectively. <mixin_count> is the number of transactions yours is indistinguishable from (from 0 to maximum available)
-
-[wallet TRTLv2]:
+[TRTL MyWallet]: help
+Available commands:
+help                     List this help message
+reset                    Discard cached data and recheck for transactions
+bc_height                Show the blockchain height
+balance                  Display how much TRTL you have
+export_keys              Export your private keys
+address                  Displays your payment address
+exit                     Exit and save your wallet
+save                     Save your wallet state
+incoming_transfers       Show incoming transfers
+outgoing_transfers       Show outgoing transfers
+list_transfers           Show all transfers
+quick_optimize           Quickly optimize your wallet to send large amounts
+full_optimize            Fully optimize your wallet to send large amounts
+transfer                 Send TRTL to someone
+[TRTL MyWallet]:
 ```
