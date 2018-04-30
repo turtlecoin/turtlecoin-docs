@@ -46,7 +46,7 @@ To save time, consider downloading a cached 'bootstrap' of the blockchain (see [
 
 #### Using Checkpoints
 
-In **versions 0.4.3** you can sync a fresh chain from 0 much quicker by using checkpoints. Follow these steps-
+In **versions 0.4.3+** you can sync a fresh chain from block 0 much quicker by using checkpoints. Follow these steps-
   * On [this link](https://github.com/turtlecoin/checkpoints/raw/master/checkpoints.csv), right click -> `Save Link As..` 
   * Save in the directory where your wallet and daemon are
   * Open Command Prompt/the terminal in the directory where you saved it
