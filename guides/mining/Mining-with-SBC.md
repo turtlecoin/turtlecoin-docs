@@ -1,10 +1,10 @@
 # How to Mine TurtleCoin with an SBC
 
-This guide will get you started mining TurtleCoin on a Raspberry Pi or similar SBC(single-board computer)
+This guide will get you started mining TurtleCoin on a Raspberry Pi or similar SBC (single-board computer).
 
 ## Setup
 
-Make sure you've already created a wallet on your PC. You'll need the wallet address to store any coins you mine. Follow the guide [here](Using-Simplewallet) to get started(follow the guide for Linux).
+Make sure you've already created a wallet on your PC. You'll need the wallet address to store any coins you mine. Follow the guide [here](Using-Simplewallet) to get started (follow the guide for Linux).
 
 For the SBC, download the latest non-desktop version of [Raspbian](https://www.raspberrypi.org/downloads). Follow their installation guide on how to write the OS image onto the MicroSD card. Once you've plugged in the SD Card, booted the Raspberry Pi, and connected it to the internet, run the following commands:
 

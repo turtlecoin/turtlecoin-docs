@@ -6,7 +6,7 @@ If you want to learn about cryptocurrencies, mining is a great place to start!
 
 ## How to Mine TurtleCoin?<a name="how-to-mine"></a>
 
-**Please note:** Unfortunately because of some bad people using mining software in malware, most anti-viruses will detect the programs below as unsafe. 
+**Please note:** Unfortunately because of some bad people using mining software in malware, most antivirus software will detect the programs below as unsafe. 
 
 It is **likely** you will need to add exceptions and exclusions to your antivirus software in order to make things work properly. 
 

@@ -1,11 +1,14 @@
-# THIS GUIDE IS OUT OF DATE. RAINBOT IS DEFUNCT. VIEW [THIS GUIDE FOR MORE](RainBorg-Wat-Dat.md)
+## THIS GUIDE IS OUT OF DATE. RAINBOT IS DEFUNCT. VIEW [THIS GUIDE FOR MORE](RainBorg-Wat-Dat.md)
 
 *For posterity, the original guide is below.*
 
 
 
 #  How to Participate in a Raindance
+## THIS GUIDE IS OUT OF DATE. RAINBOT IS DEFUNCT. VIEW [THIS GUIDE FOR MORE](RainBorg-Wat-Dat)
 
+
+# How to Participate in a Raindance
 This guide will walk you through the process.
 
 Here's a quick screen recording of a raindance taking place:  

@@ -28,4 +28,4 @@ To view an in-depth guide on how to mine TurtleCoin, you can view [this guide](M
 
 We have an awesome community and would love for you to join in!
 
-You can join our [Discord](https://discord.gg/J7g99EE) or come on over in our [subreddit!](https://reddit.com/r/trtl) We can't wait to see you :)
+You can join our [Discord](https://discord.gg/J7g99EE) or come on over to our [subreddit!](https://reddit.com/r/trtl) We can't wait to see you :)
