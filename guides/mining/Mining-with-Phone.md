@@ -34,7 +34,7 @@ The miner should not start mining, and the stats displayed show start updating, 
 
 You can tap the question marks on the right if you're unsure of what each value means
 
-![phone-mining](guides/mining/images/phone-mine.jpg)
+![phone-mining](guides/mining/images/rsz_phone-mine.png)
 
 
 
