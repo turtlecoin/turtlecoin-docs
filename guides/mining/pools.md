@@ -2,7 +2,7 @@
 
 Unless you want to solo mine, which is unfeasible for many people, you will need a pool to mine towards. Make sure to choose the one closest to you!
 
-Here are some of the TurtleCoin mining pools(arranged alphabetically):
+Here are some of the TurtleCoin mining pools (arranged alphabetically):
 
 |            Name            |                            Domain                            | Total Fee and Method |                 Min. Payout                  |        Location        |                            Notes                             |
 | :------------------------: | :----------------------------------------------------------: | :------------------: | :------------------------------------------: | :--------------------: | :----------------------------------------------------------: |
@@ -64,7 +64,7 @@ Now if the pool has a bad round (a round is the time taken to find a block) and 
 
 This can also work in the miners favour too, as if it takes half the time (50,000 shares) to find a block and you submitted only 500 shares - again 1% - 300 TRTL.
 
-Basically, you always get you percentage of the block and you win/lose depending on the “luck” of the pool.
+Basically, you always get a percentage of the block and you win/lose depending on the “luck” of the pool.
 
 
 
@@ -79,13 +79,13 @@ PPLNS does not pay out per block found, rather it pays based on the number of sh
 How it works is, 
 
 * you start mining with a PPLNS pool. 
-* Rather than paying you out based on the no. of shares you submitted since you started mining/the last block was found, it will pay depending on how many shares you submitted in a period of time, called the window, which is an estimate of the time in which the pool in question finds a block. 
-* So, after you start mining, it will take a few hours for you to earn your normal earnings - and since the effect of pool hoppers is lessened, you may comparatively more than other methods. 
+* Rather than paying you out based on the number of shares you submitted since you started mining/the last block was found, it will pay depending on how many shares you submitted in a period of time, called the window, which is an estimate of the time in which the pool in question finds a block. 
+* So, after you start mining, it will take a few hours for you to earn your normal earnings - and since the effect of pool hoppers is lessened, you may make comparatively more than other methods. 
 
 Basically, you get paid based on 
 
-- no. of shares you submitted
-- how long you have been mining.
+- the number of shares you submitted
+- and how long you have been mining.
 
 
 

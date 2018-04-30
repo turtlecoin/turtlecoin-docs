@@ -332,7 +332,7 @@ That's it! It will display a message `(Full) optmization completed!` when it's d
 
 Because transactions on the TurtleCoin blockchain are privatized, in some situations a payment ID  is necessary for the recipient to be able to determine where the payment came from, for instance when depositing to an exchange or other service.
 
-**You need it if you're sending TRTL to an exchange, the tipbot**.
+**You need it if you're sending TRTL to an exchange, the tipbot or RainBorg**.
 
 To send a transaction with a payment ID, enter it when prompted to.
 

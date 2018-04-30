@@ -5,8 +5,6 @@
   - [Community](Community)
   - [Contributing](Contributing)
 
-    ​
-
 - [Getting Started](Getting-Started)
   - [Setting up a Wallet](Getting-Started#new-wallet)
   - [Mining TurtleCoin](Getting-Started#mining)
@@ -24,6 +22,7 @@
 
 - Guides
   - [Bootstrapping the Blockchain](Bootstrapping-the-Blockchain)
+  - [RainBorg? Wat Dat?](RainBorg-Wat-Dat)
   - [Using trtlbot++](Using-trtlbot-plus-plus)
   - [Mining](Mining)
     - [Mining Software](Mining#how-to-mine)
