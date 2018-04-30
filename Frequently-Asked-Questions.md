@@ -365,4 +365,4 @@ You can ask someone in the Discord with a coloured name to run `/forked` for you
 
 #### Q: I have a question which wasn't answered here, what should I do?
 
-  A: [Join the Discord](https://discord.gg/J7g99EE), and come to the #help channel, we'll try and fix any issues.
+  A: [Join the Discord](https://discord.gg/J7g99EE), and come to the `#help` channel, we'll try and fix any issues.
