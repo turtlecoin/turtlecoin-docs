@@ -1,10 +1,10 @@
 # RainBorg? Wat Dat?
 
-Back in the day, we had the [#raindance bot](Participating-in-Raindance.md), then people took advantage of the bot and it was retired. Now we have RainBorg!
+Back in the day, we had the [#raindance bot](Participating-in-Raindance), then people took advantage of the bot and it was retired. Now we have RainBorg!
 
 <img src="guides/images/rainborg/rainborg-avatar.png" width="194" height="208" alt="RainBorg Avatar" />
 
-This bot monitors chat activity. Once a certain criterion is met, RainBorg sends out a tip using the tipbot, [trtlbot++](Using-trtlbot-plus-plus.md), to people who have recently been chatting away.
+This bot monitors chat activity. Once a certain criterion is met, RainBorg sends out a tip using the tipbot, [trtlbot++](Using-trtlbot-plus-plus), to people who have recently been chatting away.
 
 ## What is the criteria to get tips?
 
@@ -24,11 +24,11 @@ Because it is fun and promotes an active community; it is another way that this 
 
 They come from all the generous people in the community. There is a pool of TRTL, the pool is filled up by anyone that wants to contribute. You could be a contributor! It is anonymous and 100% philanthropic. 
 
-The only way it stops being anonymous is if you post in chat and disclose your donation.   `ha, I just sent 350k TRTL to the RainBorg, megatip time yo!`
+The only way it stops being anonymous is if you post in chat and disclose your donation.   `ha, just sent 350k TRTL to the RainBorg, megatip time yo!`
 
-## Give me details!
+# Give me details!
 
-Right, to get started, simply register your wallet with [trtlbot++](Using-trtlbot-plus-plus.md#registering-your-wallet).
+Right, to get started, simply register your wallet with [trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet).
 
 Go to `#wallets` and type
 
@@ -60,10 +60,10 @@ _No Payment ID equals a tip for the tipbot operator, it will not be donated to R
 
 The tips are sent out to participants in these channels.
 
-- \#general _(more tips sent here as this is the main channel)_
-- \#help _(everyone appreciates being helped, lend a hand, get some tips!)_
-- \#mining _(the miners are important, let's tip them as well)_
-- \#dev_general _(these guys, amiright!?)_
+- \#general *(more tips sent here as this is the main channel)*
+- \#help *(everyone appreciates being helped, lend a hand, get some tips!)*
+- \#mining *(the miners are important, let's tip them as well)*
+- \#dev_general *(these guys, amiright!?)*
 - \#dev_marketing *(spread the word!)*
 
 ## Chatting right? So no chat = no TRTL?
@@ -74,21 +74,21 @@ Pretty much.
   - The inactive chatters don't.  
     - It's simple.  
 
-### Hold up, I was active like 2 minutes ago then all these others got TRTL and I didn't
+### Hold up, I was active like 2mins ago then all these others got TRTL and I didn't
 
 Well, let's break this down then. You WERE active _(past tense)_, and the other people who ARE *(present tense)* active got the rain and you didn't because of the way the chatting window works.  
 
 They were active during the tipping window, if you don't send a message after a certain amount of time you won't get tipped. Be a good active Turtle and RainBorg will share her tips with you!
 
-## OK OK, so how do I get all the TRTLs? SPAM? EXILE!
+# OK OK, so how do I get all the TRTLs? SPAM? EXILE!
 
 This is not how it works or why it was set up... gaming the system or attempting to game the system could land you on the exile list.  
 
 People on the exile list never get added to the tip-list. Focus on being an engaged member of the community and let the tip mistress, RainBorg, handle raining tips on the people, she is most capable.  
 
-There is a way to get unsolicited tips though, [be a good Turtle](https://medium.com/@turtlecoin/how-to-be-a-good-turtle-20a427028a18) and check out the tipbot, [trtlbot++](Using-trtlbot-plus-plus.md).
+There is a way to get unsolicited tips though, [be a good Turtle](https://medium.com/@turtlecoin/how-to-be-a-good-turtle-20a427028a18) and check out the tipbot, [trtlbot++](Using-trtlbot-plus-plus).
 
-## Commands
+# Commands
 
 Yes she'll respond to`$` commands-
 
@@ -98,21 +98,25 @@ Yes she'll respond to`$` commands-
 - `$optout` - Opt out of receiving tips from the bot
 - `$optin` - Opt back into receiving tips from the bot
 
-## Stats
+# Stats
 
 Every time RainBorg rains down tips on chatty Turtles she'll post a message in the #raindance channel.
 They look like this:
 
-![rain](guides/images/rainborg/rainborg-rain.png)
+<blockquote>
+<strong>TUT TUT</strong>
+<p>Huzzah, 500 TRTL just rained on 4 chatty turtles in #mining, they each got 125 TRTL!</p>![rain](guides/images/rainborg/rainborg-rain.png)
 
-## Wow? Megatip wat?
+</blockquote>
 
-An idea has been floated regarding a Megatip function. Basically, someone could purposely send a large chunk of TRTL and most of it would be sent out in the next wave of rain tips. 
-
-If you want to see something like this, talk about it! ;)
-
-## Anything not covered here?
+# Anything not covered here?
 
 Open a [new issue](https://github.com/turtlecoin/meta/issues/new?title=RainBorg+Question) or make some noise in #help.
 
 The gaps will be filled either by you or another person, [anyone can contribute](https://github.com/turtlecoin/turtlecoin-wiki) to these docs as well!
+
+#### Wow? Megatip wat?
+
+An idea has been floated regarding a Megatip function. Basically, someone could purposely send a large chunk of TRTL and most of it would be sent out in the next wave of rain tips. 
+
+If you want to see something like this, talk about it! ;)
