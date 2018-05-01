@@ -304,7 +304,7 @@ If, however, you had a bigger 6000 payment from somewhere, you could just includ
 
 Fusion transactions take all your small payments and combine them into big ones, so you can send large ones at once
 
-To quickly optimize your wallet, for larger transactions which aren't nearing your full balance and you want to do it quickly, type*(this can take some time)*-
+To quickly optimize your wallet, for larger transactions which aren't nearing your full balance and you want to do it quickly, type *(this can take some time)*-
 
 ```
 quick_optimize
@@ -314,7 +314,7 @@ and press `y`
 
 
 
-If you want to fully optimize your wallet, preparing your wallet to send upto your full balance, type*(this can take some time)*-
+If you want to fully optimize your wallet, preparing your wallet to send upto your full balance, type *(this can take some time)*-
 
 ````
 full_optimize
@@ -366,7 +366,7 @@ In the running _simplewallet_ client,
 
 * Enter your private spend and view key
 
-* Set a name for your new wallet(for example, `trtl`)
+* Set a name for your new wallet (for example, `trtl`)
 
 * Specify a strong password to encrypt your wallet with and confirm it
 
@@ -403,7 +403,7 @@ In the running *simplewallet* client,
 
 - Enter your 25 word mnemonic seed
 
-- Set a name for your new wallet(for example, `trtl`)
+- Set a name for your new wallet (for example, `trtl`)
 
 - Specify a strong password to encrypt your wallet with and confirm it
 

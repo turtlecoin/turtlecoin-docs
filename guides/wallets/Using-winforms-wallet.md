@@ -18,11 +18,11 @@ Binaries for Windows and Linux are both provided in the `.zip` format. Mac is cu
 
 ### Installing on Windows
 
-Extract the `.zip` file)`TurtleWallet_Windows_[version number].zip)`).
+Extract the `.zip` file (`TurtleWallet_Windows_[version number].zip`).
 
 ### Installing on Linux
 
-Extract the `zip` file(`TurtleWallet_Linux_[version number].zip`)
+Right now, Linux is not supported.
 
 ### Installing on Mac
 
@@ -30,13 +30,13 @@ Right now, Mac is not supported.
 
 ## Synchronizing the Blockchain
 
-Running `TurtleWallet` will automatically open `walletd` and begin synchronizing with the blockchain.
+Running `TurtleWallet.exe` will automatically open `walletd.exe` and begin synchronizing with the blockchain.
 
-Because the blockchain is constantly growing, the file size is always increasing, and `TurtleCoind` must verify each block (CPU intensive). 
+Because the blockchain is constantly growing, the file size is always increasing, and `TurtleCoind.exe` must verify each block (CPU intensive). 
 
 To save time, consider downloading a cached 'bootstrap' of the blockchain (see [Bootstrapping the Blockchain](Bootstrapping-the-Blockchain) for more info).
 
-## Using Nest Wallet
+## Using WinForms Wallet
 
 ### Windows
 
@@ -44,21 +44,19 @@ Run the `TurtleWallet.exe` executable from the extracted files.
 
 ### Linux
 
-```
-./TurtleWallet
-```
+It is currently not supported.
 
 ### Mac
 
-It is currently not supported
+It is currently not supported.
 
 ### Creating a Wallet
 
-Upon opening `TurtleWallet`, you will be met with an opening screen. To create a new wallet, press `Create Wallet`.
+Upon opening `TurtleWallet.exe`, you will be met with an opening screen. To create a new wallet, press `Create Wallet`.
 
-After that, give your wallet name(for example, `trtl`) and set a strong password(and confirm it).
+After that, give your wallet a name (for example, `trtl`) and set a strong password (and confirm it).
 
-Once done, click `Create Wallet`
+Once done, click `Create Wallet`.
 
 ![create1](guides/wallets/images/winf-make.png)
 
@@ -66,7 +64,7 @@ The wallet will then begin synchronizing with the blockchain. When done, it will
 
 ### Opening a Wallet
 
-Upon opening `TurtleWallet`, you will be met with an opening screen. To open a wallet, press `Select Existing Wallet`.
+Upon opening `TurtleWallet.exe`, you will be met with an opening screen. To open a wallet, press `Select Existing Wallet`.
 
 Then, navigate to where your `.wallet` file is saved through File Explorer and double-click.
 
@@ -94,23 +92,23 @@ In the event of a lost or corrupted wallet file, computer crash, etc., the *View
 
 To back up your keys, follow these steps-
 
-* Upon opening your wallet, click `BACKUP KEYS`, located at the bottom of your wallet
+* Upon opening your wallet, click `BACKUP KEYS`, located at the bottom of your wallet.
 
-* Enter your wallet password and press `Unlock Keys`
+* Enter your wallet password and press `Unlock Keys`.
 
 * Save your View Key and Spend key in a safe and secure place.
 
   ![backup](guides/wallets/images/winf-keys.png)
 
-  ### Viewing Wallet Balance
+### Viewing Wallet Balance
 
-  Upon opening your wallet, your balance is located in the top right.
+Upon opening your wallet, your balance is located in the top right.
 
-  ![balance](guides/wallet/images/winf-balance.png)
+![balance](guides/wallets/images/winf-balance.png)
 
 ### Sending TurtleCoin Transactions
 
-* Upon opening your wallet, in the bottom right will be written `SEND TRTL`. Click it.
+* Upon opening your wallet, in the bottom right will be written `SEND TRTL`, click it.
 * To send a transaction, enter the recipient's address next to `Recipient`and the amount you want to send next to `Amount`.
 * Because transactions on the TurtleCoin blockchain are privatized, in some situations a payment ID is necessary for the recipient to be able to determine where the payment came from, for instance when depositing to an exchange or other service.
 
@@ -139,7 +137,7 @@ To close the wallet safely, follow these steps-
 
 In case you want to recover your wallet with your View Key and Spend Key, it is relatively easy.
 
-Upon opening `TurtleWallet`, you will be met with an opening screen. To import a wallet, press `Import Wallet`.
+Upon opening `TurtleWallet.exe`, you will be met with an opening screen. To import a wallet, press `Import Wallet`.
 
 - enter the name you want to give your wallet
 - enter the password you want to encrypt your wallet with(and confirm it)

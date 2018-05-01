@@ -13,7 +13,7 @@ Go to [this link](https://turtlecoin.lol/wallet) and follow these steps-
    - Click on `Generate a Wallet`
    - Mash your keyboard and start entering a bunch of random letters, numbers and signs in the field. Make sure you toggle on Caps Lock repeatedly! (Don't go too crazy - otherwise you might end up shutting down your PC!)
    - After you're done mashing your keyboard, press `Generate Wallet`
-   - The letters and numbers in the green box, starting with `TRTL`, is yout public address. You can share it freely. We recommend [registering it with trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet) in the Discord so that you can access it easily.   
+   - The letters and numbers in the green box, starting with `TRTL`, is your public address. You can share it freely. We recommend [registering it with trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet) in the Discord so that you can access it easily.   
    - Save the `Seed Phrase`, the 25 words in the red box, safely. **DO NOT SHARE IT WITH ANYONE**. **Anyone who has access to this can *access your funds* and has *complete control* over your wallet.**
    - Save the `Spend Key` and the `View Key`, the two very long strings of (seemingly) random letters and numbers, safely.  **DO NOT SHARE IT WITH ANYONE**. **Anyone who has access to this can *access your funds* and has *complete control* over your wallet.**
 
@@ -28,7 +28,7 @@ To use it, follow these steps:
 
   - Click on `Download ZIP`
 
-  - Extract the `.zip` file to a directory of your choice( Say, `C:/paper`)
+  - Extract the `.zip` file to a directory of your choice (say, `C:/paper`)
 
   - Copy/paste the file through a flash drive to your air-gapped machine.
 
@@ -40,7 +40,7 @@ To use it, follow these steps:
 
   - After you're done mashing your keyboard, press `Generate Wallet`
 
-  - The letters and numbers in the green box, starting with `TRTL`, is yout public address. You can share it freely. We recommend [registering it with trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet) in the Discord so that you can access it easily.   
+  - The letters and numbers in the green box, starting with `TRTL`, is your public address. You can share it freely. We recommend [registering it with trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet) in the Discord so that you can access it easily.   
 
   - Save the `Seed Phrase`, the 25 words in the red box, safely. 
 
@@ -67,7 +67,7 @@ To use it, follow these steps:
 
   - After you're done mashing your keyboard, press `Generate Wallet`
 
-  - The letters and numbers in the green box, starting with `TRTL`, is yout public address. You can share it freely. We recommend [registering it with trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet) in the Discord so that you can access it easily.   
+  - The letters and numbers in the green box, starting with `TRTL`, is your public address. You can share it freely. We recommend [registering it with trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet) in the Discord so that you can access it easily.   
 
   - Save the `Seed Phrase`, the 25 words in the red box, safely.
 
