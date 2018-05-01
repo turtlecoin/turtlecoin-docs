@@ -26,13 +26,23 @@ Because it is fun and promotes an active community; it is another way that this 
 
 They come from all the generous people in the community. There is a pool of TRTL, the pool is filled up by anyone that wants to contribute. You could be a contributor! It is anonymous and 100% philanthropic. 
 
+<<<<<<< HEAD
 The only way it stops being anonymous is if you post in chat and disclose your donation.. `ha, I just sent 350K TRTL to the RainBorg, megatip time yo!`
+=======
+The only way it stops being anonymous is if you post in chat and disclose your donation.  `ha, I just sent 350k TRTL to the RainBorg, megatip time yo!`
+
+## Give me details!
+>>>>>>> phone-guide
 
 ## How to Get Rained On
 
+<<<<<<< HEAD
 To get started, simply register your wallet with [trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet).
 
 Go to `#wallets` in the Discord server and type
+=======
+Go to the `#wallets` channel in Discord and type
+>>>>>>> phone-guide
 
 `.registerwallet <walletaddress>`
 
@@ -81,7 +91,11 @@ They were active during the time RainBorg was raining down on the active Turtles
 
 Active Turtles win, that's the game. Be a good active Turtle and she will share her tips with you!
 
+<<<<<<< HEAD
 ## So if I spam I get TRTL? What's the blacklist?!
+=======
+## OK OK, so how do I get all the TRTLs? SPAM? EXILE!
+>>>>>>> phone-guide
 
 This is not how it works or why it was set up... Gaming the system or attempting to game the system could land you on the exile list.  
 
@@ -89,9 +103,13 @@ People on the blacklist never get added to the tip list. Focus on being an engag
 
 There is a way to get unsolicited tips though, [be a good Turtle](https://medium.com/@turtlecoin/how-to-be-a-good-turtle-20a427028a18) and check out the tipbot, [trtlbot++](Using-trtlbot-plus-plus).
 
-# Commands
+## Commands
 
+<<<<<<< HEAD
 She responds to `$` commands, including-
+=======
+She responds to `$` commands-
+>>>>>>> phone-guide
 
   * `$help` - you get a DM with a list of commands from RainBorg
   * `$balance` - Check the bot's tip balance
@@ -99,7 +117,7 @@ She responds to `$` commands, including-
   * `$optout` - Opt out of receiving tips from the bot
   * `$optin` - Opt back into receiving tips from the bot
 
-# Stats
+## Stats
 
 Every time RainBorg rains down tips on chatty Turtles she'll post a message in the `#raindance` channel.
 They look something like this:
@@ -110,8 +128,9 @@ They look something like this:
 <img src="guides/images/rainborg/rainborg-rain.png" width="256" height="256" alt="turtle in the rain" />
 </blockquote>
 
-# Anything not covered here?
+## Anything not covered here?
 
+<<<<<<< HEAD
 Open a [new issue](https://github.com/turtlecoin/meta/issues/new?title=RainBorg+Question) or make some noise in `#help`.
 Or, just join our [Discord](https://discord.gg/qyXqkuk) and ask some fellow turtles!
 
@@ -120,3 +139,14 @@ Or, just join our [Discord](https://discord.gg/qyXqkuk) and ask some fellow turt
 An idea has been floated regarding a Megatip function. Basically, someone could purposely send a large chunk of TRTL and most of it would be sent out in the next wave of rain tips. 
 
 If you want to see something like this, talk about it! ;)
+=======
+Open a [new issue](https://github.com/turtlecoin/meta/issues/new?title=RainBorg+Question) or make some noise in #help.
+
+Or, just join our [Discord](https://discord.gg/qyXqkuk) and ask some fellow turtles!
+
+If you know something that isn't in here, you can [contribute to these docs.](https://github.com/turtlecoin/turtlecoin-wiki)
+
+### Wow? Megatip wat?
+
+An idea has been floated regarding a Megatip function. Basically, someone could purposely send a large chunk of TRTL and most of it would be sent out in the next wave of rain tips. If you want to see something like this, talk about it! ;)
+>>>>>>> phone-guide
