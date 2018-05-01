@@ -18,13 +18,15 @@ Because it is fun and promotes an active community; it is another way that this 
 
 ## So where do the TRTL's come from?
 
-They come from all the generous people in the community. There is a pool of TRTL, the pool is filled up by anyone that wants to contribute. You could be a contributor! It is anonymous and 100% philanthropic. The only way it stops being anonymous is if you post in chat and disclose your donation.  `ha, just sent 350k TRTL to the RainBorg, megatip time yo!`
+They come from all the generous people in the community. There is a pool of TRTL, the pool is filled up by anyone that wants to contribute. You could be a contributor! It is anonymous and 100% philanthropic. 
 
-# Give me details!
+The only way it stops being anonymous is if you post in chat and disclose your donation.  `ha, I just sent 350k TRTL to the RainBorg, megatip time yo!`
+
+## Give me details!
 
 Right, to get started, simply register your wallet with [trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet).
 
-Go to `#wallets` and type
+Go to the `#wallets` channel in Discord and type
 
 `.registerwallet <walletaddress>`
 
@@ -32,7 +34,7 @@ For example, you would type:
 
 `.registerwallet TRTLv3pFrFm2yk4cYNtKf5fxV1b594tNrZfEV2CYWJsTSqr9BWoWMrUNpQaeD9StrzQrxpRQKPCdd1FfvT6D6dAg4pY6iB7sqsG`
 
-That's it, you're in, now start chatting with your fellow Turtles.
+That's it, you're in, now start chatting with your fellow turtles.
 
 ## To contribute to the tip rain pool
 
@@ -69,9 +71,11 @@ Pretty much.
 
 Well, let's break this down then. You WERE active _(past tense)_, and the other people who ARE active got the rain and you didn't because of the way the chatting window works.  
 
-They were active during the time RainBorg was raining down on the active Turtles. Active Turtles win, that's the game. Be a good active Turtle and she will share her tips with you!
+They were active during the time RainBorg was raining down on the active Turtles. 
 
-# OK OK, so how do I get all the TRTLs? SPAM? EXILE!
+Active Turtles win, that's the game. Be a good active Turtle and she will share her tips with you!
+
+## OK OK, so how do I get all the TRTLs? SPAM? EXILE!
 
 This is not how it works or why it was set up... Gaming the system or attempting to game the system could land you on the exile list.  
 
@@ -79,9 +83,9 @@ People on the exile list never get added to the tip-list. Focus on being an enga
 
 There is a way to get unsolicited tips though, [be a good Turtle](https://medium.com/@turtlecoin/how-to-be-a-good-turtle-20a427028a18) and check out the tipbot, [trtlbot++](Using-trtlbot-plus-plus).
 
-# Commands
+## Commands
 
-Yes she'll respond to $ commands, these are the public ones
+She responds to `$` commands-
 
   * `$help` - you get a DM with a list of commands from RainBorg
   * `$balance` - Check the bot's tip balance
@@ -89,9 +93,9 @@ Yes she'll respond to $ commands, these are the public ones
   * `$optout` - Opt out of receiving tips from the bot
   * `$optin` - Opt back into receiving tips from the bot
 
-# Stats
+## Stats
 
-Every time RainBorg rains down tips on chatty Turtles she'll post a message in the #raindance channel.
+Every time RainBorg rains down tips on chatty Turtles she'll post a message in the `#raindance` channel.
 They look something like this:
 
 <blockquote>
@@ -100,11 +104,14 @@ They look something like this:
 <img src="guides/images/rainborg/rainborg-rain.png" width="256" height="256" alt="turtle in the rain" />
 </blockquote>
 
-# Anything not covered here?
+## Anything not covered here?
 
 Open a [new issue](https://github.com/turtlecoin/meta/issues/new?title=RainBorg+Question) or make some noise in #help.
-The gaps will be filled either by you or another person, [anyone can contribute](https://github.com/turtlecoin/turtlecoin-wiki) to these docs as well!
 
-#### Wow? Megatip wat?
+Or, just join our [Discord](https://discord.gg/qyXqkuk) and ask some fellow turtles!
 
-An idea has been floated regarding a Megatip function. Basically, someone could purposely send a large chunk of TRTL and most of it would be sent out in the next wave of rain tips. If you want to see something like this talk about it.
+If you know something that isn't in here, you can [contribute to these docs.](https://github.com/turtlecoin/turtlecoin-wiki)
+
+### Wow? Megatip wat?
+
+An idea has been floated regarding a Megatip function. Basically, someone could purposely send a large chunk of TRTL and most of it would be sent out in the next wave of rain tips. If you want to see something like this, talk about it! ;)
