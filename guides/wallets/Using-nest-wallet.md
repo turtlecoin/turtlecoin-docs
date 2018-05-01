@@ -8,7 +8,7 @@ Here's a quick image of Nest Wallet in action-
 
 ## Downloading
 
-Binary distributions can be found [here](https://github.com/turtlecoin/turtle-wallet-go/releases/latest)
+Binary distributions can be found [here](https://github.com/turtlecoin/turtle-wallet-go/releases/latest).
 
 Select the appropriate file for the target platform (Windows, Mac, Linux). 
 
@@ -18,15 +18,15 @@ Windows and Mac binaries are provided in `.zip` format, while Linux binaries are
 
 ### Installing on Windows
 
-Extract the `.zip` file(`TurtleCoin-Nest-x.xx-Windows.zip`)
+Extract the `.zip` file (`TurtleCoin-Nest-x.xx-Windows.zip`).
 
 ### Installing on Mac
 
-Extract the `.zip` file(`TurtleCoin-Nest-x.xx-Mac.zip`)
+Extract the `.zip` file (`TurtleCoin-Nest-x.xx-Mac.zip`).
 
 ### Installing on Linux
 
-Extract the `.tar.gz` file.
+Extract the `.tar.gz` file (`TurtleCoin-Nest-x.xx-Linux.tar.gz`).
 
 ```
 tar -xzf TurtleCoin-Nest-x.xx-Linux.tar.gz
@@ -52,7 +52,7 @@ Run the `TurtleCoin-Nest.exe` executable from the extracted files.
 
 Double click the app `TurtleCoin-Nest.app` from the extracted files.
 
-If you have a blocking warning that says that this app comes from an unknown developer, right-click on the app, then click `Open > Open`
+If you have a blocking warning that says that this app comes from an unknown developer, right-click on the app, then click `Open > Open`.
 
 #### Linux
 
@@ -70,7 +70,7 @@ On the screen will be written `Create a new wallet`.
 
 Under it will be a box into which you can type something.
 
-Type the what you want the name of your wallet to be. For example, `trtl`.
+Type what you want the name of your wallet to be. For example, `trtl`.
 
 
 
@@ -82,7 +82,7 @@ Once done, press `CREATE`.
 
 Upon opening Nest Wallet, you will be greeted with a screen.
 
-On the screen will be written `Open an existing wallet`
+On the screen will be written `Open an existing wallet`.
 
 ![open](guides/wallets/images/nest_open.png)
 
@@ -116,23 +116,23 @@ To back up your View Key and Spend Key, follow these steps-
 
 * Click on `Backup wallet`
 
-* ![backup](guides/wallets/images/nest-backup1.png)
+  ![backup](guides/wallets/images/nest-backup1.png)
 
 * A window like this should appear-
 
   ![backup](guides/wallets/images/nest-backup2.png)
 
-* Copy and safely store the `Private View Key` and `Private Spend Key`
+* Copy and safely store the `Private View Key` and `Private Spend Key`.
 
-  ### Viewing Wallet Balance
+### Viewing Wallet Balance
 
-  Upon opening your wallet, your balance will be on the top of the wallet screen.
+Upon opening your wallet, your balance will be on the top of the wallet screen.
 
-  ![balance](guides/wallets/images/nest-balance.png)
+![balance](guides/wallets/images/nest-balance.png)
 
 ### Sending TurtleCoin Transactions
 
-Upon opening your wallet, in the bottom right will be written `TRANSFER`
+Upon opening your wallet, in the bottom right will be written `TRANSFER`.
 
 To send a transaction, enter the recipient's address under `Recipient address`	and the amount you want to send under `Amount`.
 
@@ -149,7 +149,7 @@ To include a Payment ID, simply enter it under `(optional) Payment ID`.
 
 #### Changing Mixin and Fee
 
-Currently, it is not possible to change the mixin(set to 4) or fee (of 1 TRTL). This may be possible in the future. 
+Currently, it is not possible to change the mixin (set to 4) or fee (set to 1 TRTL). This may be possible in the future. 
 
 For now remember, that 1 TRTL ontop of what you're sending will be deducted. So don't send your full balance!
 
@@ -163,9 +163,7 @@ To safely close the wallet, simply close it as you normally would; by clicking t
 
 If you want to recover your wallet with your Private View and Spend Key, it is relatively easy.
 
-Upon opening Nest Wallet, 
-
-*in the boxes under `Import wallet from keys`*-
+Upon opening Nest Wallet, *in the boxes under `Import wallet from keys`*-
 
 * enter the name you want to give your wallet
 * enter the password you want to encrypt your wallet with
@@ -173,7 +171,7 @@ Upon opening Nest Wallet,
 
 ![restore](guides/wallets/images/nest-recover.png)
 
-Once done, click `IMPORT`. The wallet will restore your wallet and begin syncing with the blockchain.
+Once done, click `IMPORT`. The wallet will be restored and begin syncing with the blockchain.
 
 #### 25 Mnemonic Seed
 
