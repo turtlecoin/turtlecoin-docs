@@ -105,7 +105,7 @@ They look like this:
 
 <blockquote>
 <strong>TUT TUT</strong>
-<p>Huzzah, 500 TRTL just rained on 4 chatty turtles in #mining, they each got 125 TRTL!</p>![rain](guides/images/rainborg/rainborg-rain.png)
+<p>Huzzah, 500 TRTL just rained on 4 chatty turtles in #mining, they each got 125 TRTL!</p><img src="guides/images/rainborg/rainborg-rain.png" alt="turtle in the rain" />
 
 </blockquote>
 
