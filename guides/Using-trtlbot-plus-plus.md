@@ -3,9 +3,15 @@
 
 ## Registering your Wallet
 
-Go to the `#wallets` channel on the [Discord server](https://discord.gg/J7g99EE) and type `.registerwallet <walletaddress>`. 
+Go to the `#wallets` channel in the [Discord server](https://discord.gg/J7g99EE) and type `.registerwallet <walletaddress>`. 
 
-For example, you would type- `.registerwallet TRTLv3pFrFm2yk4cYNtKf5fxV1b594tNrZfEV2CYWJsTSqr9BWoWMrUNpQaeD9StrzQrxpRQKPCdd1FfvT6D6dAg4pY6iB7sqsG`
+For example, you would type- 
+
+```
+.registerwallet TRTLv3pFrFm2yk4cYNtKf5fxV1b594tNrZfEV2CYWJsTSqr9BWoWMrUNpQaeD9StrzQrxpRQKPCdd1FfvT6D6dAg4pY6iB7sqsG
+```
+
+
 
 ## Depositing Turtle
 
