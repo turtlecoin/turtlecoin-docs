@@ -86,7 +86,7 @@ People on the exile list never get added to the tip-list. Focus on being an enga
 
 There is a way to get unsolicited tips though, [be a good Turtle](https://medium.com/@turtlecoin/how-to-be-a-good-turtle-20a427028a18) and check out the tipbot, [trtlbot++](Using-trtlbot-plus-plus).
 
-# Commands  
+# Commands
 
 Yes she'll respond to `$` commands-
 
