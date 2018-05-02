@@ -8,7 +8,7 @@ This bot monitors chat activity. Once a certain criterion is met, RainBorg sends
 
 ## What is the criteria to get tips?
 
-Basically, there is a tipping window _(min time/max time)_ and chatting is monitored during that window. Those that "chat" during that time qualify and get added to a tip-list. 
+Basically, there is a tipping window *(min time/max time)* and chatting is monitored during that window. Those that "chat" during that time qualify and get added to a tip-list. 
 
 Once the list of people to be tipped reaches a threshold, and the timer has met its criteria, all the tips are issued to those on that list, woohoo!  
 
@@ -39,8 +39,6 @@ For example, you would type:
 ```
 .registerwallet TRTLv3pFrFm2yk4cYNtKf5fxV1b594tNrZfEV2CYWJsTSqr9BWoWMrUNpQaeD9StrzQrxpRQKPCdd1FfvT6D6dAg4pY6iB7sqsG
 ```
-
-
 
 That's it, you're in, now start chatting with your fellow Turtles.
 
@@ -76,7 +74,7 @@ Pretty much.
 
 ### Hold up, I was active like 2mins ago then all these others got TRTL and I didn't
 
-Well, let's break this down then. You WERE active _(past tense)_, and the other people who ARE *(present tense)* active got the rain and you didn't because of the way the chatting window works.  
+Well, let's break this down then. You WERE active *(past tense)*, and the other people who ARE active got the rain and you didn't because of the way the chatting window works.  
 
 They were active during the tipping window, if you don't send a message after a certain amount of time you won't get tipped. Be a good active Turtle and RainBorg will share her tips with you!
 
@@ -88,7 +86,7 @@ People on the exile list never get added to the tip-list. Focus on being an enga
 
 There is a way to get unsolicited tips though, [be a good Turtle](https://medium.com/@turtlecoin/how-to-be-a-good-turtle-20a427028a18) and check out the tipbot, [trtlbot++](Using-trtlbot-plus-plus).
 
-# Commands
+# Commands  
 
 Yes she'll respond to`$` commands-
 
@@ -105,7 +103,8 @@ They look like this:
 
 <blockquote>
 <strong>TUT TUT</strong>
-<p>Huzzah, 500 TRTL just rained on 4 chatty turtles in #mining, they each got 125 TRTL!</p><img src="guides/images/rainborg/rainborg-rain.png" alt="turtle in the rain" />
+<p>Huzzah, 500 TRTL just rained on 4 chatty turtles in #mining, they each got 125 TRTL!</p>
+  <img src="guides/images/rainborg/rainborg-rain.png" alt="turtle in the rain" />
 
 </blockquote>
 
