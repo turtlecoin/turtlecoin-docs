@@ -88,7 +88,7 @@ There is a way to get unsolicited tips though, [be a good Turtle](https://medium
 
 # Commands  
 
-Yes she'll respond to`$` commands-
+Yes she'll respond to `$` commands-
 
 - `$help` - you get a DM with a list of commands from RainBorg
 - `$balance` - Check the bot's tip balance, will show in the channel
