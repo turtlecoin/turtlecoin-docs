@@ -20,11 +20,11 @@ Some of the main features of TurtleCoin include:
 
 To learn more about us, check out our other various articles, describing:
 
-- [Our Background and History](Background-and-History)
+- [Our Background and History](Background-and-History.md)
 
-- [Our Community](Community)
+- [Our Community](Community.md)
 
-- [How to Contribute](Contributing)
+- [How to Contribute](Contributing.md)
 
   ​
 
