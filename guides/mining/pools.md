@@ -37,9 +37,9 @@ Example-
 
 - the fee is 0.1%
 - the block reward is 30000 TRTL
-- 30000 x 0.1% = 30
+- 30000 x 0.1% = 300
 
-Therefore, the pool operator will take 30 TRTL for himself. 
+Therefore, the pool operator will take 300 TRTL for himself. 
 
 
 
