@@ -31,6 +31,10 @@ Your stats will only update when your pool finds a block and it matures, so if y
 
 A: To save money on fees, the pools send payouts in chunks. [Check your pool website for your pending balance](#pending-balance-not-gone-up).
 
+#### Q: Why are my results being rejected from the pool?
+
+ A: You're using a incorrect algorithm. The correct TurtleCoin algorithm is CN Lite Variant 1
+ 
 #### Q: I got banned from my mining pool. Why?
 
 A: If you submit lots of invalid shares, a pool might ban you. Possible reasons for invalid shares can be 
