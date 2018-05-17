@@ -33,7 +33,7 @@ A: To save money on fees, the pools send payouts in chunks. [Check your pool web
 
 #### Q: Why are my results being rejected from the pool?
 
- A: You're using a incorrect algorithm. The correct TurtleCoin algorithm is CN Lite Variant 1
+ A: You're using a incorrect algorithm. If you are using xmr-stak, you should use cryptonight_lite_v7 as the algorithm, if you are using xmrig use cryptonight-lite as the algorithm.
  
 #### Q: I got banned from my mining pool. Why?
 
