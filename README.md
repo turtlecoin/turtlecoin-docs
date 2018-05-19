@@ -20,7 +20,7 @@ Please be granular and make a single commit per change/set of related changes (o
 
 ## Thanks and Contributors
 - @ZedPea
-- @AC
+- @ar-x
 - @Sajo811
 - @holytastyguacamole
 - @SoreGums
