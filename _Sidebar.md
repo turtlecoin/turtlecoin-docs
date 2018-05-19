@@ -46,7 +46,7 @@
     * [CentOS 7](Compiling-From-Source#centos-7)
 
 - Developers
-  * [Resources](developer/Resources)
+  * [Resources](Resources)
 
 - TRTL Development
   - Connecting with Developers
