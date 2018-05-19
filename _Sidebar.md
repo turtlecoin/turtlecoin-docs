@@ -45,6 +45,9 @@
   - [Compiling TurtleCoin from Source](Compiling-From-Source)
     * [CentOS 7](Compiling-From-Source#centos-7)
 
+- Developers
+  * [Resources](developer/Resources)
+
 - TRTL Development
   - Connecting with Developers
   - TurtleCoin Projects
