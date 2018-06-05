@@ -30,7 +30,7 @@ If you would like to setup a GUI wallet, you can take a look at [this guide](Mak
 
 ## Web Wallet
 
-Our Web Wallet is currently under development and is in the beta testing stage. If you are interested in joining the beta test, jump into our Discord channel and see if you can score an invite!
+Our Web Wallet is currently under development and is in the beta testing stage. If you are interested in joining the beta test, jump into our [Discord channel](http://chat.turtlecoin.lol) and see if you can score an invite!
 
 We'll have a guide out for it as soon as it comes out!
 
