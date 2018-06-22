@@ -31,7 +31,16 @@ turtlecoind = turtlecoin.TurtleCoind(host, port)
 ```
 
 To make a JSON RPC request to TurtleCoind you should use one of the documented methods
-<!-- i have no frigging idea, is this correct? i never used any post request or url typing or opening -->
+To start Daemon JSON RPC API server you should specify a port on which server binds (additionally to standard daemon's arguments). You can choose any free port. To do that execute the following command from the command line:
+
+bytecoind --rpc-bind-port=8081 
+If you want Daemon to be accessed from other computer not only yours you should also use a --rpc-bind-ip 0.0.0.0 command. To do that execute the following command from the command line:
+
+bytecoind --rpc-bind-ip=0.0.0.0 --rpc-bind-port=8081 
+Having done that you're ready to operate with the daemon through the following API URLs (e.g., your IP address is 126.0.1.100):
+
+http://126.0.1.100:8081/json_rpc
+http://localhost:8081/json_rpc
 
 ## getblockcount
 
@@ -246,7 +255,6 @@ height | Yes   | Height of the block | int
 See getlastblockheader
 
 
-<!-- do i need this? -->
 ## License
 
 [![Creative Commons License](/images/cc-by-sa.png)](https://creativecommons.org/licenses/by-sa/3.0/)
