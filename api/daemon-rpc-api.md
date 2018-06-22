@@ -11,7 +11,7 @@ Currently we support the following official client bindings:
 npm install turtlecoin-rpc
 ```
 
-```python
+```python 
 pip3 install turtlecoin
 ```
 
@@ -21,7 +21,7 @@ pip3 install turtlecoin
 
 >  Configuration and instantiation
 
-```python
+```python 
 from turtlecoin import TurtleCoind
 
 host = 'localhost' (you may also use `public.turtlenode.io`)
@@ -35,7 +35,7 @@ To make a JSON RPC request to TurtleCoind you should use one of the documented m
 
 ## getblockcount
 
-```python
+```python 
 from turtlecoin import TurtleCoind
 
 host = 'localhost' (you may also use `public.turtlenode.io`)
@@ -47,8 +47,7 @@ print(blockcount)
 ```
 
 > Expected Output:
-
-```json
+```python 
 {'count': 286373, 'status': 'OK'}
 ```
 `getblockcount()` returns the current chain height.
@@ -64,7 +63,7 @@ status  | Status of blockchain | string
 
 ## getblocktemplate
 
-```python
+```python 
 from turtlecoin import TurtleCoind
 
 host = 'localhost' (you may also use `public.turtlenode.io`)
@@ -76,8 +75,7 @@ print(blocktemplate)
 ```
 
 > Expected Output:
-
-```json
+```python
 {
     'blocktemplate_blob': '0300f29a5cddd1a88f9b95...',
     'difficulty': 273666101,
@@ -108,7 +106,7 @@ status | Status of the network | string
 
 ## getcurrencyid
 
-```python
+```python 
 from turtlecoin import TurtleCoind
 
 host = 'localhost' (you may also use `public.turtlenode.io`)
@@ -120,8 +118,7 @@ print(currencyid)
 ```
 
 > Expected output:
-
-```json
+```python
 {'currency_id_blob': '7fb97df81221dd1366051b2...'}
 ```
 
@@ -137,7 +134,7 @@ currency_id_blob | unique currency identifier | string
 
 ## getlastblockheader
 
-```python
+```python 
 from turtlecoin import TurtleCoind
 
 host = 'localhost' (you may also use `public.turtlenode.io`)
@@ -149,8 +146,7 @@ print(lastbheader)
 ```
 
 > Expected output:
-
-```json
+```python
 {
     'block_header': {
         'depth': 0,
@@ -192,7 +188,7 @@ status | status of the blockchain | string
 
 ##  getlastblockheaderbyhash
 
-```python
+```python 
 from turtlecoin import TurtleCoind
 
 host = 'localhost' (you may also use `public.turtlenode.io`)
@@ -222,7 +218,7 @@ See getlastblockheader
 ## getlastblockheaderbyheight
 
 
-```python
+```python 
 from turtlecoin import TurtleCoind
 
 host = 'localhost' (you may also use `public.turtlenode.io`)
