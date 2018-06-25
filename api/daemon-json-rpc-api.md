@@ -4,18 +4,22 @@ Daemon JSON RPC is a HTTP server which provides JSON 2.0 RPC interface for inter
 
 Currently we support the following official client bindings:
 
-* [JavaScript](https://github.com/turtlecoin/turtlecoin-rpc-js)
+* [JavaScript](https://www.npmjs.com/package/turtlecoin-rpc)
 * [Python](https://github.com/turtlecoin/turtlecoin-rpc-python)
 
-```javascript
-npm install turtlecoin-rpc
-```
+## Javascript
+
+For the latest Javascript client binding documentation, please see [turtlecoin-rpc](https://www.npmjs.com/package/turtlecoin-rpc) on the [NPM](https://www.npmjs.com) website.
+
+## Python
+
+### Installation
 
 ```python
 pip3 install turtlecoin
 ```
 
-## Interacting with the API
+### Interacting with the API
 
 > API endpoint example
 
@@ -68,7 +72,7 @@ Parameter            | Description
 `<service port>`     | Daemon RPC port, by default it is bound to 11898 port, but it can be manually bound to any port you want
 
 
-## getblockcount
+### getblockcount
 
 ```shell
 curl -d '{"jsonrpc":"2.0", "method":"getblockcount", "params":{}}' http://localhost:11898/json_rpc
@@ -106,7 +110,7 @@ count            | Current chain height | int
 status           | Status of request | string
 
 
-## getblockhash
+### getblockhash
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"on_getblockhash","params":[123456]}' http://localhost:11898/json_rpc
@@ -144,7 +148,7 @@ Argument         | Description          | Format
 ---------------- | -------------------- | ------
 result           | Hash of previous block | int
 
-## getblocktemplate
+### getblocktemplate
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"getblocktemplate","params":{"reserve_size":200,"wallet_address":"TRTLxxxx..."}}' http://localhost:11898/json_rpc
@@ -195,7 +199,7 @@ height | Chain height of the network | int
 reserved_offset | Offset reserved | int
 status | Status of the network | string
 
-## submitblock
+### submitblock
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"submitblock","params":["0100b...."]}' https://localhost:11898/json_rpc
@@ -235,7 +239,7 @@ Argument         | Description          | Format
 ---------------- | -------------------- | ------
 status           | Status of request | string
 
-## getlastblockheader
+### getlastblockheader
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"getlastblockheader","params":{}}' http://localhost:11898/json_rpc
@@ -296,7 +300,7 @@ reward | reward of the block | str
 timestamp | the time at which the block is occured on chain since Unix epoch | int
 status | status of the request | string
 
-## getblockheaderbyhash
+### getblockheaderbyhash
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"getblockheaderbyhash","params":{"hash":"30706..."}}' http://localhost:11898/json_rpc
@@ -364,7 +368,7 @@ reward | reward of the block | str
 timestamp | the time at which the block is occured on chain since Unix epoch | int
 status | status of the request | string
 
-## getblockheaderbyheight
+### getblockheaderbyheight
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"getblockheaderbyheight","params":{"height":123456}}' http://localhost:11898/json_rpc
@@ -432,7 +436,7 @@ reward | reward of the block | str
 timestamp | the time at which the block is occured on chain since Unix epoch | int
 status | status of the request | string
 
-## getcurrencyid
+### getcurrencyid
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"getcurrencyid","params":{}}' http://localhost:11898/json_rpc
@@ -467,7 +471,7 @@ Argument | Description | Format
 -------- | ----------- | ------
 currency_id_blob | unique currency identifier | string
 
-## getblocks
+### getblocks
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"f_blocks_list_json","params":{"height":500000}}' http://localhost:11898/json_rpc
@@ -525,7 +529,7 @@ blocks   | **Array of** |                                       |
          | tx_count     | number of transactions in the block   | int
 
 
-## getblock
+### getblock
 
 ```shell
 curl -d '{"jsonrpc":"2.0","met":"f_block_json","params":{"hash":"980ff..."}}' http://localhost:11898/json_rpc
@@ -625,7 +629,7 @@ fee | fees for the transaction | int
 hash | hash of the transaction | string
 size | size of the transaction | int
 
-## gettransaction
+### gettransaction
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"f_transaction_json","params":{"hash":"702ad..."}}' http://localhost:11898/json_rpc
@@ -740,7 +744,7 @@ version | - | int
 vin | array of input transactions | array
 vout | array of output transactions | array
 
-## gettransactionpool
+### gettransactionpool
 
 ```shell
 curl -d '{"jsonrpc":"2.0","method":"f_on_transactions_pool_json","params":{}}' http://localhost:11898/json_rpc
@@ -794,7 +798,7 @@ hash | hash of the transaction | string
 size | size of the transaction | int
 
 
-## License
+# License
 
 [![Creative Commons License](/images/cc-by-sa.png)](https://creativecommons.org/licenses/by-sa/3.0/)
 
