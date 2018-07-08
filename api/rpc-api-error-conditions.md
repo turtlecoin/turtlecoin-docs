@@ -76,8 +76,8 @@ This is caused when the transaction size (in bytes, not amount), is too large to
 
 **Solution:**
 You can either:
-- Perform fusion transactions, to fuse your small key images into larger ones, letting you send more at once, or
-- Split your one transaction into multiple transactions, until each smaller one can fit into a block. This will slightly raise the fee you have to pay of course.
+* Perform fusion transactions, to fuse your small key images into larger ones, letting you send more at once, or
+* Split your one transaction into multiple transactions, until each smaller one can fit into a block. This will slightly raise the fee you have to pay of course.
 
 ## SUM_OVERFLOW / Sum overflow
 >**Possible Alternative Error:**
@@ -95,8 +95,8 @@ No destination address specified, or amount specified is zero
 
 **Description:**
 This is caused by either:
-- A transaction amount of zero, or
-- No address was specified to transfer to.
+* A transaction amount of zero, or
+* No address was specified to transfer to.
 
 **Solution:**
 Ensure you supply an address parameter in the transfers array, and that the amount is larger than zero.
@@ -140,9 +140,9 @@ Ensure you supply an address parameter in the transfers array, and that the amou
 
 **Description:**
 This is encountered when loading the wallet file with walletd. There are a few possible causes for it:
-- The file you are trying to load doesn't exist. This is common if you open `mywallet` instead of `mywallet.wallet`.
-- The file you are trying to load is not a wallet file.
-- The wallet file has got corrupted.
+* The file you are trying to load doesn't exist. This is common if you open `mywallet` instead of `mywallet.wallet`.
+* The file you are trying to load is not a wallet file.
+* The wallet file has got corrupted.
 
 **Solution:**
 Ensure the file you are trying to open is both a valid wallet file, and exists.
@@ -200,10 +200,10 @@ Don't use methods which require spending with a view only wallet.
 
 **Description:**
 This error can occur in a number of scenarios.
-- A supplied private/public key is invalid/cannot be parsed.
-- A spend key was specified to createAddress in a view only wallet, or a null spend key was specified in a non view only wallet
-- The blocks count given is less than 1
-- The blockindex given is less than 1
+* A supplied private/public key is invalid/cannot be parsed.
+* A spend key was specified to createAddress in a view only wallet, or a null spend key was specified in a non view only wallet
+* The blocks count given is less than 1
+* The blockindex given is less than 1
 
 For more info on the exact error, check your walletd.log or console window.
 
@@ -322,6 +322,7 @@ Only send to one integrated address at once, and don't include a payment ID, to 
 **Turtlecoind Errors**
 * `https://github.com/turtlecoin/turtlecoin/blob/master/src/NodeRpcProxy/NodeErrors.h`
 * `https://github.com/turtlecoin/turtlecoin/blob/master/src/InProcessNode/InProcessNodeErros.h`
+
 ## NOT_INITIALIZED / Object was not initialized
 >**Possible Alternative Error:**
 >
