@@ -229,7 +229,7 @@ This value sets the height for the newer zawy algorithm that was previously ment
 I would suggest you set this value to `1`, to activate it instantly after the previous algorithm.
 This difficulty algorithm is much more resistant to pulse mining and time warping.
 
-- `const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX = 1`<br/><br/>
+- `const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX = 1;`<br/><br/>
 
 
 
@@ -276,7 +276,7 @@ This value is defined again in *atomic units*,
 so multiply your desired minimum fee by 10 * the number of numbers after the decimal point in your coin.
 
 
-- const uint64_t MINIMUM_FEE = UINT64_C(1000);<br/><br/>
+- `const uint64_t MINIMUM_FEE = UINT64_C(1000);`<br/><br/>
 
 
 #### `const uint64_t MINIMUM_MIXIN_V1 = 0;`<br/><br/>
@@ -342,7 +342,7 @@ Setting the dust threshold to zero prevents this, but has a side effect of makin
 
 I suggest setting DUST_THRESHOLD_V2_HEIGHT to 0, to make small amounts always spendable.
 
-- const uint32_t DUST_THRESHOLD_V2_HEIGHT = 0<br/><br/>
+- `const uint32_t DUST_THRESHOLD_V2_HEIGHT = 0;`<br/><br/>
 
 
 
@@ -529,7 +529,7 @@ We'll skip mentioning `walletName`, and `walletdName` as these both follow the s
 This value is used to let the user know where they can get support if their wallet gets stuck whilst syncing.
 In our case, this is the TurtleCoin discord. Maybe you have a forum or an IRC chat instead?
 
-- `const std::string contactLink = "https://applecoin.com/livechat`<br/><br/>
+- `const std::string contactLink = "https://applecoin.com/livechat"`<br/><br/>
 
 
 
