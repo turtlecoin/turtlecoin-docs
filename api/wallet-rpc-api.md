@@ -7,7 +7,7 @@ Currently we support the following official client bindings:
 * [JavaScript](https://github.com/turtlecoin/turtlecoin-walletd-rpc-js)
 * [PHP](https://github.com/turtlecoin/turtlecoin-walletd-rpc-php)
 * [Python](https://github.com/turtlecoin/turtlecoin-rpc-python)
-* [Go](https://github.com/turtlecoin/turtlecoin-walletd-rpc-go)
+* [Go](https://github.com/turtlecoin/turtlecoin-rpc-go)
 
 ```javascript
 npm install turtlecoin-walletd-rpc-js
