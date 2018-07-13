@@ -786,8 +786,7 @@ Congratulations!
 
 ## Compiling
 
-You can always find the latest instructions on how to compile TurtleCoin on our
-[GitHub](https://github.com/turtlecoin/turtlecoin#how-to-compile).
+You can always find the latest instructions on how to compile TurtleCoin on our [GitHub](https://github.com/turtlecoin/turtlecoin#how-to-compile).
 
 
 ## Support, Questions?
