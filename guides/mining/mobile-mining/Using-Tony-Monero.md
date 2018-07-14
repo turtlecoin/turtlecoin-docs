@@ -9,7 +9,7 @@
 5. If your device is supported, you will be brought to a screen with a success message.
 6. Check [Tony Monero Configuration](#tony-xmr-config)
 
-*You should note that by using the Tony Monero app, you will be contributing 10% of your hashpower to the developers wallet (while you are mining)*
+*You should note that by using the Tony Monero app, you will be contributing 10% of your hashpower to the developer's wallet (while you are mining)*
 
 ## Tony Monero Configuration<a name="tony-xmr-config"></a>
 
