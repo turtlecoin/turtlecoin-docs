@@ -8,7 +8,7 @@
 2. Upon downloading and installing, open the app.
 3. Check [AA Miner Configuration](#aa-miner-config)
 
-Beware, AA Miner displays a lot of ad's.
+*Beware, AA Miner displays a lot of ads.*
 
 ## AA Miner Configuration<a name="aa-miner-config"></a>
 

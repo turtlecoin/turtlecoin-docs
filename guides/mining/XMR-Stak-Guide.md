@@ -1,4 +1,4 @@
-# How to Set Up XMR-Stak 
+# How to Set Up XMR-Stak
 
 XMR-Stak is a unified miner, which means the same program will be used to mine with both your CPU and your GPU. It will automatically detect your hardware and adjust the settings accordingly.
 
@@ -47,7 +47,7 @@ Upon first launching XMR-Stak, the software will ask you several setup and confi
 
 Enter `0`, if you are like most people, and do not need to remotely check your hashrate.
 
-If you do need to, then enter a port number. 
+If you do need to, then enter a port number.
 Let's take the port number as `0101` and your IP address as `26.24.105.14` as an example.
 
 To check the hashrate, enter in the address bar of your web browser, `<26.24.105.14>:<0101>`. It should show a page with your rig's hashrate.
@@ -55,9 +55,9 @@ If you are checking from the same IP address, you can alternatively enter, `loca
 
 Make sure to enter your own IP address if you enable this feature. You can choose any port you want!
 
-2. ``` 
-   
-   Please enter: 
+2. ```
+
+   Please enter:
    - Please enter the currency that you want to mine:
 
    - aeon7
@@ -77,9 +77,9 @@ Make sure to enter your own IP address if you enable this feature. You can choos
    - monero7
    - stellite
    - sumokoin
-
+   - turtlecoin
    ```
-Enter `cryptonight_lite_v7`
+Enter `turtlecoin`
 
 3. `- Pool address: e.g. pool.example.com:3333`
 
@@ -107,7 +107,7 @@ Enter `n`(in case you do, enter `y`).
 
 9. `- Do you want to use multiple pools? (y/n)`  
 
-* Enter `y` if you would like to add more pools. 
+* Enter `y` if you would like to add more pools.
 * Give them all a weight of `10` if you're tired of reading, or if you want the best experience, give the pools nearest to you a higher number, and the ones further from you a lower number.  
 * XMR-Stak will prioritize the highest weight pool, and fall back to the others if it cannot connect.
 * If they are all given the same weight, it will connect to them in order of how they are listed, form top to bottom, in the configuration file.
@@ -120,7 +120,7 @@ Done! The miner will now start scanning your hardware and will begin mining. Awe
 
 
 
-XMR-Stak will save your configuration in `config.txt`  in the same directory from which it was first run. 
+XMR-Stak will save your configuration in `config.txt`  in the same directory from which it was first run.
 Your configuration for pools(algorithm to mine, address, port etc) will be saved in `pools.txt`
 The configuration of the device it mines(CPU/AMD/NVIDIA) will be saved in `cpu.txt`, `amd.txt` or `nvidia.txt`, respectively.
 

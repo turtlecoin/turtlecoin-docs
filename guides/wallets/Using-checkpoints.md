@@ -1,10 +1,12 @@
 # Using Checkpoints to Sync Faster
 
+**Note**: You can presently only use checkpoints with zedwallet; the command-line wallet.  
+
 ## Setup
 
-- Right click [this link](https://github.com/turtlecoin/checkpoints/raw/master/checkpoints.csv) and choose `Save link as...` to download the latest checkpoints.csv.
+- Right click [this link](https://github.com/turtlecoin/checkpoints/raw/master/checkpoints.csv) and choose `Save link as...` to download checkpoints.csv.
 - Place checkpoints.csv in the same folder as your daemon(TurtleCoind) and wallet(ZedWallet).
-- You can get them both from here if you don't have it already: https://latest.turtlecoin.lol
+- You can get them both [from here](http://latest.turtlecoin.lol) if you don't have them already.
 
 - Make sure you shut down any GUI wallets, or any other instances of TurtleCoind.
 
@@ -55,7 +57,7 @@ If you did the steps correctly, you should see something like this output.
 
 - If you see output like the above, the file you are opening is either not a .csv file, or hasn't been downloaded correctly.
 - Ensure you downloaded the file by right clicking, and choosing `Save link as...`.
-- If you incorrectly chose the wrong file, you can accidentaly download a html page instead.
+- If you incorrectly chose the wrong file, you can accidentally download a html page instead.
 - When you open up the file, it should have lots of lines like this:
 
 ```
@@ -76,7 +78,7 @@ If you did the steps correctly, you should see something like this output.
 ```
 
 - If you see output like the above, it means the file isn't present in the directory you are in.
-- Make sure you have placed the checkpoints.csv file in the same directory as TurtleCoind.
+- Make sure you have placed the `checkpoints.cs`v file in the same directory as TurtleCoind.
 
 ### TurtleCoind.exe is not recognized / No such file or directory
 
@@ -89,9 +91,9 @@ operable program or batch file.
 `bash: ./TurtleCoind: No such file or directory`
 
 - If you see output like one of the above, it means your terminal isn't in the same folder as the TurtleCoind program.
-- You can type `pwd` to see what folder you are currently in.
+- You can type `pwd` (or `dir` on Windows) to see what folder you are currently in.
 - Try following the steps above to get into the right folder, then try again.
-- If you type `ls`, you should see the TurtleCoind program, if you are in the correct folder:
+- If you type `ls`(or `dir` on Windows), you should see the TurtleCoind program, if you are in the correct folder:
 
 ```
 [turtlecoin-v0.5.0]λ ls

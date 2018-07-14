@@ -10,7 +10,7 @@ Here's a quick image of ZedWallet in action-
 
 Binary distributions can be found [here](https://github.com/turtlecoin/turtlecoin/releases/latest).
 
-Select the appropriate file for the target platform (Windows, Mac, Linux). 
+Select the appropriate file for the target platform (Windows, Mac, Linux).
 
 Windows binaries are provided in `.zip` format, while Mac and Linux are provided in `.tar.gz` format.
 
@@ -30,7 +30,7 @@ tar -xzf turtlecoin..-mac.tar.gz
 
 ### Installing on Linux
 
-Extract the *.tar.gz* file: 
+Extract the *.tar.gz* file:
 
 ```bash
 tar -xzf turtlecoin..-linux.tar.gz
@@ -40,7 +40,7 @@ tar -xzf turtlecoin..-linux.tar.gz
 
 Running `TurtleCoind` will start the *TurtleCoind* network daemon, which will connect to the network and begin downloading and verifying the TurtleCoin blockchain.  
 
-Because the blockchain is constantly growing, the file size is always increasing, and *TurtleCoind* must verify each block (CPU intensive). 
+Because the blockchain is constantly growing, the file size is always increasing, and *TurtleCoind* must verify each block (CPU intensive).
 
 To save time, consider downloading a cached 'bootstrap' of the blockchain (see [Bootstrapping the Blockchain](Bootstrapping-the-Blockchain) for more info).
 
@@ -51,11 +51,6 @@ In **versions 0.4.3+** you can sync a fresh chain from block 0 much quicker by u
 ### Windows
 
 Run the `TurtleCoind.exe` executable extracted from the Windows binary zip:
-
-```
-cd Downloads\turtlecoin-windows
-TurtleCoind.exe
-```
 
 ### Mac
 
@@ -79,9 +74,9 @@ In case you don't want to download the blockchain and verify it everytime, you c
 
 Check [here](Using-remote-nodes) for more info.
 
-## Using ZedWallet
+## Using zedwallet
 
-With `TurtleCoind` still running in the background or another terminal/shell/command prompt, open ZedWallet in a new shell:
+With `TurtleCoind` still running in the background or another terminal/shell/command prompt, open zedwallet in a new shell:
 
 #### Windows
 
@@ -182,7 +177,7 @@ TRTLv_this_is_your_public_address_ok_to_share_key_Wpk
 ### Exporting Keys
 
 Each TurtleCoin  wallet is, essentially, just a pair of keys (*View Key* and *Spend Key*) from which the public address is derived.  
-It is **very** important to export these keys and back them up somewhere that is safe and secure (meaning somewhere reliable/permanent that no one else can access). 
+It is **very** important to export these keys and back them up somewhere that is safe and secure (meaning somewhere reliable/permanent that no one else can access).
 
 In the event of a lost or corrupted wallet file, computer crash, etc., the *View Key* and *Spend Key* are the only way to restore a wallet and recover the funds it holds.
 
@@ -216,7 +211,7 @@ Total balance: 1100.00 TRTL
 
 In the running _zedwallet_ client, after opening a wallet..
 
-- type:`transfer`
+- type: `transfer`
 
 
 - type/paste the address you want to send the TRTL to and press enter
@@ -227,7 +222,7 @@ In the running _zedwallet_ client, after opening a wallet..
 
 - enter the payment ID if you have one (usually not needed). Check the [payment ID section](#tx-trtl-p-id) if you're not sure when/how to use it.
 
-- confirm that the details are correct and enter `y`. If something is amiss, enter `n` and follow the steps again. 
+- confirm that the details are correct and enter `y`. If something is amiss, enter `n` and follow the steps again.
 
 - enter your password
 
@@ -240,33 +235,18 @@ Example:
 
 #### Optimizing your Wallet
 
-When you send a transaction you have to include the "key images" of previous payments. So if you're sending 6000 TRTL you might need to include 6 x 1000 TRTL payments from mining to make it up. 
+When you send a transaction you have to include the "key images" of previous payments. So if you're sending 6000 TRTL you might need to include 6 x 1000 TRTL payments from mining to make it up.
 
 If, however, you had a bigger 6000 payment from somewhere, you could just include that and the transaction would be 6 times smaller.
 
 Fusion transactions take all your small payments and combine them into big ones, so you can send large ones at once
 
-To quickly optimize your wallet, for larger transactions which aren't nearing your full balance and you want to do it quickly, type *(this can take some time)*-
-
+To optimize your wallet, type:
 ```
-quick_optimize
+optimize
 ```
 
-and press `y`
-
-
-
-If you want to fully optimize your wallet, preparing your wallet to send upto your full balance, type *(this can take some time)*-
-
-````
-full_optimize
-````
-
-and press `y`
-
-
-
-That's it! It will display a message `(Full) optmization completed!` when it's done.
+When it is completed, it will print out a green message `Full optimization completed!`
 
 ![optimize](guides/wallets/images/optimize-simple.png)
 
@@ -280,11 +260,11 @@ To send a transaction with a payment ID, enter it when prompted to.
 
 ![p-id](guides/wallets/images/p-id-simple.png)
 
-Note that, typically, the service/recipient will generate and provide the required payment ID. 
+Note that, typically, the service/recipient will generate and provide the required payment ID.
 
 ### Exiting the Wallet
 
-"Live" wallets loaded into the *zedwallet* client must be synced with the blockchain in order to properly calculate balance, view transaction history, etc. 
+"Live" wallets loaded into the *zedwallet* client must be synced with the blockchain in order to properly calculate balance, view transaction history, etc.
 
 It is important to properly save the wallet data before exiting *zedwallet* so that the synchronized data is not lost.
 
@@ -301,9 +281,9 @@ Done
 
 #### Private Spend and View Keys<a name="recover-spend-view-keys"></a>
 
-In the running _zedwallet_ client, 
+In the running _zedwallet_ client,
 
-* type `I` 
+* type `I`
 
 
 * Enter your private spend and view key
@@ -408,4 +388,3 @@ full_optimize            Fully optimize your wallet to send large amounts
 transfer                 Send TRTL to someone
 [TRTL trtl]:
 ```
-

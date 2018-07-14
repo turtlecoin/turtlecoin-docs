@@ -6,9 +6,9 @@ If you want to learn about cryptocurrencies, mining is a great place to start!
 
 ## How to Mine TurtleCoin?<a name="how-to-mine"></a>
 
-**Please note:** Unfortunately because of some bad people using mining software in malware, most antivirus software will detect the programs below as unsafe. 
+**Please note:** Unfortunately because of some bad people using mining software in malware, most antivirus software will detect the programs below as unsafe.
 
-It is **likely** you will need to add exceptions and exclusions to your antivirus software in order to make things work properly. 
+It is **likely** you will need to add exceptions and exclusions to your antivirus software in order to make things work properly.
 
 Unless you know what you are doing, please ***only*** download from the links below.
 
@@ -24,7 +24,7 @@ If you're on Linux, check [this guide](XMR-Stak-Linux-Guide).
 
 ### 2. [XMRig](https://github.com/xmrig/xmrig)
 
-XMRig is a little bit different to XMR-Stak, you need to download a CPU and GPU miner separately and run two separate instances in your computer. One will use your CPU and the other one will use your GPU. 
+XMRig is a little bit different to XMR-Stak, you need to download a CPU and GPU miner separately and run two separate instances in your computer. One will use your CPU and the other one will use your GPU.
 
 Please follow [this guide](XMRig-Guide) to start mining TurtleCoin with XMRig.
 
@@ -48,4 +48,4 @@ You may view a comprehensive list of pools [here](Pools).
 
 ## Have Questions or Need Help?
 
-Check out our [Discord](https://discord.gg/J7g99EE) or [subreddit](https://www.reddit.com/r/TRTL/) to get in touch.
+Check out our [Discord](http://chat.turtlecoin.lol) or [subreddit](https://www.reddit.com/r/TRTL/) to get in touch.

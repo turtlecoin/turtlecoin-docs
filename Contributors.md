@@ -3,7 +3,7 @@
 Huge thank you to everyone here, they've made major commits to the wiki and helped make it what it is today!
 
 * @ZedPea
-* @AC
+* @ar-x
 * @Sajo811
 * @holytastyguacamole
 * @SoreGums
