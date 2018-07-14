@@ -208,26 +208,27 @@ Alternatively, check [this guide](Bootstrapping-the-Blockchain) for instructions
 
 A: This is a known issue with older macs or un-updated macs.
     Try entering this into a terminal -
-    ```
-    curl -sL "https://raw.githubusercontent.com/turtlecoin/turtlecoin/master/multi_installer.sh" | bash
-    ```
 
-    This automated script should compile the software itself, and place the binaries in ./src once done.  
-    See <https://github.com/turtlecoin/turtlecoin#ubuntu-1604-and-macos-1010> for more info.  
-    If this fails, try instead following the instructions to compile manually - <https://github.com/turtlecoin/turtlecoin#apple>
+  ```
+  curl -sL "https://raw.githubusercontent.com/turtlecoin/turtlecoin/master/multi_installer.sh" | bash
+  ```
+
+  This automated script should compile the software itself, and place the binaries in ./src once done.  
+  See <https://github.com/turtlecoin/turtlecoin#ubuntu-1604-and-macos-1010> for more info.  
+  If this fails, try instead following the instructions to compile manually - <https://github.com/turtlecoin/turtlecoin#apple>
 
 #### Q: I've opened the wallet, and I'm getting lots of red messages like "It looks like TurtleCoind isn't open!"...
 
-    ```
-    It looks like TurtleCoind isn't open!
+  ```
+  It looks like TurtleCoind isn't open!
 
-    Ensure TurtleCoind is open and has finished initializing.
-    If it's still not working, try restarting TurtleCoind. The daemon sometimes gets
-    stuck.
-    Alternatively, perhaps TurtleCoind can't communicate with any peers.
+  Ensure TurtleCoind is open and has finished initializing.
+  If it's still not working, try restarting TurtleCoind. The daemon sometimes gets
+  stuck.
+  Alternatively, perhaps TurtleCoind can't communicate with any peers.
 
-    The wallet can't function until it can communicate with the network.
-    ````
+  The wallet can't function until it can communicate with the network.
+  ````
 
 A: You need to also open up `TurtleCoind.exe` and let it sync. TurtleCoind is your connection to the network, and needs to be open and synced whenever you want to use your wallet.
 
@@ -270,7 +271,9 @@ Until you are fully synced, you won't be able to send transactions, and your bal
 
 #### Q: What is mixin?
 
-  A: Mixin is how many times your transaction is "mixed" with others for obfuscation and privacy. This used to be dynamic in that the user could choose a number equal to or greater than zero. However this property is now set and enforced at the network layer. The TRTL Network is a privacy focused blockchain, and keen to ease adoption for everyone, like how two decimals are used. Removing this user configurable option and setting it at the network layer allows for the network to balance this privacy aspect automatically so people can focus on the important parts.
+  A: Mixin is how many times your transaction is "mixed" with others for obfuscation and privacy. This used to be dynamic in that the user could choose a number equal to or greater than zero. However this property is now set and enforced at the network layer.  
+  The TRTL Network is a privacy focused blockchain, and keen to ease adoption for everyone, like how two decimals are used.  
+  Removing this user configurable option and setting it at the network layer allows for the network to balance this privacy aspect automatically so people can focus on the important parts.
 
    As of block 620,000 the network mixin is set to seven (7) with increases planned for the future.
 
@@ -357,8 +360,8 @@ A: Yes, you can view the guide [here](Making-a-Paper-Wallet)
   * Rain - Good active Turtles get rained on, check out what the [RainBorg](RainBorg-Wat-Dat) is to see how to use it.
   * Faucet - Head over to the faucets-
     * [madk's faucet](https://faucet.trtl.me/) - 10 TRTL, thrice a day
-    * [polar-it's faucet](https://turtlecoin-faucet.xhub.cloud/) - 25 TRTL, every 30 minutes
-    and enter your TRTL address.
+    * [polar-it's faucet](https://turtlecoin-faucet.xhub.cloud/) - 25 TRTL, every 30 minutes  
+    and enter your TRTL address.  
     The amount you can receive is limited to share the TRTL for all. Thanks to @madk and @polar-it for creating this.
 
 #### Q: Are there any light wallets / mobile wallets?
