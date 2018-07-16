@@ -1,0 +1,11 @@
+language: generic
+
+deploy:
+  provider: script
+  script: ./scripts/deploy.sh
+  on:
+    branch: master
+
+env:
+  global:
+    secure: CqiTo+y9CksPVpPiRWyVQjoi1TRuyntU50ALalx+XdP0fCW4/SZFCm7JltG2RjnLks1if+75s0SMbKxNa/VaVAeE2aF45MhfDYI1G1eSzlUvKrztNa0HwhN2rSZiKjPCw8a2VzscVOsq35gkMSlJOsu0X79AHDnpAkm6TVllIVAI61LKnK4/pn8iqy4l2+eYyPPdQftc/e/c9x2e+/9sCPm9blR4QoLEybUudyzNgbK0r0saT0YgxIQkM8yMmunJ93gB5Xx1QkSrTIib38qSfKLm5bzwH+v/A8C/QEvGvwjoCqYnUYjbkw1J+mLUVgkumCkKCKxOd78YEz9iEs9aZFZDB7u3BZD1d8sRzGDvqu7q+vX0bjs5+Zt+biqwo/KxlDfETRsh1zYZkMk1mx87axEjBJa8PBeKA18B+iN0bAxEoRgUZ4pjIlYp0dzXSzi4ZMcO4LDTGuB2KXrKl3BP3usS0sORlAF+Slx5AwIwIpchAEpsbkQEjlvaKDlcvtzVAvmBD4cy8WBPGODo9H60OlsPZPWr548QuHYOUPte+hnDd/zzMbNrmF1B9rMcGvg1eDLR4N8PQ+2wlrrwJvEC7+a5fZ+Afc4HVfDbRLrvgIgXlujz8RYtdrjuarklwDbq8WlnnC9Mx1LdKL/rqqZuAFsOaoNNjTw6UI5rmQDkH7g=
