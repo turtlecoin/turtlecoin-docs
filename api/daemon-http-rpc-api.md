@@ -12,6 +12,10 @@ Currently we support the following official client bindings:
 pip3 install turtlecoin
 ```
 
+```go
+go get github.com/turtlecoin/turtlecoin-rpc-go
+```
+
 ## Interacting with the API
 
 > API endpoint example
@@ -39,6 +43,17 @@ from turtlecoin import TurtleCoind
 rpc_host = 'localhost'
 rpc_port = 11898
 turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```
+
+```go
+import (
+  trpc "github.com/turtlecoin/turtlecoin-rpc-go"
+)
+
+rpcHost := "localhost"
+rpcPort := 11898
+
+turtlecoind := trpc.TurtleCoind{rpcHost,rpcPort}
 ```
 
 To start the Daemon JSON RPC API server at `http://localhost:11898`, run:
@@ -95,6 +110,11 @@ response = turtlecoind.get_height()
 print(response)
 ```
 
+```go
+response := turtlecoind.Height()
+fmt.Println(response)
+```
+
 > Expected Output:
 
 ```json
@@ -134,6 +154,11 @@ daemon.getInfo().then((result) => {
 ```python
 response = turtlecoind.get_info()
 print(response)
+```
+
+```go
+response := turtlecoind.Info()
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -265,6 +290,11 @@ response = turtlecoind.get_peers()
 print(response)
 ```
 
+```go
+response := turtlecoind.Peers()
+fmt.Println(response)
+```
+
 > Expected Output:
 
 ```json
@@ -307,6 +337,11 @@ daemon.feeInfo().then((result) => {
 ```python
 response = turtlecoind.get_fee_info()
 print(response)
+```
+
+```go
+response := turtlecoind.FeeInfo()
+fmt.Println(response)
 ```
 
 > Expected Output:

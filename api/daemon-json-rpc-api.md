@@ -16,6 +16,10 @@ npm install turtlecoin-rpc
 pip3 install turtlecoin
 ```
 
+```go
+go get github.com/turtlecoin/turtlecoin-rpc-go
+```
+
 ## Interacting with the API
 
 > API endpoint example
@@ -43,6 +47,17 @@ const daemon = new TurtleCoind({
   timeout: 2000, // request timeout
   ssl: false // whether we need to connect using SSL/TLS
 })
+```
+
+```go
+import (
+    trpc "github.com/turtlecoin/turtlecoin-rpc-go"
+)
+
+rpcHost := "localhost"
+rpcPort := 11898
+
+turtlecoind := trpc.TurtleCoind{rpcHost,rpcPort}
 ```
 
 To start the Daemon JSON RPC API server at `http://localhost:11898/json_rpc`, run:
@@ -99,6 +114,11 @@ response = turtlecoind.get_block_count()
 print(response)
 ```
 
+```go
+response := turtlecoind.GetBlockCount()
+fmt.Println(response)
+```
+
 > Expected Output
 
 ```json
@@ -143,6 +163,12 @@ daemon.getBlockHash({
 height = 123456
 response = turtlecoind.get_block_hash(height)
 print(response)
+```
+
+```go
+height := 123456
+response := turtlecoind.GetBlockHash(height)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -192,6 +218,14 @@ wallet_address = 'TRTLxxxx...'
 
 response = turtlecoind.get_block_template(reserve_size, wallet_address)
 print(response)
+```
+
+```go
+reserveSize := 200
+walletAddress := "TRTLxxxx..."
+
+response := turtlecoind.GetBlockTemplate(reserveSize, walletAddress)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -250,6 +284,12 @@ response = turtlecoind.submit_block(block_blob)
 print(response)
 ```
 
+```go
+blockBlob := "0100b..."
+response := turtlecoind.SubmitBlock(blockBlob)
+fmt.Println(response)
+```
+
 > Expected Output:
 
 ```json
@@ -293,6 +333,11 @@ daemon.getLastBlockHeader().then((result) => {
 ```python
 response = turtlecoind.get_last_block_header()
 print(response)
+```
+
+```go
+response := turtlecoind.GetLastBlockHeader()
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -363,6 +408,12 @@ daemon.getBlockHeaderByHash({
 hash = '30706...'
 response = turtlecoind.get_block_header_by_hash(hash)
 print(response)
+```
+
+```go
+hash := "30706..."
+response := turtlecoind.GetBlockHeaderByHash(hash)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -441,6 +492,12 @@ response = turtlecoind.get_block_header_by_height(height)
 print(response)
 ```
 
+```go
+height := 123456
+response := turtlecoind.GetBlockHeaderByHeight(height)
+fmt.Println(response)
+```
+
 > Expected Output:
 
 ```json
@@ -514,6 +571,11 @@ response = turtlecoind.get_currency_id()
 print(response)
 ```
 
+```go
+response := turtlecoind.GetCurrencyID()
+fmt.Println(response)
+```
+
 > Expected Output:
 
 ```json
@@ -556,6 +618,12 @@ height = 500000
 response = turtlecoind.get_blocks(height)
 print(response)
 ```
+
+```go
+height := 500000
+response := turtlecoind.GetBlocks(height)
+fmt.Println(response)
+``
 
 > Expected Output:
 
@@ -620,6 +688,12 @@ daemon.getBlock({
 hash = '980ff...'
 response = turtlecoind.get_block(hash)
 print(response)
+```
+
+```go
+hash := "980ff..."
+response := turtlecoind.GetBlock(hash)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -727,6 +801,12 @@ daemon.getTransaction({
 hash = '702ad...'
 response = turtlecoind.get_transaction(hash)
 print(response)
+```
+
+```go
+hash := "702ad..."
+response := turtlecoind.GetTransaction(hash)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -846,6 +926,11 @@ daemon.getTransactionPool().then((transactions) => {
 ```python
 response = turtlecoind.get_transaction_pool()
 print(response)
+```
+
+```go
+response := turtlecoind.GetTransactionPool()
+fmt.Println(response)
 ```
 
 > Expected Output:
