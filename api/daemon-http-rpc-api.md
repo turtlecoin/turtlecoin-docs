@@ -53,7 +53,7 @@ import (
 rpcHost := "localhost"
 rpcPort := 11898
 
-turtlecoind := trpc.TurtleCoind{rpcHost,rpcPort}
+daemon := trpc.TurtleCoind{URL: rpcHost, Port: rpcPort}
 ```
 
 To start the Daemon JSON RPC API server at `http://localhost:11898`, run:
@@ -81,7 +81,7 @@ and, locally at
 `http://localhost:11898`
 
 
-To make a JSON RPC request to your Daemon RPC you should use a POST request that looks like this:
+To make a HTTP RPC request to your Daemon RPC you should use a GET request that looks like this:
 
 `http://<service address>:<service port>`
 
@@ -111,7 +111,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.Height()
+response := daemon.Height()
 fmt.Println(response)
 ```
 
@@ -157,7 +157,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.Info()
+response := daemon.Info()
 fmt.Println(response)
 ```
 
@@ -249,6 +249,10 @@ response = turtlecoind.get_transactions()
 print(response)
 ```
 
+```go
+Not Implemented
+```
+
 > Expected Output:
 
 ```json
@@ -291,7 +295,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.Peers()
+response := daemon.Peers()
 fmt.Println(response)
 ```
 
@@ -340,7 +344,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.FeeInfo()
+response := daemon.Fee()
 fmt.Println(response)
 ```
 

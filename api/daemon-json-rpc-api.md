@@ -57,7 +57,7 @@ import (
 rpcHost := "localhost"
 rpcPort := 11898
 
-turtlecoind := trpc.TurtleCoind{rpcHost,rpcPort}
+daemon := trpc.TurtleCoind{URL: rpcHost,Port: rpcPort}
 ```
 
 To start the Daemon JSON RPC API server at `http://localhost:11898/json_rpc`, run:
@@ -115,7 +115,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.GetBlockCount()
+response := daemon.GetBlockCount()
 fmt.Println(response)
 ```
 
@@ -167,7 +167,7 @@ print(response)
 
 ```go
 height := 123456
-response := turtlecoind.GetBlockHash(height)
+response := daemon.GetBlockHash(height)
 fmt.Println(response)
 ```
 
@@ -224,7 +224,7 @@ print(response)
 reserveSize := 200
 walletAddress := "TRTLxxxx..."
 
-response := turtlecoind.GetBlockTemplate(reserveSize, walletAddress)
+response := daemon.GetBlockTemplate(reserveSize, walletAddress)
 fmt.Println(response)
 ```
 
@@ -286,7 +286,7 @@ print(response)
 
 ```go
 blockBlob := "0100b..."
-response := turtlecoind.SubmitBlock(blockBlob)
+response := daemon.SubmitBlock(blockBlob)
 fmt.Println(response)
 ```
 
@@ -336,7 +336,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.GetLastBlockHeader()
+response := daemon.GetLastBlockHeader()
 fmt.Println(response)
 ```
 
@@ -412,7 +412,7 @@ print(response)
 
 ```go
 hash := "30706..."
-response := turtlecoind.GetBlockHeaderByHash(hash)
+response := daemon.GetBlockHeaderByHash(hash)
 fmt.Println(response)
 ```
 
@@ -494,7 +494,7 @@ print(response)
 
 ```go
 height := 123456
-response := turtlecoind.GetBlockHeaderByHeight(height)
+response := daemon.GetBlockHeaderByHeight(height)
 fmt.Println(response)
 ```
 
@@ -572,7 +572,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.GetCurrencyID()
+response := daemon.GetCurrencyID()
 fmt.Println(response)
 ```
 
@@ -621,7 +621,7 @@ print(response)
 
 ```go
 height := 500000
-response := turtlecoind.GetBlocks(height)
+response := daemon.GetBlocks(height)
 fmt.Println(response)
 ``
 
@@ -692,7 +692,7 @@ print(response)
 
 ```go
 hash := "980ff..."
-response := turtlecoind.GetBlock(hash)
+response := daemon.GetBlock(hash)
 fmt.Println(response)
 ```
 
@@ -805,7 +805,7 @@ print(response)
 
 ```go
 hash := "702ad..."
-response := turtlecoind.GetTransaction(hash)
+response := daemon.GetTransaction(hash)
 fmt.Println(response)
 ```
 
@@ -929,7 +929,7 @@ print(response)
 ```
 
 ```go
-response := turtlecoind.GetTransactionPool()
+response := daemon.GetTransactionPool()
 fmt.Println(response)
 ```
 
