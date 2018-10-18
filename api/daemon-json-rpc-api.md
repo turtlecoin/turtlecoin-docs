@@ -57,7 +57,9 @@ import (
 rpcHost := "localhost"
 rpcPort := 11898
 
-daemon := trpc.TurtleCoind{URL: rpcHost,Port: rpcPort}
+daemon := trpc.TurtleCoind{
+    URL: rpcHost,
+    Port: rpcPort}
 ```
 
 To start the Daemon JSON RPC API server at `http://localhost:11898/json_rpc`, run:

@@ -88,7 +88,10 @@ rpcHost := "localhost"
 rpcPort := 8070
 rpcPassword := "passw0rd"
 
-walletd := trpc.Walletd{rpcHost, rpcPort, rpcPassword}
+service := trpc.Walletd{
+  URL: rpcHost,
+  Port: rpcPort,
+  RPCPassword: rpcPassword}
 ```
 
 To make a JSON RPC request to your TurtleCoin RPC Wallet you should use a POST request that looks like this:
@@ -131,10 +134,13 @@ print(response)
 ```
 
 ```go
-viewSecretKey := "xxxxx..."
 scanHeight := 0 // starting height to scan
-response := walletd.Reset(viewSecretKey, scanHeight)
-fmt.Println(response)
+response, err := service.Reset(scanHeight)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -194,8 +200,12 @@ print(response)
 ```
 
 ```go
-response := walletd.Save()
-fmt.Println(response)
+response, err := service.Save()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -240,8 +250,12 @@ print(response)
 ```
 
 ```go
-response := walletd.GetViewKey()
-fmt.Println(response)
+response, err := service.GetViewKey()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -298,8 +312,12 @@ print(response)
 
 ```go
 address := "TRTLxxxx..."
-response := walletd.GetSpendKeys(address)
-fmt.Println(response)
+response, err := service.GetSpendKeys(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -362,8 +380,12 @@ print(response)
 
 ```go
 address := "TRTLxxxx..."
-response := walletd.GetMnemonicSeed(address)
-fmt.Println(response)
+response, err := service.GetMnemonicSeed(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -423,8 +445,12 @@ print(response)
 ```
 
 ```go
-response := walletd.GetStatus()
-fmt.Println(response)
+response, err := service.GetStatus()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -482,8 +508,12 @@ print(response)
 ```
 
 ```go
-response := walletd.GetAddresses()
-fmt.Println(response)
+response, err := service.GetAddresses()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -545,8 +575,16 @@ print(response)
 ```
 
 ```go
-response := walletd.CreateAddress()
-fmt.Println(response)
+spendSecretKey := ""
+spendPublicKey := ""
+scanHeight := 850000
+newAddress := true
+response, err := service.CreateAddress(spendSecretKey, spendPublicKey, scanHeight, newAddress)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -604,8 +642,12 @@ print(response)
 
 ```go
 address := "TRTLxxxx..."
-response := walletd.DeleteAddress(address)
-fmt.Println(response)
+response, err := service.DeleteAddress(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -661,8 +703,12 @@ print(response)
 
 ```go
 address := "TRTLxxxx..."
-response := walletd.GetBalance(address)
-fmt.Println(response)
+response, err := service.GetBalance(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -732,8 +778,12 @@ print(response)
 ```go
 firstBlockIndex := 0
 blockCount := 3
-response := walletd.GetBlockHashes(firstBlockIndex, blockCount)
-fmt.Println(response)
+response, err := service.GetBlockHashes(firstBlockIndex, blockCount)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -813,10 +863,17 @@ print(response)
 ```
 
 ```go
+addresses := []string{"TRTLxxxx..."}
+blockHash := ""
 firstBlockIndex := 0
 blockCount := 3
-response := walletd.GetTransactionHashes(firstBlockIndex, blockCount)
-fmt.Println(response)
+paymentID := ""
+response, err := service.GetTransactionHashes(addresses, blockHash, firstBlockIndex, blockCount, paymentID)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -912,10 +969,17 @@ print(response)
 ```
 
 ```go
+addresses := []string{"TRTLxxxx..."}
+blockHash := ""
 firstBlockIndex := 0
 blockCount := 3
-response := walletd.GetTransactions(firstBlockIndex, blockCount)
-fmt.Println(response)
+paymentID := ""
+response, err := service.GetTransactions(addresses, blockHash, firstBlockIndex, blockCount, paymentID)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1044,9 +1108,13 @@ print(response)
 ```
 
 ```go
-address := "TRTLxxxx..."
-response := walletd.GetUnconfirmedTransactionHashes(address)
-fmt.Println(response)
+addresses := []string{"TRTLxxxx..."}
+response, err := service.GetUnconfirmedTransactionHashes(addresses)
+if err != nil {
+		fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1113,8 +1181,12 @@ print(response)
 
 ```go
 transactionHash := "55a23..."
-response := walletd.GetTransaction(transactionHash)
-fmt.Println(response)
+response, err := service.GetTransaction(transactionHash)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1235,17 +1307,26 @@ print(response)
 ```
 
 ```go
-addresses := []string{}
+addresses := []string{"TRTLyyyy..."} // can be empty
 unlockTime := 0
 extra := ""
 paymentID := ""
 fee := 10
 changeAddress := "TRTLyyyy..."
 
-transfers := make([]map[string]interface{})
+transfers := []map[string]interface{}{
+  {
+    "address" : "TRTLxxxx...",
+    "amount" : 5000,
+  },
+}
 
-response := walletd.SendTransaction(addresses, transfers, fee, unlockTime, extra, paymentID, changeAddress)
-fmt.Println(response)
+response, err := service.SendTransaction(addresses, transfers, fee, unlockTime, extra, paymentID, changeAddress)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1344,17 +1425,26 @@ print(response)
 ```
 
 ```go
-addresses := []string{}
+addresses := []string{"TRTLyyyy..."} // can be empty
 unlockTime := 0
 extra := ""
 paymentID := ""
 fee := 10
 changeAddress := "TRTLyyyy..."
 
-transfers := make([]map[string]interface{})
+transfers := []map[string]interface{}{
+  {
+    "address" : "TRTLxxxx...",
+    "amount" : 5000,
+  },
+}
 
-response := walletd.CreateDelayedTransaction(addresses, transfers, fee, unlockTime, extra, paymentID, changeAddress)
-fmt.Println(response)
+response, err := service.CreateDelayedTransaction(addresses, transfers, fee, unlockTime, extra, paymentID, changeAddress)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1420,8 +1510,12 @@ print(response)
 ```
 
 ```go
-response := walletd.GetDelayedTransactionHashes()
-fmt.Println(response)
+response, err := service.GetDelayedTransactionHashes()
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1478,8 +1572,12 @@ print(response)
 
 ```go
 transactionHash := "50d83..."
-response := walletd.DeleteDelayedTransaction(transactionHash)
-fmt.Println(response)
+response, err := service.DeleteDelayedTransaction(transactionHash)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1537,8 +1635,12 @@ print(response)
 
 ```go
 transactionHash := "50d83..."
-response := walletd.SendDelayedTransaction(transactionHash)
-fmt.Println(response)
+response, err := service.SendDelayedTransaction(transactionHash)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1603,8 +1705,12 @@ print(response)
 threshold := 1000000
 addresses := []string{"TRTLxxxx...", "TRTLyyyy..."}
 destinationAddress := "TRTLzzzz..."
-response := walletd.SendfusionTransaction(threshold, addresses, destinationAddress)
-fmt.Println(response)
+response, err := service.SendfusionTransaction(threshold, addresses, destinationAddress)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1680,8 +1786,12 @@ print(response)
 ```go
 threshold := 1000000
 addresses := []string{"TRTLxxxx...","TRTLyyyy..."}
-response := walletd.EstimateFusion(threshold, addresses)
-fmt.Println(response)
+response, err := service.EstimateFusion(threshold, addresses)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1747,8 +1857,12 @@ print(response)
 ```go
 address := "TRTLxxxx..."
 paymentID := "7FE73BD90EF05DEA0B5C15FC78696619C50DD5F2BA628F2FD16A2E3445B1922F"
-response := walletd.CreateIntegratedAddress(address, paymentID)
-fmt.Println(response)
+response, err := service.CreateIntegratedAddress(address, paymentID)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1802,8 +1916,12 @@ print(response)
 ```
 
 ```go
-response := walletd.GetFeeInfo()
-fmt.Println(response)
+response, err := service.GetFeeInfo()
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
