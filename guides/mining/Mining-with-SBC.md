@@ -82,7 +82,7 @@ nano config.json
 
 Your terminal should display the contents of `config.json`. 
 
-* In order to mine TurtleCoin, we tell xmrig what algorithm you want to mine. Look for the `"algo":` setting and set it to `"algo": "cryptonight-pico/trtl",`
+* In order to mine TurtleCoin, we tell xmrig what algorithm you want to mine. Look out for the `"algo":` setting and set it to `"algo": "cryptonight-pico/trtl",`
 
 * In place of `"url": "donate.v2.xmrig.com:3333",` you'll need to choose a pool to mine towards. Make sure to choose the right port. You can check the full list of pools [here](https://github.com/turtlecoin/turtlecoin/wiki/pools).
 
