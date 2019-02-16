@@ -74,7 +74,7 @@ First we need to copy `config.json` to the same directory the xmrig executable i
 cp ~/xmrig/src/config.json config.json
 ```
 
-Now we have to edit the configuration file properly. For this guide we'll be using `nano`, but any other text editor should also work fine:
+Now we have to edit the configuration file properly. In this guide we'll be using `nano`, but any other text editor should also work fine:
 
 ```
 nano config.json
