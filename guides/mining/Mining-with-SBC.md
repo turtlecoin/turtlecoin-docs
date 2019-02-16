@@ -1,4 +1,4 @@
-# How to Compile xmrig Step by Step
+# How to Mine TurtleCoin with an SBC
 
 The following guide will show you how to compile a CPU miner (xmrig) for SBCs like the Raspberry Pi.
 
