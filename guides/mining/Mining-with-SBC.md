@@ -90,7 +90,7 @@ Your terminal should display the contents of `config.json`. In order to mine tur
 
 * Instead of `"user": "YOUR_WALLET_ADDRESS",` simply paste your TurtleCoin wallet address.
 
-  If you don't have one yet, you can find out how to make a wallet [here](https://github.com/turtlecoin/turtlecoin/wiki/Making-a-Wallet).
+  If you don't have one yet, you can find out how to create a wallet [here](https://github.com/turtlecoin/turtlecoin/wiki/Making-a-Wallet).
 
 When you're done with that, press: 
 
