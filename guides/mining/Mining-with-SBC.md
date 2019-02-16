@@ -34,22 +34,22 @@ cd xmrig && mkdir build && cd build
 
 Now we specify the build flags to optimize xmrig for your SBC in particular. You'll have to **choose between one of these**:
 
-for any SBC:
+* for any SBC:
 ```
 cmake ..
 ```
 
-for the Raspberry Pi 2:
+* for the Raspberry Pi 2:
 ```
 cmake .. -DCMAKE_C_FLAGS="-mcpu=cortex-a7 -mtune=cortex-a7" -DCMAKE_CXX_FLAGS="-mcpu=cortex-a7 -mtune=cortex-a7"
 ```
 
-for the Raspberry Pi 3:
+* for the Raspberry Pi 3:
 ```
 cmake .. -DCMAKE_C_FLAGS="-mcpu=cortex-a53 -mtune=cortex-a53" -DCMAKE_CXX_FLAGS="-mcpu=cortex-a53 -mtune=cortex-a53"
 ```
 
-for the Asus Tinker Board:
+* for the Asus Tinker Board:
 ```
 cmake .. -DCMAKE_C_FLAGS="-march=armv7-a" -DCMAKE_CXX_FLAGS="-march=armv7-a"
 
