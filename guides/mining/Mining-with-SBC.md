@@ -80,7 +80,7 @@ Now we have to edit the config file properly. For this guide we'll be using `nan
 nano config.json
 ```
 
-Your terminal should display the contents of `config.json`. In order to mine turtlecoin, we tell xmrig what algorithm you want to mine. Look for the `"algo":` setting and set it as follows:
+Your terminal should display the contents of `config.json`. In order to mine TurtleCoin, we tell xmrig what algorithm you want to mine. Look for the `"algo":` setting and set it as follows:
 
 ```
 "algo": "cryptonight-pico/trtl",
