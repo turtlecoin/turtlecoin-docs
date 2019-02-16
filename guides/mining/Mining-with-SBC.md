@@ -74,7 +74,6 @@ First we need to copy `config.json` to the same directory the xmrig executable i
 cp ~/xmrig/src/config.json config.json
 ```
 
-
 Now we have to edit the config file properly. For this guide we'll be using `nano`, but any other text editor should also work fine:
 
 ```
@@ -87,9 +86,9 @@ Your terminal should display the contents of `config.json`. In order to mine tur
 "algo": "cryptonight-pico/trtl",
 ```
 
-* In place of `"url": "donate.v2.xmrig.com:3333",`, you'll need to choose a pool to mine towards. Make sure to set the right port. You can check the full list of pools [here](Pools).
+* In place of `"url": "donate.v2.xmrig.com:3333",` you'll need to choose a pool to mine towards. Make sure to choose the right port. You can check the full list of pools [here](https://github.com/turtlecoin/turtlecoin/wiki/pools).
 
-* Instead of `"user": "YOUR_WALLET_ADDRESS",`, simply paste your TurtleCoin wallet address.
+* Instead of `"user": "YOUR_WALLET_ADDRESS",` simply paste your TurtleCoin wallet address.
 
   If you don't have one yet, you can find out how to make a wallet [here](https://github.com/turtlecoin/turtlecoin/wiki/Making-a-Wallet).
 
