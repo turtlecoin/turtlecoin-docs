@@ -1,68 +1,6 @@
-# How to Mine TurtleCoin with an SBC
-
-This guide will get you started mining TurtleCoin on a Raspberry Pi or similar SBC (single-board computer).
-
-## Setup
-
-Make sure you've already created a wallet on your PC. You'll need the wallet address to store any coins you mine. Follow the guide [here](Using-Zedwallet) to get started (follow the guide for Linux).
-
-For the SBC, download the latest non-desktop version of [Raspbian](https://www.raspberrypi.org/downloads). Follow their installation guide on how to write the OS image onto the MicroSD card. Once you've plugged in the SD Card, booted the Raspberry Pi, and connected it to the internet, run the following commands:
-
-```
-sudo apt-get update && sudo apt-get upgrade
-```
-
-This may take a few minutes. Next, we'll have to install some required tools to compile and run the miner. Enter this command:
-
-```
-sudo apt-get install git automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ unzip
-```
-## Install the Miner
-
-Next, we need to obtain a CPU miner. We'll use `rPi-xmrig-gcc7.3.0`
-
-
-1. Download the `.zip` source code from the [Releases page](https://github.com/auto-joe/rPi-xmrig-gcc7.3.0/releases/latest)
-
-```
-wget https://github.com/auto-joe/rPi-xmrig-gcc7.3.0/archive/2.6.0-beta1.zip
-```
-
-2. Download it to a directory of your choice and extract it to a folder called `rPi-xmrig`, or anything of your choice.
-
-```
-unzip 2.6.0-beta1.zip -d / rPi-xmrig
-```
-
-
-## Configure and Run the Miner
-
-Open the file `start.sh` with a text editor and replace the existing parameters with these-
-
-
-```shell
-./xmrig -a cryptonight-lite --variant=1 -u TRTL... -p x -o [pool address]
-```
-
-* Instead of `TRTL...`, simply paste your TurtleCoin wallet address.
-
-  If you don't have one yet, you can generate a [paper wallet](Making-a-Paper-Wallet) to mine towards for now, and later import into a CLI or GUI wallet.
-
-* In place of `[pool address]`, you'll need to choose a pool to mine towards. You can check the full list [here](Pools).
-
-Then start the miner-
-
-```shell
-./start.sh
-```
-
-After entering this command, the miner will start scanning your hardware and begin to mine.
-
-Happy mining! :)
-
 # How to Compile xmrig Step by Step
 
-The following guide will show you how to compile a CPU miner (xmrig) yourself. **If you're going to mine with a Raspberry Pi 3 the guide above will give you the highest hash rate.** [Auto-Joe](https://github.com/auto-joe/) provides two different repositories. They are well optimized for the Raspberry Pi 3 and the Orange Pi Zero. This guide may be interesting for people who own SBCs that are not as widely known as the Raspberry Pi.
+The following guide will show you how to compile a CPU miner (xmrig) for SBCs like the Raspberry Pi.
 
 What are the benefits of compiling xmrig from scratch?
   - You'll have the most up-to-date version of xmrig
@@ -130,21 +68,39 @@ To speed up the compilation you can add `-j [amount_of_CPU_cores]`. On a Raspber
 
 ## Configuring and Running xmrig
 
-This part is almost the same as in the guide above. The only difference is, that first we need to create `start.sh`. I've used `nano` for this, but any other text editor should also work fine:
+First we need to copy `config.json` to the same directory the xmrig executable is located:
 
 ```
-sudo nano start.sh
-```
-Your terminal should look a bit different now. Paste the following line:
-```
-./xmrig -a cryptonight-lite --variant=1 -u TRTL... -p x -o [pool address]
+cp ~/xmrig/src/config.json config.json
 ```
 
-* Instead of `TRTL...`, simply paste your TurtleCoin wallet address.
 
-  If you don't have one yet, you can generate a [paper wallet](Making-a-Paper-Wallet) to mine towards for now, and later import into a CLI or GUI wallet.
+Now we have to edit the config file properly. For this guide we'll be using `nano`, but any other text editor should also work fine:
 
-* In place of `[pool address]`, you'll need to choose a pool to mine towards. You can check the full list [here](Pools).
+```
+nano config.json
+```
+
+Your terminal should display the contents of `config.json`. In order to mine turtlecoin, we tell xmrig what algorithm you want to mine. Look for the `"algo":` setting and set it as follows:
+
+```
+"algo": "cryptonight-pico/trtl",
+```
+
+You also have to provide `"url":` with a pool, you want to mine towards. You can check the full list [here](https://github.com/turtlecoin/turtlecoin/wiki/pools).
+
+"url": "POOL_address:port",
+
+xmrig has to tell the pool, to what address 
+
+"user": "YOUR_WALLET_ADDRESS",
+
+
+* In place of `"url": "donate.v2.xmrig.com:3333",`, you'll need to choose a pool to mine towards. Make sure to set the right port. You can check the full list of pools [here](Pools).
+
+* Instead of `"user": "YOUR_WALLET_ADDRESS",`, simply paste your TurtleCoin wallet address.
+
+  If you don't have one yet, you can find out how to make a wallet [here](https://github.com/turtlecoin/turtlecoin/wiki/Making-a-Wallet).
 
 When you're done with that, press: 
 
@@ -153,10 +109,9 @@ When you're done with that, press:
 Then start the miner:
 
 ```
-sudo sh start.sh
+./xmrig
 ```
 
 After entering this command, the miner will start scanning your hardware and begin to mine.
 
 [Congratulations](https://www.youtube.com/watch?v=SC4xMk98Pdc)! You did it! :)
-
