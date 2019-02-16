@@ -32,7 +32,7 @@ git clone https://github.com/xmrig/xmrig.git
 cd xmrig && mkdir build && cd build
 ```
 
-Now we specify the build flags to optimize xmrig for your SBC in particular. You'll have to **choose between one of these**:
+Now we specify the build flags to optimize xmrig for your SBC in particular. You'll have to **only choose one of these**:
 
 * for any SBC:
 ```
