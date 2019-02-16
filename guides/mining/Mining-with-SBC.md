@@ -87,15 +87,6 @@ Your terminal should display the contents of `config.json`. In order to mine tur
 "algo": "cryptonight-pico/trtl",
 ```
 
-You also have to provide `"url":` with a pool, you want to mine towards. You can check the full list [here](https://github.com/turtlecoin/turtlecoin/wiki/pools).
-
-"url": "POOL_address:port",
-
-xmrig has to tell the pool, to what address 
-
-"user": "YOUR_WALLET_ADDRESS",
-
-
 * In place of `"url": "donate.v2.xmrig.com:3333",`, you'll need to choose a pool to mine towards. Make sure to set the right port. You can check the full list of pools [here](Pools).
 
 * Instead of `"user": "YOUR_WALLET_ADDRESS",`, simply paste your TurtleCoin wallet address.
