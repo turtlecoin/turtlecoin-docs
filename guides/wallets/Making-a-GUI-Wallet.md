@@ -1,16 +1,21 @@
 # Setting up a GUI Wallet
 
-There are two types of GUI Wallets which are being actively developed and maintained as of right now. We will focus on both of them.
+There are currently three types of GUI Wallets as well as a Web Wallet which are being actively developed and maintained as of right now.
 
 ## [Nest Wallet](https://github.com/turtlecoin/turtle-wallet-go)
 
-The Nest Wallet is a TurtleCoin Wallet written in GoLang for MacOS, Linux and Windows. It is mainly developed and maintained by woodyjon
+The Nest Wallet is a TurtleCoin Wallet written in GoLang for MacOS, Linux and Windows. It is mainly developed and maintained by woodyjon.
 
 You can view a guide for setting it up [here](Using-nest-wallet).
 
+## [Shellnet Web Wallet](https://shellnet.pw)
 
-#### [WinForms Wallet](https://github.com/turtlecoin/turtle-wallet-winforms) [DEFUNCT]
+Shellnet is a TurtleCoin Web Wallet developed and maintained by dsanon.
 
-~~The WinForms wallet is a TurtleCoin Wallet written in C# for Windows and Linux through Mono. It is mainly developed and maintained by jerme404~~
+## [T-Scripta Wallet](https://github.com/turtlecoin/turtle-wallet-tscripta)
 
-~~You can view a guide for setting it up [here](Using-winforms-wallet).~~
+T-Scripta Wallet is a C# GUI wallet currently in development by Val.
+
+## [Electron Wallet](https://github.com/turtlecoin/turtle-wallet-electron)
+
+The Electron GUI Wallet is a Javascript wallet originally written by MacroShock and later maintained by rixombea.

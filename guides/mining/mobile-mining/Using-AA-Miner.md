@@ -4,7 +4,7 @@
 
 ## Setup
 
-1. Download the [AA Miner](https://play.google.com/store/apps/details?id=com.aaminer.miner) app from the Google Play Store.
+1. Download the [AA Miner](https://play.google.com/store/apps/details?id=com.aaminer.miner.guide) app from the Google Play Store.
 2. Upon downloading and installing, open the app.
 3. Check [AA Miner Configuration](#aa-miner-config)
 

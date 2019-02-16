@@ -4,15 +4,25 @@ Daemon JSON RPC is a HTTP server which provides JSON 2.0 RPC interface for inter
 
 Currently we support the following official client bindings:
 
-* [JavaScript](https://github.com/turtlecoin/turtlecoin-rpc-js)
+* [JavaScript](https://www.npmjs.com/package/turtlecoin-rpc)
+* [PHP](https://github.com/turtlecoin/turtlecoin-rpc-php)
 * [Python](https://github.com/turtlecoin/turtlecoin-rpc-python)
+* [Go](https://github.com/turtlecoin/turtlecoin-rpc-go)
 
 ```javascript
 npm install turtlecoin-rpc
 ```
 
+```php
+composer require turtlecoin/turtlecoin-rpc-php
+```
+
 ```python
 pip3 install turtlecoin
+```
+
+```go
+go get github.com/turtlecoin/turtlecoin-rpc-go
 ```
 
 ## Interacting with the API
@@ -33,6 +43,43 @@ rpc_port = 11898
 turtlecoind = TurtleCoind(rpc_host, rpc_port)
 ```
 
+```javascript
+const TurtleCoind = require('turtlecoin-rpc').TurtleCoind
+
+const daemon = new TurtleCoind({
+  host: '0.0.0.0', // ip address or hostname of the TurtleCoind host
+  port: 11898, // what port is the RPC server running on
+  timeout: 2000, // request timeout
+  ssl: false // whether we need to connect using SSL/TLS
+})
+```
+
+```php
+<?php
+use TurtleCoin\TurtleCoind;
+
+$config = [
+    'rpcHost' => 'http://localhost',
+    'rpcPort' => 11898,
+];
+
+$turtlecoind = new TurtleCoind($config);
+```
+
+```go
+import (
+    "fmt"
+    trpc "github.com/turtlecoin/turtlecoin-rpc-go"
+)
+
+rpcHost := "localhost"
+rpcPort := 11898
+
+daemon := trpc.TurtleCoind{
+    URL: rpcHost,
+    Port: rpcPort}
+```
+
 To start the Daemon JSON RPC API server at `http://localhost:11898/json_rpc`, run:
 
 `TurtleCoind --rpc-bind-port=11898`
@@ -41,13 +88,13 @@ To make the server accessible from another computer, use the `--rpc-bind-ip 0.0.
 
 `TurtleCoind --rpc-bind-ip=0.0.0.0 --rpc-bind-port=11898`
 
-To enable block explorer API access (like for `getblocks`, `gettransactionpool`, etc.), use the `--enable_blockexplorer` switch.
+To enable block explorer API access (like for `getblocks`, `gettransactionpool`, etc.), use the `--enable-blockexplorer` switch.
 
-`TurtleCoind --enable_blockexplorer`
+`TurtleCoind --enable-blockexplorer`
 
 The above given switches can be combined to achieve remote access with block explorer methods as shown below.
 
-`TurtleCoind --enable_blockexplorer --rpc-bind-ip=0.0.0.0 --rpc-bind-port=11898`
+`TurtleCoind --enable-blockexplorer --rpc-bind-ip=0.0.0.0 --rpc-bind-port=11898`
 
 This would make the RPC server accessible at
 
@@ -63,7 +110,7 @@ To make a JSON RPC request to your Daemon RPC you should use a POST request that
 `http://<service address>:<service port>/json_rpc`
 
 Parameter            | Description
--------------------- | ------------------------------------------------------------ 
+-------------------- | ------------------------------------------------------------
 `<service address>`  | IP of Daemon RPC, if it is located on local machine it is either 127.0.0.1 or localhost
 `<service port>`     | Daemon RPC port, by default it is bound to 11898 port, but it can be manually bound to any port you want
 
@@ -74,12 +121,28 @@ Parameter            | Description
 curl -d '{"jsonrpc":"2.0", "method":"getblockcount", "params":{}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
+```javascript
+daemon.getBlockCount().then((blockCount) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```php
+<?php
+$response = $turtlecoind->getBlockCount();
+echo $response;
+```
+
+```python
 response = turtlecoind.get_block_count()
 print(response)
+```
+
+```go
+response := daemon.GetBlockCount()
+fmt.Println(response)
 ```
 
 > Expected Output
@@ -112,13 +175,33 @@ status           | Status of request | string
 curl -d '{"jsonrpc":"2.0","method":"on_getblockhash","params":[123456]}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
+```javascript
+daemon.getBlockHash({
+  height: 500000
+}).then((blockHash) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```php
+<?php
+$height = 123456;
+$response = $turtlecoind->getBlockHash($height);
+echo $response;
+```
+
+```python
 height = 123456
 response = turtlecoind.get_block_hash(height)
 print(response)
+```
+
+```go
+height := 123456
+response := daemon.GetBlockHash(height)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -150,15 +233,40 @@ result           | Hash of previous block | int
 curl -d '{"jsonrpc":"2.0","method":"getblocktemplate","params":{"reserve_size":200,"wallet_address":"TRTLxxxx..."}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```javascript
+daemon.getBlockTemplate({
+  reserveSize: 200,
+  walletAddress: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+}).then((blockTemplate) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
+
+```php
+<?php
+$reserveSize = 200;
+$address = 'TRTLxxxx...';
+$response = $turtlecoind->getBlockTemplate($reserveSize, $address);
+echo $response;
+```
+
+```python
 reserve_size = 200
 wallet_address = 'TRTLxxxx...'
 
 response = turtlecoind.get_block_template(reserve_size, wallet_address)
 print(response)
+```
+
+```go
+reserveSize := 200
+walletAddress := "TRTLxxxx..."
+
+response := daemon.GetBlockTemplate(reserveSize, walletAddress)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -201,13 +309,33 @@ status | Status of the network | string
 curl -d '{"jsonrpc":"2.0","method":"submitblock","params":["0100b...."]}' https://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
+```javascript
+daemon.submitBlock({
+  blockBlob: '...'
+}).then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```php
+<?php
+$blockBlob = '0100b...';
+$response = $turtlecoind->submitBlock($blockBlob);
+echo $response;
+```
+
+```python
 block_blob = '0100b...'
 response = turtlecoind.submit_block(block_blob)
 print(response)
+```
+
+```go
+blockBlob := "0100b..."
+response := daemon.SubmitBlock(blockBlob)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -241,12 +369,29 @@ status           | Status of request | string
 curl -d '{"jsonrpc":"2.0","method":"getlastblockheader","params":{}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```javascript
+daemon.getLastBlockHeader().then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
+
+```php
+<?php
+$response = $turtlecoind->getLastBlockHeader();
+echo $response;
+```
+
+```python
 response = turtlecoind.get_last_block_header()
 print(response)
+```
+
+```go
+response := daemon.GetLastBlockHeader()
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -302,13 +447,34 @@ status | status of the request | string
 curl -d '{"jsonrpc":"2.0","method":"getblockheaderbyhash","params":{"hash":"30706..."}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```javascript
+daemon.getBlockHeaderByHash({
+  hash: '7d6db7b77232d41c19d898e81c85ecf08c4e8dfa3434f975a319f6261a695739'
+}).then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
+
+```php
+<?php
+$hash = '30706...';
+$response = $turtlecoind->getBlockHeaderByHash($hash);
+echo $response;
+```
+
+```python
 hash = '30706...'
 response = turtlecoind.get_block_header_by_hash(hash)
 print(response)
+```
+
+```go
+hash := "30706..."
+response := daemon.GetBlockHeaderByHash(hash)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -370,13 +536,34 @@ status | status of the request | string
 curl -d '{"jsonrpc":"2.0","method":"getblockheaderbyheight","params":{"height":123456}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```javascript
+daemon.getBlockHeaderByHeight({
+  height: 502345
+}).then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
+
+```php
+<?php
+$height = 123456;
+$response = $turtlecoind->getBlockHeaderByHeight($height);
+echo $response;
+```
+
+```python
 height = 123456
 response = turtlecoind.get_block_header_by_height(height)
 print(response)
+```
+
+```go
+height := 123456
+response := daemon.GetBlockHeaderByHeight(height)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -438,12 +625,29 @@ status | status of the request | string
 curl -d '{"jsonrpc":"2.0","method":"getcurrencyid","params":{}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```javascript
+daemon.getCurrencyId().then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
+
+```php
+<?php
+$response = $turtlecoind->getCurrencyId();
+echo $response;
+```
+
+```python
 response = turtlecoind.get_currency_id()
 print(response)
+```
+
+```go
+response := daemon.GetCurrencyID()
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -473,13 +677,33 @@ currency_id_blob | unique currency identifier | string
 curl -d '{"jsonrpc":"2.0","method":"f_blocks_list_json","params":{"height":500000}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
+```javascript
+daemon.getBlocks({
+  height: 500000
+}).then((blocks) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```php
+<?php
+$height = 500000;
+$response = $turtlecoind->getBlocks($height);
+echo $response;
+```
+
+```python
 height = 500000
 response = turtlecoind.get_blocks(height)
 print(response)
+```
+
+```go
+height := 500000
+response := daemon.GetBlocks(height)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -516,7 +740,7 @@ height          | Yes           | height of the last block to be included in the
 Argument |              | Description                           | Format
 -------- | ------------ | -----------                           | ------
 status   |              | status of the request                 | string
-blocks   | **Array of** |                                       | 
+blocks   | **Array of** |                                       |
          | cumul_size   | size of the block                     | int
          | difficulty   | difficulty of the block               | int
          | hash         | hash of the block                     | string
@@ -528,16 +752,36 @@ blocks   | **Array of** |                                       |
 ## getblock
 
 ```shell
-curl -d '{"jsonrpc":"2.0","met":"f_block_json","params":{"hash":"980ff..."}}' http://localhost:11898/json_rpc
+curl -d '{"jsonrpc":"2.0","method":"f_block_json","params":{"hash":"980ff..."}}' http://localhost:11898/json_rpc
+```
+
+```javascript
+daemon.getBlock({
+  hash: 'f11580d74134ac34673c74f8da458080aacbe1eccea05b197e9d10bde05139f5'
+}).then((block) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
+
+```php
+<?php
+$hash = '980ff...';
+$response = $turtlecoind->getBlock($hash);
+echo $response;
 ```
 
 ```python
-from turtlecoin import TurtleCoind
-
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
 hash = '980ff...'
 response = turtlecoind.get_block(hash)
 print(response)
+```
+
+```go
+hash := "980ff..."
+response := daemon.GetBlock(hash)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -631,13 +875,33 @@ size | size of the transaction | int
 curl -d '{"jsonrpc":"2.0","method":"f_transaction_json","params":{"hash":"702ad..."}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
+```javascript
+daemon.getTransaction({
+  hash: '702ad5bd04b9eff14b080d508f69a320da1909e989d6c163c18f80ae7a5ab832'
+}).then((transaction) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```php
+<?php
+$hash = '702ad...';
+$response = $turtlecoind->getTransaction($hash);
+echo $response;
+```
+
+```python
 hash = '702ad...'
 response = turtlecoind.get_transaction(hash)
 print(response)
+```
+
+```go
+hash := "702ad..."
+response := daemon.GetTransaction(hash)
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -746,12 +1010,28 @@ vout | array of output transactions | array
 curl -d '{"jsonrpc":"2.0","method":"f_on_transactions_pool_json","params":{}}' http://localhost:11898/json_rpc
 ```
 
-```python
-from turtlecoin import TurtleCoind
+```javascript
+daemon.getTransactionPool().then((transactions) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
+```
 
-turtlecoind = TurtleCoind(rpc_host, rpc_port)
+```php
+<?php
+$response = $turtlecoind->getTransactionPool();
+echo $response;
+```
+
+```python
 response = turtlecoind.get_transaction_pool()
 print(response)
+```
+
+```go
+response := daemon.GetTransactionPool()
+fmt.Println(response)
 ```
 
 > Expected Output:
@@ -803,4 +1083,3 @@ The content in this document were originally written by the [Bytecoin (BCN) Deve
 Also of note, TurtleCoin developers have altered and adapted the content to suit our implementation of the API. This was done independently of the Bytecoin development team. They neither endorse or acknowledge our changes. Feel free to adopt or change our content as per the [CC BY SA 3.0 license](https://creativecommons.org/licenses/by-sa/3.0/) requirements.
 
 _TurtleCoin developers 2018_
-

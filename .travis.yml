@@ -2,7 +2,8 @@ language: generic
 
 deploy:
   provider: script
-  script: ./scripts/deploy.sh
+  skip_cleanup: true
+  script: chmod +x scripts/deploy.sh && ./scripts/deploy.sh
   on:
     branch: master
 

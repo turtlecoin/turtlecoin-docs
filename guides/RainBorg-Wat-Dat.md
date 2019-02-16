@@ -82,6 +82,8 @@ Well, let's break this down then. You WERE active *(past tense)*, and the other 
 
 They were active during the time RainBorg was raining down on the active Turtles. Active Turtles win, that's the game. Be a good active Turtle and she will share her tips with you!
 
+Quick note, if you are lower than level 8 for mee6 you will not be eligible for rain. Start chatting and gain levels!
+
 # OK OK, so how do I get all the TRTLs? SPAM? EXILE!
 
 This is not how it works or why it was set up... gaming the system or attempting to game the system could land you on the exile list.  

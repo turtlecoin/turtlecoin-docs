@@ -208,6 +208,7 @@ trtlbot++ isn't just a tip bot, it's so much more! Here's a table of it's other 
 | faucet |  `.faucet` | Returns information about current amount of TRTL in the faucet's wallet. |
 | updatewallet | `.updatewallet TRTL...` | Updates your currently registered wallet address in case of a change(is not a replacement for `.registerwallet TRTL...` ). |
 | wallet | `.wallet @<user>` | PM's you with the wallet address of the user tagged(`.wallet @Sajo8#2953`). If you type only `.wallet` it will PM you with your own wallet address. |
+| redirecttips | `.redirecttips` | Toggles between sending tips to your registered wallet and keeping them in your tipjar |
 | marketcap | `.mcap` | Returns current Market Cap. Cannot be used in the main TurtleCoin Discord, only in the [Market one](https://discord.gg/HS7kn3d). |
 | price | `.price` | Returns current price. Cannot be used in the main TurtleCoin Discord, only in the [Market one](https://discord.gg/HS7kn3d). |
 

@@ -4,21 +4,25 @@ TurtleCoin RPC Wallet is a HTTP server which provides JSON 2.0 RPC interface for
 
 Currently we support the following official client bindings:
 
-* [JavaScript](https://github.com/turtlecoin/turtlecoin-walletd-rpc-js)
-* [PHP](https://github.com/turtlecoin/turtlecoin-walletd-rpc-php)
+* [JavaScript](https://www.npmjs.com/package/turtlecoin-rpc)
+* [PHP](https://github.com/turtlecoin/turtlecoin-rpc-php)
 * [Python](https://github.com/turtlecoin/turtlecoin-rpc-python)
 * [Go](https://github.com/turtlecoin/turtlecoin-rpc-go)
 
 ```javascript
-npm install turtlecoin-walletd-rpc-js
+npm install turtlecoin-rpc
 ```
 
 ```php
-composer require turtlecoin/turtlecoin-walletd-rpc-php
+composer require turtlecoin/turtlecoin-rpc-php
 ```
 
 ```python
 pip3 install turtlecoin
+```
+
+```go
+go get github.com/turtlecoin/turtlecoin-rpc-go
 ```
 
 ## Interacting with the API
@@ -32,21 +36,29 @@ http://localhost:8070/json_rpc
 > Configuration and instantiation
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
+const TurtleService = require('turtlecoin-rpc').TurtleService
 
-let rpcHost = 'http://localhost',
-    rpcPort = 8070,
-    rpcPassword = 'passw0rd',
-    logging = false;
+const service = new TurtleService({
+  host: '127.0.0.1', // ip address or hostname of the turtle-service host
+  port: 8070, // what port is turtle-service running on
+  timeout: 2000, // request timeout
+  ssl: false, // whether we need to connect using SSL/TLS
+  rpcPassword: 'changeme', // must be set to the password used to run turtle-service
 
-let walletd = new TurtleCoinWalletd(
-    rpcHost, rpcPort, rpcPassword, logging
-);
+  // RPC API default values
+  defaultMixin: false, // the default mixin to use for transactions, the default setting is false which means we don't have a default value
+  defaultFee: 0.1, // the default transaction fee for transactions
+  defaultBlockCount: 1, // the default number of blocks when blockCount is required
+  decimalDivisor: 100, // Currency has many decimal places?
+  defaultFirstBlockIndex: 1, // the default first block index we will use when it is required
+  defaultUnlockTime: 0, // the default unlockTime for transactions
+  defaultFusionThreshold: 10000000, // the default fusionThreshold for fusion transactions
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
+use TurtleCoin\TurtleService;
 
 $config = [
     'rpcHost'     => 'http://localhost',
@@ -54,7 +66,7 @@ $config = [
     'rpcPassword' => 'passw0rd',
 ];
 
-$walletd = new Walletd\Client($config);
+$turtleService = new TurtleService($config);
 ```
 
 ```python
@@ -67,12 +79,28 @@ rpc_password = 'passw0rd'
 walletd = Walletd(rpc_password, rpc_host, rpc_port)
 ```
 
+```go
+import (
+  "fmt"
+  trpc "github.com/turtlecoin/turtlecoin-rpc-go"
+)
+
+rpcHost := "localhost"
+rpcPort := 8070
+rpcPassword := "passw0rd"
+
+service := trpc.Walletd{
+  URL: rpcHost,
+  Port: rpcPort,
+  RPCPassword: rpcPassword}
+```
+
 To make a JSON RPC request to your TurtleCoin RPC Wallet you should use a POST request that looks like this:
 
 `http://<service address>:<service port>/json_rpc`
 
 Parameter            | Description
--------------------- | ------------------------------------------------------------ 
+-------------------- | ------------------------------------------------------------
 `<service address>`  | IP of TurtleCoin RPC Wallet, if RPC Wallet is located on local machine it is either 127.0.0.1 or localhost
 `<service port>`     | TurtleCoin RPC Wallet port, by default it is bound to 8070 port, but it can be manually bound to any port you want
 
@@ -81,41 +109,40 @@ Parameter            | Description
 ## reset
 
 ```shell
-curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"reset","params":{"viewSecretKey":"xxxxx..."}}' http://localhost:8070/json_rpc
+curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"reset","params":{"scanHeight":100000}}' http://localhost:8070/json_rpc
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let viewSecretKey = 'xxxxx...';
-
-walletd.reset(viewSecretKey)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    })
+service.reset({
+  scanHeight: 100000
+}).then(() => {
+  // do something
+}).catch((error) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
-$viewSecretKey = 'xxxxx...';
-$response = $walletd->reset($viewSecretKey);
-echo $response->getBody()->getContents();
+$scanHeight = 100000;
+$response = $turtleService->reset($scanHeight);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
-view_secret_key = 'xxxxx...'
-response = walletd.reset(view_secret_key)
+scan_height = 100000
+response = walletd.reset(scan_height)
 print(response)
+```
+
+```go
+scanHeight := 0 // starting height to scan
+response, err := service.Reset(scanHeight)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -131,18 +158,19 @@ print(response)
 `reset()` method allows you to re-sync your wallet.
 
 **Input**
- 
+
 Argument         | Mandatory   | Description      | Format
 ---------------- | ----------- | ---------------- | ------
-viewSecretKey    | No          | Private view key | string
+scanHeight       | No          | The height to begin scanning for transactions at. This can greatly speed up wallet syncing time. | int
+
 
 
 No output in case of success.
 
 <aside class="notice">
-  <div>If the <code>viewSecretKey</code> argument is not provided, the <code>reset()</code> method resets the wallet and 
-  re-syncs it. If the <code>viewSecretKey</code> argument is provided, the <code>reset()</code> method substitutes the 
-  existing wallet with a new one with the specified key and creates an address for it.</div>
+  <div>If the <code>viewSecretKey</code> argument is not provided, the <code>reset()</code> method resets the wallet and
+  re-syncs it. If the <code>viewSecretKey</code> argument is provided, the <code>reset()</code> method substitutes the
+  existing wallet with a new one with the specified key.</div>
 </aside>
 
 
@@ -154,34 +182,31 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"save","params":
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-
-walletd.save()
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.save().then(() => {
+  // do something
+}).catch((error) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
-$response = $walletd->save();
-echo $response->getBody()->getContents();
+$response = $turtleService->save();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 response = walletd.save()
 print(response)
+```
+
+```go
+response, err := service.Save()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -208,34 +233,31 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getViewKey","pa
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-
-walletd.getViewKey()
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getViewKey().then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
-$response = $walletd->getViewKey();
-echo $response->getBody()->getContents();
+$response = $turtleService->getViewKey();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 response = walletd.get_view_key()
 print(response)
+```
+
+```go
+response, err := service.GetViewKey()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -269,37 +291,36 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getSpendKeys","
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let address = 'TRTLxxxx...';
-
-walletd.getSpendKeys(address)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getSpendKeys({
+  address: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+}).then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $address = 'TRTLxxxx...';
-$response = $walletd->getSpendKeys($address);
-echo $response->getBody()->getContents();
+$response = $turtleService->getSpendKeys($address);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 address = 'TRTLxxxx...'
 response = walletd.get_spend_keys(address)
 print(response)
+```
+
+```go
+address := "TRTLxxxx..."
+response, err := service.GetSpendKeys(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -339,37 +360,36 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getMnemonicSeed
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let address = 'TRTLxxxx...';
-
-walletd.getMnemonicSeed(address)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getMnemonicSeed({
+  address: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+}).then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $address = 'TRTLxxxx...';
-$response = $walletd->getMnemonicSeed($address);
-echo $response->getBody()->getContents();
+$response = $turtleService->getMnemonicSeed($address);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 address = 'TRTLxxxx...'
 response = walletd.get_mnemonic_seed(address)
 print(response)
+```
+
+```go
+address := "TRTLxxxx..."
+response, err := service.GetMnemonicSeed(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -411,34 +431,31 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getStatus","par
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-
-walletd.getStatus()
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getStatus().then((result) => {
+  // do something
+}).catch((error) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
-$response = $walletd->getStatus();
-echo $response->getBody()->getContents();
+$response = $turtleService->getStatus();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 response = walletd.get_status()
 print(response)
+```
+
+```go
+response, err := service.GetStatus()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -478,34 +495,31 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getAddresses","
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-
-walletd.getAddresses()
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getAddresses().then((result) => {
+  // do something
+}).catch((error) => {
+  //do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
-$response = $walletd->getAddresses();
-echo $response->getBody()->getContents();
+$response = $turtleService->getAddresses();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 response = walletd.get_addresses()
 print(response)
+```
+
+```go
+response, err := service.GetAddresses()
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -542,42 +556,42 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"createAddress",
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let secretSpendKey = null;
-let publicSpendKey = null;
-
-walletd.createAddress(secretSpendKey, publicSpendKey)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.createAddress({
+  spendSecretKey: '',
+  spendPublicKey: ''
+}).then((result) => {
+  // do something
+}).catch((error) => {
+  //do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
-
-$secretSpendKey = null;
-$publicSpendKey = null;
-$response = $walletd->createAddress($secretSpendKey, $publicSpendKey);
-echo $response->getBody()->getContents();
+$spendSecretKey = null;
+$spendPublicKey = null;
+$response = $turtleService->createAddress($spendSecretKey, $spendPublicKey);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
-
 spend_secret_key = ''
 spend_public_key = ''
 response = walletd.create_address(spend_secret_key, spend_public_key)
 print(response)
+```
+
+```go
+spendSecretKey := ""
+spendPublicKey := ""
+scanHeight := 850000
+newAddress := true
+response, err := service.CreateAddress(spendSecretKey, spendPublicKey, scanHeight, newAddress)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -598,8 +612,10 @@ print(response)
 
 Argument                 | Mandatory    | Description                                  | Format
 ------------------------ | ------------ | -------------------------------------------- | -------
-secretSpendKey           | No           | Private spend key. If `secretSpendKey` was specified, RPC Wallet creates spend address | string
-publicSpendKey           | No           | Public spend key. If `publicSpendKey` was specified, RPC Wallet creates view address   | string
+spendSecretKey           | No           | Private spend key. If `spendSecretKey` was specified, RPC Wallet creates spend address | string
+spendPublicKey           | No           | Public spend key. If `spendPublicKey` was specified, RPC Wallet creates view address   | string
+newAddress               | No           | Is this a new address being created? If so, blocks before the creation timestamp will not be scanned. Defaults to true if neither keys are given, as it is guaranteed to be a new address. | bool
+scanHeight               | No           | The height to begin scanning for transactions at. Only applies if a public/secret key is supplied. This can greatly speed up wallet syncing time. | int
 
 
 
@@ -610,39 +626,36 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"deleteAddress",
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let address = 'TRTLxxxx...';
-
-walletd.deleteAddress(address)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.deleteAddress({
+  address: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $address = 'TRTLxxxx...';
-$response = $walletd->deleteAddress($address);
-echo $response->getBody()->getContents();
+$response = $turtleService->deleteAddress($address);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 address = 'TRTLxxxx...'
 response = walletd.delete_address(address)
 
 # If the delete was successful, response will be True
 print(response)
+```
+
+```go
+address := "TRTLxxxx..."
+response, err := service.DeleteAddress(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -676,37 +689,35 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getBalance","pa
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let address = 'TRTLxxxx...';
-
-walletd.getBalance(address)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+// Address optional
+service.getBalance({
+  address: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $address = 'TRTLxxxx...';
-$response = $walletd->getBalance($address);
-echo $response->getBody()->getContents();
+$response = $turtleService->getBalance($address);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 address = 'TRTLxxxx...'
 response = walletd.get_balance(address)
 print(response)
+```
+
+```go
+address := "TRTLxxxx..."
+response, err := service.GetBalance(address)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -751,40 +762,38 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getBlockHashes"
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let firstBlockIndex = 0;
-let blockCount = 3;
-
-walletd.getBlockHashes(firstBlockIndex, blockCount)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getBlockHashes({
+  firstBlockIndex: 500000,
+  blockCount: 10
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $firstBlockIndex = 0;
 $blockCount = 3;
-$response = $walletd->getBlockHashes($firstBlockIndex, $blockCount);
-echo $response->getBody()->getContents();
+$response = $turtleService->getBlockHashes($firstBlockIndex, $blockCount);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 first_block_index = 0
 block_count = 3
 response = walletd.get_block_hashes(first_block_index, block_count)
 print(response)
+```
+
+```go
+firstBlockIndex := 0
+blockCount := 3
+response, err := service.GetBlockHashes(firstBlockIndex, blockCount)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -827,46 +836,34 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getTransactionH
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let blockCount = 100000;
-let firstBlockIndex = 400000;
-let blockHash = null;
-let addresses = null;
-let paymentId = null;
-
-walletd.getTransactionHashes(blockCount, firstBlockIndex, blockHash, addresses, paymentId)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getTransactionHashes({
+  addresses: [
+    "TRTLux9QBmzCYEGgdWXHEQCAm6vY9vZHkbGmx8ev5LxhYk8N71Pp7PWFYL9CHxpWph2wCPZcJ6tkPfUxVZcUN8xmYsSDJZ25i9n",
+    "TRTLv1mPerM2ckUuNvxrkzDE7QKd9PFVUXYbVfbvx8YxB5BYEdSqQvUFYL9CHxpWph2wCPZcJ6tkPfUxVZcUN8xmYsSDJbQMVgF"
+  ],
+  blockHash: 'f98d6bbe80a81b3aa0aebd004096e2223524f58f347a1f21be122450f244b948',
+  blockCount: 1
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $blockCount = 100000;
 $firstBlockIndex = 400000;
 $blockHash = null;
 $addresses = null;
 $paymentId = null;
 
-$response = $walletd->getTransactionHashes(
+$response = $turtleService->getTransactionHashes(
     $blockCount, $firstBlockIndex, $blockHash, $addresses, $paymentId
 );
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 block_count = 100000
 block_hash = '6c285...'
 addresses = []
@@ -874,6 +871,20 @@ payment_id = ''
 
 response = walletd.get_transaction_hashes(addresses, block_hash, block_count, payment_id)
 print(response)
+```
+
+```go
+addresses := []string{"TRTLxxxx..."}
+blockHash := ""
+firstBlockIndex := 0
+blockCount := 3
+paymentID := ""
+response, err := service.GetTransactionHashes(addresses, blockHash, firstBlockIndex, blockCount, paymentID)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -908,7 +919,7 @@ addresses        | No                                                           
 blockHash        | Only one of these parameters (blockHash or firstBlockIndex) is allowed   | Hash of the starting block                                    | string
 firstBlockIndex  | Only one of these parameters (blockHash or firstBlockIndex) is allowed   | Starting height	                                            | int
 blockCount       | Yes                                                                      | Number of blocks to return transaction hashes from	        | int
-paymentId        | No                                                                       | Valid payment ID	                                            | string
+paymentId        | No                                                                       | Valid payment ID (64char hex string)	                        | string
 
 * If `paymentId` parameter is set, `getTransactionHashes()` method returns transaction hashes of transactions that contain specified payment ID in the given block range.
 * If `addresses` parameter is set, `getTransactionHashes()` method returns transaction hashes of transactions that contain transfer from at least one of specified addresses.
@@ -932,46 +943,34 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getTransactions
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let blockCount = 100000;
-let firstBlockIndex = 400000;
-let blockHash = null;
-let addresses = null;
-let paymentId = null;
-
-walletd.getTransactions(blockCount, firstBlockIndex, blockHash, addresses, paymentId)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getTransactions({
+  addresses: [
+    "TRTLux9QBmzCYEGgdWXHEQCAm6vY9vZHkbGmx8ev5LxhYk8N71Pp7PWFYL9CHxpWph2wCPZcJ6tkPfUxVZcUN8xmYsSDJZ25i9n",
+    "TRTLv1mPerM2ckUuNvxrkzDE7QKd9PFVUXYbVfbvx8YxB5BYEdSqQvUFYL9CHxpWph2wCPZcJ6tkPfUxVZcUN8xmYsSDJbQMVgF"
+  ],
+  firstBlockIndex: 469419,
+  blockCount: 1
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $blockCount = 100000;
 $firstBlockIndex = 400000;
 $blockHash = null;
 $addresses = null;
 $paymentId = null;
 
-$response = $walletd->getTransactions(
+$response = $turtleService->getTransactions(
     $blockCount, $firstBlockIndex, $blockHash, $addresses, $paymentId
 );
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 block_count = 100000
 block_hash = '6c285...'
 addresses = []
@@ -979,6 +978,20 @@ payment_id = ''
 
 response = walletd.get_transactions(addresses, block_hash, block_count, payment_id)
 print(response)
+```
+
+```go
+addresses := []string{"TRTLxxxx..."}
+blockHash := ""
+firstBlockIndex := 0
+blockCount := 3
+paymentID := ""
+response, err := service.GetTransactions(addresses, blockHash, firstBlockIndex, blockCount, paymentID)
+if err != nil {
+  fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1047,9 +1060,9 @@ Argument        | Mandatory                                                     
 --------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------ | -------
 addresses       | No                                                                           | Array of strings, where each string is an address		| array
 blockHash       | Only one of these parameters (`blockHash` or `firstBlockIndex`) is allowed.  | Hash of the starting block		                        | string
-firstBlockIndex | Only one of these parameters (`blockHash` or `firstBlockIndex`) is allowed.  | Starting height >0 (1,2,3...)		                                | int
+firstBlockIndex | Only one of these parameters (`blockHash` or `firstBlockIndex`) is allowed.  | Starting height >0 (1,2,3...)		                    | int
 blockCount      | Yes                                                                          | Number of blocks to return transaction hashes from		| int
-paymentId       | No                                                                           | Valid payment ID		                                | string
+paymentId       | No                                                                           | Valid payment ID (64char hex string)                   | string
 
 * If `paymentId` parameter is set, `getTransactions()` method returns transactions that contain specified payment ID in the given block range.
 * If `addresses` parameter is set, `getTransactions()` method returns transactions that contain transfer from at least one of specified addresses.
@@ -1067,15 +1080,15 @@ Transaction attributes:
 
 Argument            | Description                                       | Format
 ------------------- | --------------------------------------------------|-----------
-transactionHash     | Hash of the transaction                                                      | string 
+transactionHash     | Hash of the transaction                                                       | string
 blockIndex          | Number of the block that contains a transaction                               | int
-timestamp           | Timestamp of the transaction                                                  | int 
+timestamp           | Timestamp of the transaction                                                  | int
 isBase              | Shows if the transaction is a CoinBase transaction or not                     | boolean
 unlockTime          | Height of the block when transaction is going to be available for spending    | int
-amount              | Amount of the transaction                                                     | int 
+amount              | Amount of the transaction                                                     | int
 fee                 | Transaction fee                                                               | int
-extra               | Hash of the  transaction                                                      | string 
-paymentId           | Payment ID of the transaction (optional)                                      | string 
+extra               | Hash of the  transaction                                                      | string
+paymentId           | Payment ID of the transaction (optional) (64char hex string)                  | string
 transfers           | Array of address (string), amount (int)                                       | array
 
 
@@ -1087,37 +1100,34 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getUnconfirmedT
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let addresses = null;
-
-walletd.getUnconfirmedTransactionHashes(addresses)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getUnconfirmedTransactionHashes({
+  address: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $addresses = null;
-$response = $walletd->getUnconfirmedTransactionHashes($addresses);
-echo $response->getBody()->getContents();
+$response = $turtleService->getUnconfirmedTransactionHashes($addresses);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 addresses = []
 response = walletd.get_unconfirmed_transaction_hashes(addresses)
 print(response)
+```
+
+```go
+addresses := []string{"TRTLxxxx..."}
+response, err := service.GetUnconfirmedTransactionHashes(addresses)
+if err != nil {
+		fmt.Println(err)
+} else {
+  fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1142,7 +1152,7 @@ Transaction consists of transfers. Transfer is an amount-address pair. There cou
 
 Argument    | Mandatory     | Description                                                | Format
 ----------- | ------------- | ---------------------------------------------------------- | -------
-addresses   | No            | Array of strings, where each string is a valid address     | array 
+addresses   | No            | Array of strings, where each string is a valid address     | array
 
 <aside class="notice">
   <div>If addresses parameter is set, transactions that contain transfer from at least one of specified addresses are returned.</div>
@@ -1163,37 +1173,34 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getTransaction"
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let transactionHash = '55a23...';
-
-walletd.getTransaction(transactionHash)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getTransaction({
+  transactionHash: 'd01e448f7b631cebd989e3a150258b0da59c66f96adecec392bbf61814310751'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $transactionHash = '55a23...';
-$response = $walletd->getTransaction($transactionHash);
-echo $response->getBody()->getContents();
+$response = $turtleService->getTransaction($transactionHash);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 transaction_hash = '55a23...'
 response = walletd.get_transaction(transaction_hash)
 print(response)
+```
+
+```go
+transactionHash := "55a23..."
+response, err := service.GetTransaction(transactionHash)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1232,7 +1239,7 @@ Transaction consists of transfers. Transfer is an amount-address pair. There cou
 
 Argument            | Mandatory     | Description                                                | Format
 ------------------- | ------------- | ---------------------------------------------------------- | -------
-transactionHash     | Yes           | Hash of the requested transaction                          | string 
+transactionHash     | Yes           | Hash of the requested transaction                          | string
 
 **Output**
 
@@ -1244,16 +1251,16 @@ Transaction attributes:
 
 Argument            | Description                                                                   | Format
 ------------------- | ------------------------------------------------------------------------------|-------
-transactionHash     | Hash of the transaction                                                      | string 
+transactionHash     | Hash of the transaction                                                       | string
 blockIndex          | Number of the block that contains a transaction                               | int
-timestamp           | Timestamp of the transaction                                                  | int 
+timestamp           | Timestamp of the transaction                                                  | int
 isBase              | Shows if the transaction is a CoinBase transaction or not                     | boolean
 unlockTime          | Height of the block when transaction is going to be available for spending    | int
-amount              | Amount of the transaction                                                     | int 
+amount              | Amount of the transaction                                                     | int
 fee                 | Transaction fee                                                               | int
-extra               | Hash of the  transaction                                                      | string 
-paymentId           | Payment ID of the transaction (optional)                                      | string 
-transfers           | Array of addresses (string), amount (int)                                  | array
+extra               | Hash of the  transaction                                                      | string
+paymentId           | Payment ID of the transaction (optional)  (64char hex string)                 | string
+transfers           | Array of addresses (string), amount (int)                                     | array
 
 
 
@@ -1264,35 +1271,18 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"sendTransaction
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let anonymity = 3;
-let fee = 10;
-let addresses = null;
-let unlockTime = null;
-let extra = null;
-let paymentId = null;
-let changeAddress = 'TRTLyyyy...';
-
-let transfers = [
-    {address: "TRTLxxxx...", amount: 5000}
-];
-
-walletd.sendTransaction(anonymity, transfers, fee, addresses, unlockTime, extra, paymentId, changeAddress)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.sendTransaction({
+  transfers: [
+    service.newTransfer('TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ', 1000000)
+  ],
+  fee: 0.1
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $anonymity = 3;
 $fee = 10;
 $addresses = null;
@@ -1305,17 +1295,14 @@ $transfers = [
     ["address" => "TRTLxxxx...", "amount"  => 5000],
 ];
 
-$response = $walletd->sendTransaction(
+$response = $turtleService->sendTransaction(
     $anonymity, $transfers, $fee, $addresses, $unlockTime, $extra, $paymentId, $changeAddress
 );
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 anonymity = 3
 fee = 10
 addresses = []
@@ -1332,6 +1319,29 @@ response = walletd.send_transaction(
     transfers, anonymity, fee, addresses, change_address, extra, payment_id, unlock_time
 )
 print(response)
+```
+
+```go
+addresses := []string{"TRTLyyyy..."} // can be empty
+unlockTime := 0
+extra := ""
+paymentID := ""
+fee := 10
+changeAddress := "TRTLyyyy..."
+
+transfers := []map[string]interface{}{
+  {
+    "address" : "TRTLxxxx...",
+    "amount" : 5000,
+  },
+}
+
+response, err := service.SendTransaction(addresses, transfers, fee, unlockTime, extra, paymentID, changeAddress)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1356,10 +1366,10 @@ addresses       | No            | Array of strings, where each string is an addr
 transfers       | Yes           | Array of objects, address: (string address), amount: (int amount)                        | array
 fee             | Yes           | Transaction fee. Minimal fee in TurtleCoin network is 0.10 TRTL. As with other amounts use whole units, 1 TRTL = 100 units, so 0.1 TRTL = 10 units | int
 unlockTime      | No            | The block height at which the transaction will be unlocked for spending.                 | int
-anonymity       | Yes           | Privacy (mixin) level from block 600,000 needs to be seven (7), this will be removed / ignored in a future version | int
+anonymity       | Yes           | Privacy (mixin) level from block 800,000 three (3)                                       | int
 extra           | No            | String of variable length. Can contain A-Z, 0-9 characters.                              | string
-paymentId       | No            | Payment ID                                                                               | string 
-changeAddress   | No            | Valid and existing address in this container.                                            | string 
+paymentId       | No            | Payment ID (64char hex string)                                                           | string
+changeAddress   | No            | Valid and existing address in this container.                                            | string
 
 * If container contains only 1 address, `changeAddress` field can be left empty and the change is going to be sent to this address.
 * If addresses field contains only 1 address, `changeAddress` can be left empty and the change is going to be sent to this address.
@@ -1380,35 +1390,18 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"createDelayedTr
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let anonymity = 3;
-let fee = 10;
-let addresses = null;
-let unlockTime = null;
-let extra = null;
-let paymentId = null;
-let changeAddress = 'TRTLyyyy...';
-
-let transfers = [
-    {address: "TRTLxxxx...", amount: 5000}
-];
-
-walletd.createDelayedTransaction(anonymity, transfers, fee, addresses, unlockTime, extra, paymentId, changeAddress)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.createDelayedTransaction({
+  transfers: [
+    service.newTransfer('TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ', 1000000)
+  ],
+  fee: 0.1
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $anonymity = 3;
 $fee = 10;
 $addresses = null;
@@ -1421,17 +1414,14 @@ $transfers = [
     ["address" => "TRTLxxxx...", "amount"  => 5000],
 ];
 
-$response = $walletd->createDelayedTransaction(
+$response = $turtleService->createDelayedTransaction(
     $anonymity, $transfers, $fee, $addresses, $unlockTime, $extra, $paymentId, $changeAddress
 );
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 anonymity = 3
 fee = 10
 addresses = []
@@ -1448,6 +1438,29 @@ response = walletd.create_delayed_transaction(
     transfers, anonymity, fee, addresses, change_address, extra, payment_id, unlock_time
 )
 print(response)
+```
+
+```go
+addresses := []string{"TRTLyyyy..."} // can be empty
+unlockTime := 0
+extra := ""
+paymentID := ""
+fee := 10
+changeAddress := "TRTLyyyy..."
+
+transfers := []map[string]interface{}{
+  {
+    "address" : "TRTLxxxx...",
+    "amount" : 5000,
+  },
+}
+
+response, err := service.CreateDelayedTransaction(addresses, transfers, fee, unlockTime, extra, paymentID, changeAddress)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1472,9 +1485,9 @@ addresses       | No            | Array of strings, where each string is an addr
 transfers       | Yes           | Array of address (string), amount (int)                                                  | array
 fee             | Yes           | Transaction fee. Minimal fee in TurtleCoin network is 0.10 TRTL. This parameter should be specified in minimal available TRTL units. For example, if your fee is 0.10 TRTL, you should pass it as 10. | int
 unlockTime      | No	        | Height of the block until which transaction is going to be locked for spending.	       | int
-anonymity       | Yes           | Privacy level (a discrete number from 1 to infinity). Level 6 and higher is recommended. | int
+anonymity       | Yes           | Privacy (mixin) level from block 800,000 three (3)                                       | int
 extra           | No            | String of variable length. Can contain A-Z, 0-9 characters.                              | string
-paymentId       | No            | Payment ID                                                                               | string
+paymentId       | No            | Payment ID  (64char hex string)                                                          | string
 changeAddress   | No            | Valid and existing in this container address.                                            | string
 
 * If container contains only 1 address, `changeAddress` field can be left empty and the change is going to be sent to this address
@@ -1497,34 +1510,29 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getDelayedTrans
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-
-walletd.getDelayedTransactionHashes()
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.getDelayedTransactionHashes().then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
-$response = $walletd->getDelayedTransactionHashes();
-echo $response->getBody()->getContents();
+$response = $turtleService->getDelayedTransactionHashes();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 response = walletd.get_delayed_transaction_hashes()
 print(response)
+```
+
+```go
+response, err := service.GetDelayedTransactionHashes()
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1558,39 +1566,36 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"deleteDelayedTr
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let transactionHash = 'b3e37...';
-
-walletd.deleteDelayedTransaction(transactionHash)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.deleteDelayedTransaction({
+  transactionHash: 'd01e448f7b631cebd989e3a150258b0da59c66f96adecec392bbf61814310751'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $transactionHash = 'b3e37...';
-$response = $walletd->deleteDelayedTransaction($transactionHash);
-echo $response->getBody()->getContents();
+$response = $turtleService->deleteDelayedTransaction($transactionHash);
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 transaction_hash = '50d83...'
 response = walletd.delete_delayed_transaction(transaction_hash)
 
 # If delete is successful, the response will be True
 print(response)
+```
+
+```go
+transactionHash := "50d83..."
+response, err := service.DeleteDelayedTransaction(transactionHash)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1624,40 +1629,37 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"sendDelayedTran
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let transactionHash = 'c37cd...';
-
-walletd.sendDelayedTransaction(transactionHash)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.sendDelayedTransaction({
+  transactionHash: 'd01e448f7b631cebd989e3a150258b0da59c66f96adecec392bbf61814310751'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $transactionHash = 'c37cd...';
-$response = $walletd->sendDelayedTransaction($transactionHash);
+$response = $turtleService->sendDelayedTransaction($transactionHash);
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 transaction_hash = '50d83...'
 response = walletd.send_delayed_transaction(transaction_hash)
 
 # If transaction is sent successful, the response will be True
 print(response)
+```
+
+```go
+transactionHash := "50d83..."
+response, err := service.SendDelayedTransaction(transactionHash)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1691,41 +1693,25 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"sendFusionTrans
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let threshold = 1000000;
-let anonymity = 3;
-let addresses = ['TRTLxxxx...', 'TRTLyyyy...'];
-let destinationAddress = 'TRTLzzzz...';
-
-walletd.sendFusionTransaction(threshold, anonymity, addresses, destinationAddress)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.sendFusionTransaction({
+  destinationAddress: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $threshold = 1000000;
 $anonymity = 3;
 $addresses = ['TRTLxxxx...', 'TRTLyyyy...'];
 $destinationAddress = 'TRTLzzzz...';
-$response = $walletd->sendFusionTransaction($threshold, $anonymity, $addresses, $destinationAddress);
+$response = $turtleService->sendFusionTransaction($threshold, $anonymity, $addresses, $destinationAddress);
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 threshold = 1000000
 anonymity = 3
 addresses = ['TRTLxxxx...', 'TRTLyyyy...']
@@ -1733,6 +1719,18 @@ destination_address = 'TRTLzzzz...'
 response = walletd.send_fusion_transaction(threshold, anonymity, addresses, destination_address)
 
 print(response)
+```
+
+```go
+threshold := 1000000
+addresses := []string{"TRTLxxxx...", "TRTLyyyy..."}
+destinationAddress := "TRTLzzzz..."
+response, err := service.SendfusionTransaction(threshold, addresses, destinationAddress)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1747,9 +1745,9 @@ print(response)
 }
 ```
 
-`sendFusionTransaction()` method allows you to send a fusion transaction, by taking funds from selected addresses and 
+`sendFusionTransaction()` method allows you to send a fusion transaction, by taking funds from selected addresses and
 transferring them to the destination address.
-If there aren't any outputs that can be optimized, `sendFusionTransaction()` will return an error. You can 
+If there aren't any outputs that can be optimized, `sendFusionTransaction()` will return an error. You can
 use `estimateFusion` to check the outputs, available for the optimization.
 
 **Input**
@@ -1757,7 +1755,7 @@ use `estimateFusion` to check the outputs, available for the optimization.
 Argument            | Mandatory  | Description                                                                                          | Format
 ------------------- | ---------- | ---------------------------------------------------------------------------------------------------- | -------
 threshold           | Yes        | Value that determines which outputs will be optimized. Only the outputs, lesser than the threshold value, will be included into a fusion transaction. | int
-anonymity           | Yes        | Privacy level (a discrete number from 1 to infinity). Level 6 and higher is recommended.             | int
+anonymity           | Yes        | Privacy (mixin) level from block 800,000 three (3)                                                 | int
 addresses           | No         | Array of strings, where each string is an address to take the funds from.	                        | array
 destinationAddress  | No         | An address that the optimized funds will be sent to. Valid and existing in this container address.	| string
 
@@ -1780,41 +1778,41 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"estimateFusion"
 ```
 
 ```javascript
-import TurtleCoinWalletd from 'turtlecoin-walletd-rpc-js';
-
-let walletd = new TurtleCoinWalletd(hostname, port, password, logging);
-let threshold = 1000000;
-let addresses = ['TRTLxxxx...', 'TRTLyyyy...'];
-
-walletd.estimateFusion(threshold, addresses)
-    .then(resp => {
-        console.log(resp.body)
-    })
-    .catch(err => {
-        console.log(err)
-    });
+service.estimateFusion({
+  threshold: 100000000,
+  addresses:[
+    'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ'
+  ]
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $threshold = 1000000;
 $addresses = ['TRTLxxxx...', 'TRTLyyyy...'];
-$response = $walletd->estimateFusion($threshold, $addresses);
+$response = $turtleService->estimateFusion($threshold, $addresses);
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 threshold = 1000000
 addresses = ['TRTLxxxx...', 'TRTLyyyy...']
 response = walletd.estimate_fusion(threshold, addresses)
 print(response)
+```
+
+```go
+threshold := 1000000
+addresses := []string{"TRTLxxxx...","TRTLyyyy..."}
+response, err := service.EstimateFusion(threshold, addresses)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1854,29 +1852,39 @@ curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"createIntegrate
 ```
 
 ```javascript
-/* Needs to be added */
+service.createIntegratedAddress({
+  address: 'TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ',
+  paymentId: '80ec855eef7df4bce718442cabe086f19dfdd0d03907c7768eddb8eca8c5a667'
+}).then((result) => {
+  // do something
+})
 ```
 
 ```php
 <?php
-use TurtleCoin\Walletd;
-
-$walletd = new Walletd\Client($config);
 $address = 'TRTLxxxx...';
 $paymentId = '7FE73BD90EF05DEA0B5C15FC78696619C50DD5F2BA628F2FD16A2E3445B1922F';
-$response = $walletd->createIntegratedAddress($address, $paymentId);
+$response = $turtleService->createIntegratedAddress($address, $paymentId);
 
-echo $response->getBody()->getContents();
+echo $response;
 ```
 
 ```python
-from turtlecoin import Walletd
-
-walletd = Walletd(rpc_password, rpc_host, rpc_port)
 address = 'TRTLxxxx...'
 payment_id = '7FE73BD90EF05DEA0B5C15FC78696619C50DD5F2BA628F2FD16A2E3445B1922F'
 response = walletd.create_integrated_address(address, payment_id)
 print(response)
+```
+
+```go
+address := "TRTLxxxx..."
+paymentID := "7FE73BD90EF05DEA0B5C15FC78696619C50DD5F2BA628F2FD16A2E3445B1922F"
+response, err := service.CreateIntegratedAddress(address, paymentID)
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
 ```
 
 > Expected output:
@@ -1895,10 +1903,10 @@ print(response)
 
 **Input**
 
-Argument              | Mandatory      | Description          | Format
---------------------- | -------------- | -------------------- | -------
-address               | Yes            | A valid address      | string
-paymentId             | Yes            | A valid paymentId    | string
+Argument              | Mandatory      | Description                           | Format
+--------------------- | -------------- | ------------------------------------- | -------
+address               | Yes            | A valid address                       | string
+paymentId             | Yes            | A valid paymentId (64char hex string) | string
 
 **Output**
 
@@ -1906,6 +1914,62 @@ Argument              | Description                         | Format
 --------------------- | ----------------------------------- | ------
 integratedAddress	  | The created integrated address		| string
 
+## getFeeInfo
+
+```shell
+curl -d '{"jsonrpc":"2.0","id":1,"password":"passw0rd","method":"getFeeInfo","params":{}}' http://localhost:8070/json_rpc
+```
+
+```javascript
+service.getFeeInfo().then((result) => {
+  // do something
+})
+```
+
+```php
+<?php
+$response = $turtleService->getFeeInfo();
+
+echo $response;
+```
+
+```python
+response = walletd.get_fee_info()
+print(response)
+```
+
+```go
+response, err := service.GetFeeInfo()
+if err != nil {
+	fmt.Println(err)
+} else {
+	fmt.Println(response)
+}
+```
+
+> Expected output:
+
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "address": "TRTLxxx...",
+    "amount": 5000
+  }
+}
+```
+
+`getFeeInfo()` method retrieves the fee and address (if any) that that TurtleCoind walletd is connecting to is using. This fee will automatically be added to any transactions sent by sendTransaction() or sendDelayedTransaction(). Note it does not apply to sendFusionTransaction().
+
+No input.
+
+**Output**
+
+Argument              | Description                         | Format
+--------------------- | ----------------------------------- | ------
+address               | The address of the node owner 		| string
+amount                | The fee that will be sent to the node owners address with each transaction | int
 
 ## License
 

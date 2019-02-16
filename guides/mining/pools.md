@@ -6,7 +6,7 @@ Here are some of the TurtleCoin mining pools (arranged alphabetically):
 
 |                          Pool Name                           |    Total Fee and Method     |                 Min. Payout                  |        Location        |                            Notes                             |
 | :----------------------------------------------------------: | :-------------------------: | :------------------------------------------: | :--------------------: | :----------------------------------------------------------: |
-|     [CryptoNote Social](https://cryptonote.social/trtl)      |     0%, (Proportional)      | 0 TRTL(anything higher than transaction fee) |       California       | **No payments page, be wary.** Read `details details details` section carefully. |
+|     [CryptoNote Social](https://cryptonote.social/trtl)      |     0%, (Proportional)      | 0 TRTL(anything higher than transaction fee) |       California       | Read `details details details` section carefully. |
 | [Funky Penguin NZ](https://trtl.heigh-ho.funkypenguin.co.nz) | 0.0987654321%, Proportional |                  1000 TRTL                   |      New Zealand       |                              -                               |
 |     [GNTL TRTL Poo](https://trtl.pool.gntl.co.uk/#/home)     | 0.1%, PPLNS <br /> 1%, Solo | Wallet: 500 TRTL <br />Exchange: 10000 TRTL  |     United Kingdom     |                     Supports solo mining                     |
 |         [Mine2Gether](https://trtl.mine2gether.com)          |     0.1%, Proportional      |                   500 TRTL                   |        Germany         |                              -                               |
@@ -28,6 +28,8 @@ Here are some of the TurtleCoin mining pools (arranged alphabetically):
 | [TurtlePower ChallengeCoin](http://turtlepower.challengecoin.io) |      1%, Proportional       |                   500 TRTL                   |          USA           |                           No HTTPS                           |
 |              [YouPool](https://youpool.io/TRTL)              |            0.2%             |                  1000 TRTL                   |         China          |                              -                               |
 |                 [z-pool](https://z-pool.com)                 |     0.1%, Proportional      |                   500 TRTL                   |        Germany         |                              -                               |
+|     [Imhard4.men, US](http://turtlehomosecs.imhard4.men)      |     0.1%, Proportional      |                  50 TRTL                   |         New Jersey         |                           Mine at your own risk            |
+
 ## Definition of Fees
 
 Rather simple; the pool operator will take a percentage of the reward of the block found for himself.

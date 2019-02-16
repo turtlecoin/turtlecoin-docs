@@ -196,14 +196,14 @@ A: This occurs because of the blockchain forking, generally when one mining pool
 2018-May-07 15:52:19.908530 ERROR   Corrupted blockchain. Block with index 428973 and hash aafa7fd33d476535188bdd9e86ba51bb5e058be8e52367b78e9c0c03e74299c5 has previous block hash 2c0cf6c07612b9e1ea19c6922a56746b83cb42c7b11edfc4b185572225bb0f20, but parent has hash 26189359b64d4bb357a04b102a42a01d2771a3f3d80db3ca1b7395a2aeaede4a. Resynchronize your daemon please.
 2018-May-07 15:52:19.924135 INFO    Closing DB.
 ```
-A: Re-sync your daemon from scratch(see below question), [bootstrap the blockchain](bootstrapping-the-blockchain.md) or sync [using checkpoints](Using-checkpoints)
+A: Re-sync your daemon from scratch(see below question) [using checkpoints](Using-checkpoints)
 
 #### Q: How can I re-sync the blockchain?
 
 A: Close any TurtleCoin-related software, then go to `%APPDATA%`, and delete the `TurtleCoin` folder.
   Reopen TurtleCoind/GUI and let it re-sync.
 
-Alternatively, check [this guide](Bootstrapping-the-Blockchain) for instructions on how to bootstrap for a quicker sync.
+Alternatively, check [this guide](Using-checkpoints) for instructions on how to use checkpoints for a quicker sync.
 
 #### Q: When I open TurtleCoind on a Mac, I get an error `Illegal instruction: 4`. How can I fix it?
 
@@ -211,7 +211,7 @@ A: This is a known issue with older macs or un-updated macs.
     Try entering this into a terminal -
 
   ```
-  curl -sL "https://raw.githubusercontent.com/turtlecoin/turtlecoin/master/multi_installer.sh" | bash
+  curl -sL "https://raw.githubusercontent.com/turtlecoin/turtlecoin/master/scripts/multi_installer.sh" | bash
   ```
 
   This automated script should compile the software itself, and place the binaries in ./src once done.  
@@ -244,22 +244,12 @@ Until you are fully synced, you won't be able to send transactions, and your bal
 
 #### Q: I think I should have more money in my balance than it is showing, what should I do?
 
-    A: Re-sync your daemon from scratch(see [here](#q-how-can-i-re-sync-the-blockchain)), [bootstrap the blockchain](Bootstrapping-the-Blockchain/) or sync [using checkpoints](Using-checkpoints).  
+    A: Re-sync your daemon from scratch(see [here](#q-how-can-i-re-sync-the-blockchain)) faster [using checkpoints](Using-checkpoints).  
     If it still doesn't work, then [update](latest.turtlecoin.lol) your wallet!
-
-#### Q: I've tried resetting, but it isn't working. What should I do?
-
-  A:
-
-* In zedwallet, type `export_keys`, and save the view and spend key somewhere safe in case something goes wrong, if you haven't already.
-
-*  Then, close and reopen zedwallet and TurtleCoind.
-*  Type `reset` in zedwallet after reopening your wallet file.
-*  It should start resetting your wallet, but the progress might not be immediately obvious - wait a while, and it should start counting up the blocks and printing out your transactions as it gets to them.
 
 #### Q: How do I backup my wallet?
 
-  A: Open zedwallet and type `export_keys`.  
+  A: Open zedwallet and type `backup`.  
   Save the view and spend key somewhere safe, and you can use them to reimport your wallet if you lose it.
 
 #### Q: How do I send TRTL?
@@ -276,7 +266,7 @@ Until you are fully synced, you won't be able to send transactions, and your bal
   The TRTL Network is a privacy focused blockchain, and keen to ease adoption for everyone, like how two decimals are used.  
   Removing this user configurable option and setting it at the network layer allows for the network to balance this privacy aspect automatically so people can focus on the important parts.
 
-   As of block 620,000 the network mixin is set to seven (7) with increases planned for the future.
+   As of block 800,000 the network mixin is set to three (3).
 
 #### Q: How can I view my balance?
 
@@ -289,8 +279,7 @@ Until you are fully synced, you won't be able to send transactions, and your bal
 
 #### Q: Can I speed up the syncing of the blockchain?
 
-  A: You can grab a recent copy of the blockchain and incrementally sync from there. See [here](guides/Bootstrapping-the-Blockchain) for instructions.  
-  Or, you can sync [with checkpoints](guides/wallets/Using-checkpoints)(only with zedwallet).
+  A: You can grab a recent copy of the blockchain and incrementally sync from there. See [here](Using-checkpoints) for instructions.
 
 #### Q: Can I skip the syncing?
 
@@ -310,10 +299,12 @@ Until you are fully synced, you won't be able to send transactions, and your bal
 
 #### Q: Are there any GUI wallets?
 
-A: Yes, there is currently 1 GUI wallet actively in development(and one legacy GUI wallet), along with some mobile wallets too. However, they may not be ready for full use yet, and may not work on your operating system.
+A: Yes, there are currently 2 GUI wallets actively in development along with some mobile wallets too. However, they may not be ready for full use yet, and may not work on your operating system.
 
 * [Nest Wallet](https://github.com/turtlecoin/turtle-wallet-go)
-* [Xamarin Wallet](https://github.com/turtlecoin/turtle-wallet-xamarin)[DEFUNCT]
+* [Shellnet Web Wallet](https://shellnet.pw)
+* [T-Scripta Wallet](https://github.com/turtlecoin/turtle-wallet-tscripta)
+* [Electron Wallet](https://github.com/turtlecoin/turtle-wallet-electron)
 
 To view a guide on using them, you can go [here](Making-a-Wallet/#graphical-wallet-gui-wallet)
 
@@ -387,8 +378,8 @@ A: Yes, you can view the guide [here](Making-a-Paper-Wallet)
 
 * https://turtle.land
 * https://blocks.turtle.link
-* https://turtle-coin.com
-* https://explorer.trtlpwr.cc
+* ~~https://turtle-coin.com~~
+* ~~https://explorer.trtlpwr.cc~~
 
 #### Q: How do I make sure a pool isn't forked?
 

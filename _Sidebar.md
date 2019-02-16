@@ -21,10 +21,10 @@
   - [Others](Frequently-Asked-Questions#other)
 
 - Guides
-  - [Bootstrapping the Blockchain](Bootstrapping-the-Blockchain)
   - [RainBorg? Wat Dat?](RainBorg-Wat-Dat)
   - [Using trtlbot++](Using-trtlbot-plus-plus)
   - [Forking TurtleCoin](Forking-Turtlecoin)
+  - [Running TurtleCoind on a Pi](Running-TurtleCoind-on-Pi)
   - [Mining](Mining)
     - [Mining Software](Mining#how-to-mine)
       - [XMR-Stak](XMR-Stak-Guide)
@@ -33,8 +33,7 @@
     - [Mining Pools](Pools)
     - [Cloud Mining](Cloud-Mining)
     - [Mining with a SBC](Mining-with-SBC)
-    - Mining with Your Mobile Phone
-      - [How to mine with mobile](Mining-with-Phone)
+    - [Mining with Your Mobile Phone](Mining-with-Phone)
       - [Using Tony Monero](Using-Tony-Monero)
       - [Using AA Miner](Using-AA-Miner)
   - [Wallets](Making-a-Wallet)

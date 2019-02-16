@@ -47,13 +47,19 @@ Upon first launching XMR-Stak, the software will ask you several setup and confi
 
 Enter `0`, if you are like most people, and do not need to remotely check your hashrate.
 
-If you do need to, then enter a port number.
-Let's take the port number as `0101` and your IP address as `26.24.105.14` as an example.
+If you do need to, then enter a port number. Generally it is recommended to use a port number in the range 1025-65535.
+For example purposes, lets say you used 1337 as the port.
 
-To check the hashrate, enter in the address bar of your web browser, `<26.24.105.14>:<0101>`. It should show a page with your rig's hashrate.
-If you are checking from the same IP address, you can alternatively enter, `localhost:<0101>`
+To check the hashrate, enter in the address bar of your web browser, `127.0.0.1:1337`.
+Change the `1337` if you used a different port.
 
-Make sure to enter your own IP address if you enable this feature. You can choose any port you want!
+It should show a page with your rig's hashrate.
+
+If you want to check your miners hashrate whilst you are on a different network, you will have to enter your computers IP address, followed by the port, for example, `198.51.100.0:1337`.
+
+You can find your computers IP by visiting this website whilst on that computer: http://whatsmyip.org/
+
+You will probably have to open the port you are running the interface on in your router admin panel. Instructions on how to do this are out of scope for this document.
 
 2. ```
 

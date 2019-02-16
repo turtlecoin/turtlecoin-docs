@@ -1,7 +1,7 @@
 # RPC Errors
-Here I will attempt to decipher the error messages that turtlecoind and walletd spit out, and try my best to give a reason behind the error, as well as a better possible error message. So let's start, shall we?
+Here are some common error messages with TurtleCoind and Walletd spit out, why they occured and how to fix them.  
+Listed are also some possible alternative errors which they could spit out.
 
-**Walletd Errors**
 * `https://github.com/turtlecoin/turtlecoin/blob/master/src/Wallet/WalletErrors.h`
 
 ## BAD_ADDRESS / Bad address
@@ -33,13 +33,14 @@ The network can't find enough outputs to mix your transaction with.
 
 **Solution:**
 This can be rectified by using zero mixin or lowering the amount you are sending. This is very unlikely to be encountered on mainnet, and is mainly found on testnet.
+
 ## NOT_INITIALIZED / Object was not initialized
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## WRONG_PASSWORD / The password is wrong
 >**Possible Alternative Error:**
@@ -53,19 +54,19 @@ Enter the correct password! Import via keys if you cannot remember it.
 
 ## ALREADY_INITIALIZED / The object is already initialized
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## INTERNAL_WALLET_ERROR / Internal error occurred
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## TRANSACTION_SIZE_TOO_BIG / Transaction size is too big
 >**Possible Alternative Error:**
@@ -75,8 +76,8 @@ Enter the correct password! Import via keys if you cannot remember it.
 This is caused when the transaction size (in bytes, not amount), is too large to fit into a block. Currently this limit is around 125k bytes, and the size of transactions is based upon how many key images you need to supply for the transaction - each key image comes from a previous transaction, and so if you have lots of small payments, your transactions will need a lot of key images to sum to the desired amount.
 
 **Solution:**
-You can either:
-* Perform fusion transactions, to fuse your small key images into larger ones, letting you send more at once, or
+You can either:  
+* Perform fusion transactions, to fuse your small key images into larger ones, letting you send more at once, or  
 * Split your one transaction into multiple transactions, until each smaller one can fit into a block. This will slightly raise the fee you have to pay of course.
 
 ## SUM_OVERFLOW / Sum overflow
@@ -91,61 +92,60 @@ Send a smaller amount in one transaction.
 
 ## ZERO_DESTINATION / The destination is empty
 >**Possible Alternative Error:**
-No destination address specified, or amount specified is zero
+> No destination address specified, or amount specified is zero
 
 **Description:**
-This is caused by either:
-* A transaction amount of zero, or
+This is caused by either:  
+* A transaction amount of zero, or  
 * No address was specified to transfer to.
 
 **Solution:**
 Ensure you supply an address parameter in the transfers array, and that the amount is larger than zero.
 
->
+
 ## TX_CANCEL_IMPOSSIBLE / Impossible to cancel transaction
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
-## WRONG_STATE / The wallet is in wrong state (maybe loading or saving),try again later`
+## WRONG_STATE / The wallet is in wrong state (maybe loading or saving),try again later
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
-## OPERATION_CANCELLED / The operation you've requested has beencancelled`
+## OPERATION_CANCELLED / The operation you've requested has been cancelled
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## TX_TRANSFER_IMPOSSIBLE / Transaction transfer impossible
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## WRONG_VERSION / Wrong version
 >**Possible Alternative Error:**
->Wallet file does not exist, is corrupted, or is not a wallet file.
+> -
 
 **Description:**
 This is encountered when loading the wallet file with walletd. There are a few possible causes for it:
-* The file you are trying to load doesn't exist. This is common if you open `mywallet` instead of `mywallet.wallet`.
-* The file you are trying to load is not a wallet file.
+* Your wallet file is the wrong version
 * The wallet file has got corrupted.
 
 **Solution:**
-Ensure the file you are trying to open is both a valid wallet file, and exists.
+Delete the blockchain db, delete the .wallet file, import your keys, and resync from scratch
 
 
 ## FEE_TOO_SMALL / Transaction fee is too small
@@ -160,19 +160,19 @@ Make sure the fee used is at least 0.1 TRTL, or 10 in atomic units.
 
 ## KEY_GENERATION_ERROR / Cannot generate new key
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## INDEX_OUT_OF_RANGE / Index is out of range
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## ADDRESS_ALREADY_EXISTS / Address already exists
 >**Possible Alternative Error:**
@@ -199,11 +199,11 @@ Don't use methods which require spending with a view only wallet.
 >Individual errors for each specific issue.
 
 **Description:**
-This error can occur in a number of scenarios.
-* A supplied private/public key is invalid/cannot be parsed.
-* A spend key was specified to createAddress in a view only wallet, or a null spend key was specified in a non view only wallet
-* The blocks count given is less than 1
-* The blockindex given is less than 1
+This error can occur in a number of scenarios.  
+* A supplied private/public key is invalid/cannot be parsed.  
+* A spend key was specified to createAddress in a view only wallet, or a null spend key was specified in a non view only wallet  
+* The blocks count given is less than 1  
+* The blockindex given is less than 1  
 
 For more info on the exact error, check your walletd.log or console window.
 
@@ -212,11 +212,11 @@ Check the api-docs for examples on how to use the method you are toying with, to
 
 ## OBJECT_NOT_FOUND / Object not found
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## WALLET_NOT_FOUND / Requested wallet not found
 >**Possible Alternative Error:**
@@ -308,9 +308,9 @@ This occurs when your anonymity value is above the minimum allowed. You can chec
 **Solution:**
 Make sure your anonymity value is withing the allowed limits.
 
-## CONFLICTING_PAYMENT_IDS / Multiple conflicting payment ID's werespecified via the use of integrated addresses`
+## CONFLICTING_PAYMENT_IDS / Multiple conflicting payment ID's werespecified via the use of integrated addresses
 >**Possible Alternative Error:**
->
+> -
 
 **Description:**
 When using integrated addresses, if a payment ID is specified, it must match the payment ID included in the integrated address. Furthermore, if multiple integrated addresses are used, they must all have the same payment ID.
@@ -319,29 +319,29 @@ When using integrated addresses, if a payment ID is specified, it must match the
 Only send to one integrated address at once, and don't include a payment ID, to avoid confusion.
 
 
-**Turtlecoind Errors**
-* `https://github.com/turtlecoin/turtlecoin/blob/master/src/NodeRpcProxy/NodeErrors.h`
+**Turtlecoind Errors**  
+* `https://github.com/turtlecoin/turtlecoin/blob/master/src/NodeRpcProxy/NodeErrors.h`  
 * `https://github.com/turtlecoin/turtlecoin/blob/master/src/InProcessNode/InProcessNodeErros.h`
 
 ## NOT_INITIALIZED / Object was not initialized
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## ALREADY_INITIALIZED / Object has been already initialized
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## NETWORK_ERROR / Network error
 >**Possible Alternative Error:**
->
+> -
 
 **Description:**
 TurtleCoind is not open / not responding.
@@ -351,33 +351,33 @@ TurtleCoind is not open / not responding.
 
 ## NODE_BUSY / Node is busy
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## INTERNAL_NODE_ERROR / Internal node error
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## REQUEST_ERROR / Error in request parameters
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 
 ## CONNECT_ERROR / Can't connect to daemon
 >**Possible Alternative Error:**
->
+> -
 
-**Description:**
+**Description:** -
 
-**Solution:**
+**Solution:** -
 

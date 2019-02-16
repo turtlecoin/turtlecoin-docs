@@ -4,7 +4,7 @@ Huge thank you to everyone here, they've made major commits to the wiki and help
 
 * @ZedPea
 * @ar-x
-* @Sajo811
+* @Sajo8
 * @holytastyguacamole
 * @SoreGums
 

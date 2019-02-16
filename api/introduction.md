@@ -20,4 +20,4 @@ You can view code examples in the dark area to the right; switch the programming
 
 We also have some specific language bindings to make integration easier.
 
-If anything is missing or seems incorrect, please check the [GitHub issues](https://github.com/ar-x/turtlecoin-wiki/issues) for existing known issues or [create a new issue](https://github.com/ar-x/turtlecoin-wiki/issues/new).
+If anything is missing or seems incorrect, please check the [GitHub issues](https://github.com/turtlecoin/turtlecoin-docs/issues) for existing known issues or [create a new one](https://github.com/turtlecoin/turtlecoin-docs/issues/new).
