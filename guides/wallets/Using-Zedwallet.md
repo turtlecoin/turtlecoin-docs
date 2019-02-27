@@ -44,7 +44,7 @@ Because the blockchain is constantly growing, the file size always increases (th
 
 ### Using Checkpoints
 
-In **versions 0.4.3+** you can sync a fresh chain from block 0 much quicker by using checkpoints. Follow [this guide](Using-checkpoints) to learn more.
+In **versions 0.4.3+** you can sync a fresh chain from block 0 much quicker by using checkpoints. Follow [this guide](https://github.com/turtlecoin/turtlecoin-docs/blob/master/guides/wallets/Using-checkpoints.md) to learn more.
 
 ### Windows
 
