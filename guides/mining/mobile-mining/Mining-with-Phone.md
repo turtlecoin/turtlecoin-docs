@@ -4,7 +4,7 @@
 
 *Currently only available on Android version 4.1(Jelly Bean, year 2012) and newer*
 
-To mine TurtleCoin on your mobile phone, you can use either of these two apps(Tony Monero is recommended, however):
+To mine TurtleCoin on your mobile phone, you can use either of these three apps(Tony Monero is recommended, however):
 
 1. [Tony Monero](Using-Tony-Monero)
 2. [AA Miner](Using-AA-Miner)
