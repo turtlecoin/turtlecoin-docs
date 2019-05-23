@@ -6,11 +6,12 @@
 
 #### Q: How do I get started mining?
 
- A: You can check [this guide](Mining)
+A: You can check [this guide](Mining).
 
 #### Q: I'm using a Mac, can I still mine?
 
- A: Yes, of course! We're working on a guide.
+A: Yes, of course! We're working on a guide.
+ 
 #### Q: I've started mining, how can I view my stats?
 
 A: Visit your pool's homepage. There should be a spot for you to put in your TRTL address, and you can then view your hashrate, pending balance, payouts, and more.
@@ -33,11 +34,11 @@ A: To save money on fees, the pools send payouts in chunks. [Check your pool web
 
 #### Q: Why are my results being rejected from the pool?
 
- A: You're using a incorrect algorithm. If you are using XMR-Stak, you should use `turtlecoin` as the algorithm, if you are using XMRig use `cryptonight-lite` as the algorithm and have the variant set to 1.
+A: You're using a incorrect algorithm. If you are using XMR-Stak, you should use `turtlecoin` as the algorithm, if you are using XMRig use `cryptonight-lite` as the algorithm and have the variant set to 1.
 
 #### Q: I got banned from my mining pool. Why?
 
-A: If you submit lots of invalid shares, a pool might ban you. Possible reasons for invalid shares can be
+A: If you submit lots of invalid shares, a pool might ban you. Possible reasons for invalid shares can be:
 
 * your hardware getting overworked,
 
@@ -173,7 +174,6 @@ Navigate to the directory shown in the image, and ensure `Lock pages in memory` 
 
 ![largepages](images/valloc.png)
 
-
 #### Q: I'm missing the file `vcruntime140.dll`. Where can I get this?
 
 A: Try installing this: <https://www.microsoft.com/en-us/download/details.aspx?id=52685>
@@ -186,8 +186,7 @@ A: Try installing this: <https://go.microsoft.com/fwlink/?LinkId=746572>
 
 #### Q: I'm seeing an error in TurtleCoind `Proof of work too weak for block...` and the syncing stopped.
 
-A: This occurs because of the blockchain forking, generally when one mining pool has a very large hashrate. T
-  This can be fixed by re-syncing the correct blockchain from scratch. See the question below.
+A: This occurs because of the blockchain forking, generally when one mining pool has a very large hashrate. This can be fixed by re-syncing the correct blockchain from scratch. See the question below.
 
 #### Q: I'm getting a "corrupted blockchain" error like this?
 ```
@@ -196,7 +195,7 @@ A: This occurs because of the blockchain forking, generally when one mining pool
 2018-May-07 15:52:19.908530 ERROR   Corrupted blockchain. Block with index 428973 and hash aafa7fd33d476535188bdd9e86ba51bb5e058be8e52367b78e9c0c03e74299c5 has previous block hash 2c0cf6c07612b9e1ea19c6922a56746b83cb42c7b11edfc4b185572225bb0f20, but parent has hash 26189359b64d4bb357a04b102a42a01d2771a3f3d80db3ca1b7395a2aeaede4a. Resynchronize your daemon please.
 2018-May-07 15:52:19.924135 INFO    Closing DB.
 ```
-A: Re-sync your daemon from scratch(see below question) [using checkpoints](Using-checkpoints)
+A: Re-sync your daemon from scratch (see below question) [using checkpoints](Using-checkpoints).
 
 #### Q: How can I re-sync the blockchain?
 
@@ -239,30 +238,28 @@ A: You need to also open up `TurtleCoind.exe` and let it sync. TurtleCoind is yo
 Until you are fully synced, you won't be able to send transactions, and your balance may be missing or incorrect!
 ```
 
-  A: Your daemon hasn't finished syncing yet. Keep zedwallet open, and wait until you are 0 days behind the current block, and for the daemon to print out a green message saying `Successfully synchronized with the TurtleCoin Network.`  
+A: Your daemon hasn't finished syncing yet. Keep zedwallet open, and wait until you are 0 days behind the current block, and for the daemon to print out a green message saying `Successfully synchronized with the TurtleCoin Network.`  
   You can also type `status` in the daemon and press enter to see the current height it's at.
 
 #### Q: I think I should have more money in my balance than it is showing, what should I do?
 
-    A: Re-sync your daemon from scratch(see [here](#q-how-can-i-re-sync-the-blockchain)) faster [using checkpoints](Using-checkpoints).  
-    If it still doesn't work, then [update](latest.turtlecoin.lol) your wallet!
+A: Re-sync your daemon from scratch (see [here](#q-how-can-i-re-sync-the-blockchain)) faster [using checkpoints](Using-checkpoints). If it still doesn't work, then [update](Making-a-Wallet) your wallet!
 
 #### Q: How do I backup my wallet?
 
-  A: Open zedwallet and type `backup`.  
-  Save the view and spend key somewhere safe, and you can use them to reimport your wallet if you lose it.
+A: Open zedwallet and type `backup`. Save the view and spend key somewhere safe, and you can use them to reimport your wallet if you lose it.
 
 #### Q: How do I send TRTL?
 
-  A: You can check [this out](Using-ZedWallet#tx-trtl) for steps on how to send TRTL to someone.
+A: You can check [this out](Using-ZedWallet#tx-trtl) for steps on how to send TRTL to someone.
 
 #### Q: How do I send money to exchanges / use payment ID?
 
-  A: You can check [this out](Using-ZedWallet#tx-trtl-p-id) for steps on how to send TRTL with the payment ID.
+A: You can check [this out](Using-ZedWallet#tx-trtl-p-id) for steps on how to send TRTL with the payment ID.
 
 #### Q: What is mixin?
 
-  A: Mixin is how many times your transaction is "mixed" with others for obfuscation and privacy. This used to be dynamic in that the user could choose a number equal to or greater than zero. However this property is now set and enforced at the network layer.  
+A: Mixin is how many times your transaction is "mixed" with others for obfuscation and privacy. This used to be dynamic in that the user could choose a number equal to or greater than zero. However this property is now set and enforced at the network layer.  
   The TRTL Network is a privacy focused blockchain, and keen to ease adoption for everyone, like how two decimals are used.  
   Removing this user configurable option and setting it at the network layer allows for the network to balance this privacy aspect automatically so people can focus on the important parts.
 
@@ -270,33 +267,31 @@ Until you are fully synced, you won't be able to send transactions, and your bal
 
 #### Q: How can I view my balance?
 
-  A: If `TurtleCoind.exe` is fully synced, in `zedwallet.exe`, simply type `balance`.
-
+A: If `TurtleCoind.exe` is fully synced, in `zedwallet.exe`, simply type `balance`.
 
 #### Q: How long does it take to sync TurtleCoind.exe?
 
-  A: Currently it takes a couple of hours. This number will increase as more people use TRTL and the blockchain gets larger. If you'd like to speed up the process, check out the question below.
+A: Currently it takes a couple of hours. This number will increase as more people use TRTL and the blockchain gets larger. If you'd like to speed up the process, check out the question below.
 
 #### Q: Can I speed up the syncing of the blockchain?
 
-  A: You can grab a recent copy of the blockchain and incrementally sync from there. See [here](Using-checkpoints) for instructions.
+A: You can grab a recent copy of the blockchain and incrementally sync from there. See [here](Using-checkpoints) for instructions.
 
 #### Q: Can I skip the syncing?
 
-  A: Yes, you can currently use a remote node with zedwallet and Nest wallet. The keys stay on your PC, so it's secure. Check [this guide](Using-remote-nodes) for more information.
+A: Yes, you can currently use a remote node with zedwallet and Nest wallet. The keys stay on your PC, so it's secure. Check [this guide](Using-remote-nodes) for more information.
 
 #### Q: What does it mean if my balance is locked?
 
-  A: This is a transfer which hasn't been confirmed by the network yet. It will move into your main balance shortly, generally after 3 minutes.
+A: This is a transfer which hasn't been confirmed by the network yet. It will move into your main balance shortly, generally after 3 minutes.
 
 #### Q: In zedwallet.exe, I get an error `Error: failed to save new wallet: boost::filesystem::unique__path: Keyset as registered is invalid`. How can I fix it?
 
-  A: This is caused by some broken Windows crypto keys. In the address bar in Windows Explorer, type `%AppData%/Microsoft/Crypto/RSA/`.  
+A: This is caused by some broken Windows crypto keys. In the address bar in Windows Explorer, type `%AppData%/Microsoft/Crypto/RSA/`.  
   There should be a folder in there, with a long name, like `S-1-5-21-1416222650-108526586-4052533318-1000`.  
   Go into this folder and delete the files in there. Then reboot.
 
 ## GUI Wallet(s)<a name="gui-wallets"></a>
-
 #### Q: Are there any GUI wallets?
 
 A: Yes, there are currently 2 GUI wallets actively in development along with some mobile wallets too. However, they may not be ready for full use yet, and may not work on your operating system.
@@ -311,16 +306,16 @@ To view a guide on using them, you can go [here](Making-a-Wallet/#graphical-wall
 ## Paper Wallet / Cold Storage?<a name="paper-wallet-cold-storage"></a>
 #### Q: Wait, What's Cold Storage?
 
-  A: The term "Cold Storage" refers to a wallet that has been created via an offline means.
+A: The term "Cold Storage" refers to a wallet that has been created via an offline means.
 
  The preferred way to do this is via a computer than has never ever been connected to the internet, commonly referred to as an air gapped device.
 
 
  Why is this a thing? If done properly it means it is near impossible for the keys to be secretly intercepted since the data is never viewable by other compute devices.
 
-  You see above/elsewhere wallet files are being created via the wallet software, these files might be stored unencrypted, if unencrypted then the keys can be read by malicious software and balance's of those wallets transferred.
+ You see above/elsewhere wallet files are being created via the wallet software, these files might be stored unencrypted, if unencrypted then the keys can be read by malicious software and balance's of those wallets transferred.
 
-  Thus to protect against that scenario you could transfer any TRTL balance to one of these cold storage addresses. Please remember to keep secure/secret backups of your keys. If you lose the keys you lose any balance that was transferred to that wallet.
+ Thus to protect against that scenario you could transfer any TRTL balance to one of these cold storage addresses. Please remember to keep secure/secret backups of your keys. If you lose the keys you lose any balance that was transferred to that wallet.
 
 #### Q: Can I make a paper wallet?
 
@@ -328,22 +323,22 @@ A: Yes, you can view the guide [here](Making-a-Paper-Wallet)
 
 #### Q: I made a paper wallet, how do I use it?
 
-  A: You can check out [this guide](Recovering-your-Wallet) for steps on how to import your paper wallet into a wallet of your choice(choose a wallet and import the keys).
+A: You can check out [this guide](Recovering-your-Wallet) for steps on how to import your paper wallet into a wallet of your choice(choose a wallet and import the keys).
 
 #### Q: Can I view the balance of my wallet online?
 
-  A: Due to TurtleCoin being a cryptonote-based coin(private), this is not possible.
+A: Due to TurtleCoin being a cryptonote-based coin(private), this is not possible.
 
   It should be possible in the future to allow users to give away just their Private View Key to view transactions, but this hasn't been implemented by anyone so far, and would allow that website to see every transaction that you make.
 
 ## Other
 #### Q: Why does TRTL have such a high amount of tokens/small amount of decimal places?
 
-  A: Read a great post about the justification for it [here](https://medium.com/@turtlecoin/one-trillion-turtles-coin-supply-and-unit-economics-5bfbea0aa1f1).
+A: Read a great post about the justification for it [here](https://medium.com/@turtlecoin/one-trillion-turtles-coin-supply-and-unit-economics-5bfbea0aa1f1).
 
 #### Q: How can I get some TRTL?
 
-  A: There are multiple ways to acquire TRTL, for example:
+A: There are multiple ways to acquire TRTL, for example:
 
   * Mining - see [here](Mining)
   * Buying - TRTL is currently available on these exchanges: [TradeOgre](https://tradeogre.com/exchange/BTC-TRTL) and [TradeSatoshi](https://tradesatoshi.com/Exchange/?market=TRTL_BTC)
@@ -358,23 +353,23 @@ A: Yes, you can view the guide [here](Making-a-Paper-Wallet)
 
 #### Q: Are there any light wallets / mobile wallets?
 
-  A: None are ready for usage right now, but they are being worked on. Check the development channels in [Discord][Discord_Link] to see how people are getting on, and feel free to join in if you're a programmer!
+A: None are ready for usage right now, but they are being worked on. Check the development channels in [Discord][Discord_Link] to see how people are getting on, and feel free to join in if you're a programmer!
 
 #### Q: What is RainBorg / how does it work?
 
-  A: There is an in depth, graphical explanation [here](RainBorg-Wat-Dat)
+A: There is an in depth, graphical explanation [here](RainBorg-Wat-Dat)
 
 #### Q: How do I register my wallet on Discord?
 
-  A: You can check out this guide [here](Using-trtlbot-plus-plus#registering-your-wallet).
+A: You can check out this guide [here](Using-trtlbot-plus-plus#registering-your-wallet).
 
 #### Q: Where is the blockchain stored?
 
-  A: On Windows, it is in `%AppData%/turtlecoin`. On Mac and Linux, it is in `~/.turtlecoin`.
+A: On Windows, it is in `%AppData%/turtlecoin`. On Mac and Linux, it is in `~/.turtlecoin`.
 
 #### Q: Is there a blockchain explorer?
 
-  A: Yes, there are currently a few-
+A: Yes, there are currently a few-
 
 * https://turtle.land
 * https://blocks.turtle.link
@@ -383,10 +378,10 @@ A: Yes, you can view the guide [here](Making-a-Paper-Wallet)
 
 #### Q: How do I make sure a pool isn't forked?
 
-You can ask someone in the [Discord][Discord_Link] with a coloured name(aside from green) to run `/forked` for you, which will return with a list of pools which are possibly forked.
+A: You can ask someone in the [Discord][Discord_Link] with a coloured name(aside from green) to run `/forked` for you, which will return with a list of pools which are possibly forked.
 
 #### Q: I have a question which wasn't answered here, what should I do?
 
-  A: [Join the Discord][Discord_Link], and come to the `#help` channel, we'll try and fix any issues.
+A: [Join the Discord][Discord_Link], and come to the `#help` channel, we'll try and fix any issues.
 
 [Discord_Link]:http://chat.turtlecoin.lol/
