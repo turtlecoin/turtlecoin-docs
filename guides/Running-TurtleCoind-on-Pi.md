@@ -92,7 +92,7 @@ Now just wait to sync!
 
 ## Speeding Up Synchronization
 
-There's a couple things you can do to speed up the blockchain sync. One is to use checkpoints: follow the directions [here](Using-checkpoints).
+There's a couple things you can do to speed up the blockchain sync. One is to use checkpoints: follow the directions [here](wallets/Using-Checkpoints).
 
 Alternatively, if you have another computer that already has a synced blockchain, you can copy the data in the .TurtleCoin or Appdata/Roaming/TurtleCoin folder onto your SSD and enjoy starting with a fully synced chain!
 

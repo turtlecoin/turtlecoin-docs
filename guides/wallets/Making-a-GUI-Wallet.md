@@ -12,10 +12,14 @@ Guide coming soon!
 
 Shellnet is a TurtleCoin Web Wallet developed and maintained by dsanon.
 
+You can check out a guide [here](Using-Shellnet).
+
 ## [TurtleWallet Web Wallet](https://turtlewallet.lol/)
 
 TurtleWallet is a TurtleCoin Web Wallet developed and maintained by dsanon.
 
+<!--
 ## [TRTLFun Web Wallet](https://trtlfun.com/)
 
 TRTLFun is a TurtleCoin Web Wallet developed and maintained by ?.
+-->

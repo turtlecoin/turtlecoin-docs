@@ -4,7 +4,7 @@
 
 Here's a quick image of zedwallet in action:
 
-![zedwallet](guides/wallets/images/screenshot_zedwallet.png)
+![zedwallet](images/screenshot_zedwallet.png)
 
 ## Downloading
 
@@ -40,11 +40,11 @@ unzip turtlecoin-...-linux.zip
 
 Running `TurtleCoind` will start the *TurtleCoind* network daemon, which will connect to the network and begin downloading and verifying the TurtleCoin blockchain.  
 
-Because the blockchain is constantly growing, the file size always increases (the blockchain is currently over 35 GB), and *TurtleCoind must verify every block*, which is both CPU and disk intensive. An SSD with at least this much free disk space is recommended, unless you plan to use [remote nodes](Using-remote-nodes). 
+Because the blockchain is constantly growing, the file size always increases (the blockchain is currently over 35 GB), and *TurtleCoind must verify every block*, which is both CPU and disk intensive. An SSD with at least this much free disk space is recommended, unless you plan to use [remote nodes](Using-Remote-Nodes). 
 
 ### Using Checkpoints
 
-In **versions 0.4.3+** you can sync a fresh chain from block 0 much quicker by using checkpoints. Follow [this guide](Using-checkpoints) to learn more.
+In **versions 0.4.3+** you can sync a fresh chain from block 0 much quicker by using checkpoints. Follow [this guide](Using-Checkpoints) to learn more.
 
 ### Windows
 
@@ -238,7 +238,7 @@ Depending on the amount you transfer, you may need to wait a while for confirmat
 
 Example:
 
-![transfer](guides/wallets/images/transfer-simple.png)
+![transfer](images/transfer-simple.png)
 
 
 #### Optimizing your Wallet
@@ -258,7 +258,7 @@ Full optimization completed!
 
 When it is completed, it will print out a green message `Full optimization completed!`
 
-![optimize](guides/wallets/images/optimize-simple.png)
+![optimize](images/optimize-simple.png)
 
 #### Payment ID<a name="tx-trtl-p-id"></a>
 
@@ -268,7 +268,7 @@ Because transactions on the TurtleCoin blockchain are privatized, in some situat
 
 To send a transaction with a payment ID, enter it when prompted to.
 
-![p-id](guides/wallets/images/p-id-simple.png)
+![p-id](images/p-id-simple.png)
 
 Note that typically, the service/recipient will generate and provide the required payment ID.
 

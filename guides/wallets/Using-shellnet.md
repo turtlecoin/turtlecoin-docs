@@ -4,7 +4,7 @@
 
 Here's a quick image of Shellnet in action:
 
-![shellnet](guides/wallets/images/shell-ss.png)
+![shellnet](images/shell-ss.png)
 
 ## Using Shellnet
 
@@ -23,13 +23,13 @@ To login to your wallet, go to the [login page](https://shellnet.pw/login)
 
 Enter the username and password you chose when signup up and press `LOGIN`: 
 
-![shell-welcome](guides/wallets/images/shell-ss.png)
+![shell-welcome](images/shell-ss.png)
 
 ### Viewing Wallet Address
 
 Your wallet's public address is available under `Wallet Info` next to `Address` on the home screen:
 
-![shell-addr](guides/wallets/images/shell-addr.png)
+![shell-addr](images/shell-addr.png)
 
 To copy it to your clipboard, press the small icon next to it.
 
@@ -44,19 +44,19 @@ In the event of a lost or corrupted wallet file, computer crash, etc., the *View
 
 To view your keys, click on the `export keys` button in the top left.
 
-![export-button](guides/wallets/images/shell-out-bttn.png)
+![export-button](images/shell-out-bttn.png)
 
 Confirm your password when prompted
 
 Your Private Spend and View key will now be displayed:
 
-![keys](guides/wallets/images/ss-keys.png)
+![keys](images/ss-keys.png)
 
 ### Viewing Wallet Balance
 
 Your wallet's balance is available under `Wallet Info` next to `Available` on the home screen
 
-![balance](guides/wallets/images/shell-balance.png)
+![balance](images/shell-balance.png)
 
 ### Sending TurtleCoin Transactions
 
@@ -76,8 +76,8 @@ Verify that the amount and address are correct, and click `CONFIRM` to send; if 
 
 Example:
 
-![transfer](guides/wallets/images/ss-transfer.png)
-![confirm](guides/wallets/images/ss-confirm.png)
+![transfer](images/ss-transfer.png)
+![confirm](images/ss-confirm.png)
 
 #### Payment ID<a name="tx-trtl-p-id"></a>
 
@@ -87,7 +87,7 @@ Because transactions on the TurtleCoin blockchain are privatized, in some situat
 
 To send a transaction with a payment ID, enter it in the `Enter Payment Id...` field
 
-![p-id](guides/wallets/images/ss-pid.png)
+![p-id](images/ss-pid.png)
 
 Note that typically, the service/recipient will generate and provide the required payment ID.
 
@@ -95,7 +95,7 @@ Note that typically, the service/recipient will generate and provide the require
 
 To log out of Shellnet, simply click on the `logout` button on the top left on the home page
 
-![logout](guides/wallets/images/ss-logout.png)
+![logout](images/ss-logout.png)
 
 ### Deleting your Account
 
@@ -104,7 +104,7 @@ To delete your account, click on the `delete account` button on the top right.
 It confirm that you want to delete your account; [save your keys](#exporting-keys) before deleting your account so that you can access your TRTL again!  
 To go ahead with deleting your account, press the `CONFIRM` button
 
-![delete](guides/wallets/images/ss-delete.png)
+![delete](images/ss-delete.png)
 
 After deleting, you will be redirected to the home page
 

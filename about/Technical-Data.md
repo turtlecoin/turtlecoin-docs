@@ -13,7 +13,7 @@ Block time: `30` second target block time - made by and for miners.
 
 Decimal places: Two decimal places, like USD  
 
-Supply Cap: `1,000,000,000,000`  
+Supply Cap: `1,000,000,000,000` (1 trillion)
 
 Address Prefix: `TRTL`   
 

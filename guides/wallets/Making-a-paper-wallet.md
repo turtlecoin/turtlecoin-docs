@@ -10,7 +10,7 @@ There are two options for a paper wallet.
 
 ## Making A Paper Wallet on an Internet-Connected Machine
 
-Go to [this link](https://turtlecoin.lol/wallet) and follow [these steps.](#generating-the-wallet)
+Go to [this link](https://turtlecoin.lol/wallet) and follow [these steps](#generating-the-wallet).
 
 ## Making a Paper Wallet on an Air-Gapped Machine
 
@@ -54,7 +54,7 @@ To use it, follow these steps:
 
 - After you're done mashing your keyboard, press `Generate Wallet`
 
-- The letters and numbers in the green box, starting with `TRTL`, is your public address. You can share it freely. We recommend [registering it with trtlbot++](Using-trtlbot-plus-plus#registering-your-wallet) in the [Discord server](http://chat.turtlecoin.lol/) so that you can access it easily(you can also get tips!).
+- The letters and numbers in the green box, starting with `TRTL`, is your public address. You can share it freely. We recommend [registering it with trtlbot++](../Using-trtlbot-plus-plus#registering-your-wallet) in the [Discord server](http://chat.turtlecoin.lol/) so that you can access it easily(you can also get tips!).
 
 - Save the `Seed Phrase`, the 25 words in the red box, safely.  
 **DO NOT SHARE IT WITH ANYONE**.  

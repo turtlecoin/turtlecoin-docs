@@ -24,7 +24,7 @@ Re-sync your daemon from scratch(see below question)
 Close any TurtleCoin-related software, then go to `%APPDATA%`, and delete the `TurtleCoin` folder.  
 Reopen TurtleCoind/the GUI wallet and let it re-sync.
 
-Alternatively, check [this guide](Using-checkpoints) for instructions on how to use checkpoints for a quicker sync, or try a [remote node](Using-remote-nodes)
+Alternatively, check [this guide](guides/wallets/Using-Checkpoints) for instructions on how to use checkpoints for a quicker sync, or try a [remote node](guides/wallets/Using-Remote-Nodes)
 
 #### Q: When I open TurtleCoind on a Mac, I get an error `Illegal instruction: 4`. How can I fix it?
 
@@ -81,7 +81,7 @@ You can also type `status` in the daemon and press enter to see the current heig
 
 #### Q: I think I should have more money in my balance than it is showing, what should I do?
 
-Re-sync your daemon from scratch(see [here](#q-how-can-i-re-sync-the-blockchain)), sync [using checkpoints](Using-checkpoints) or use a [remote node](Using-remote-nodes)) if you're using the GUI wallet.
+Re-sync your daemon from scratch(see [here](#q-how-can-i-re-sync-the-blockchain)), sync [using checkpoints](guides/wallets/Using-Checkpoints) or use a [remote node](guides/wallets/Using-Remote-Nodes)) if you're using the GUI wallet.
 If it still doesn't work, then [update](http://latest.turtlecoin.lol) your wallet!
 
 #### Q: I've tried resetting, but it isn't working. What should I do?
@@ -111,12 +111,12 @@ Your wallet is now being optimized. When it finishes, your transaction should be
 #### Q: How do I send TRTL?
 
 
-You can check [this out](Using-zedwallet#tx-trtl) for steps on how to send TRTL to someone.
+You can check [this out](guides/wallets/Using-zedwallet#tx-trtl) for steps on how to send TRTL to someone.
 
 #### Q: How do I send money to exchanges / use payment ID?
 
 
-You can check [this out](Using-zedwallet#tx-trtl-p-id) for steps on how to send TRTL with the payment ID.
+You can check [this out](guides/wallets/Using-zedwallet#tx-trtl-p-id) for steps on how to send TRTL with the payment ID.
 
 #### Q: What is mixin?
 
@@ -137,12 +137,12 @@ Currently it takes a couple of hours. This number will increase as more people u
 #### Q: Can I speed up the syncing of the blockchain?
 
 
-You can sync [with checkpoints](Using-checkpoints) (only with zedwallet) or use a [remote node](Using-remote-nodes)
+You can sync [with checkpoints](guides/wallets/Using-Checkpoints) (only with zedwallet) or use a [remote node](guides/wallets/Using-Remote-Nodes)
 
 #### Q: Can I skip the syncing?
 
 
-Yes, you can currently use a remote node with zedwallet, Nest wallet and WalletShell. The keys stay on your PC, so it's secure. Check [this guide](Using-remote-nodes) for more information. [Checkpoints](Using-checkpoints) are also an option if you're using zedwallet.
+Yes, you can currently use a remote node with zedwallet, Nest wallet and WalletShell. The keys stay on your PC, so it's secure. Check [this guide](guides/wallets/Using-Remote-Nodes) for more information. [Checkpoints](guides/wallets/Using-Checkpoints) are also an option if you're using zedwallet.
 
 #### Q: What does it mean if my balance is locked?
 
@@ -165,7 +165,7 @@ Go into this folder and delete the files in there. Then reboot, and try again.
 #### Q: How do I get started mining?
 
 
-You can check [this guide](Mining)
+You can check [this guide](guides/mining/Mining)
 
 #### Q: I'm using a Mac, can I still mine?
 
@@ -224,7 +224,7 @@ Yes, in case you get banned, or a pool goes down for some time, you can keep min
 #### Q: Where can I find a list of pools?
 
 
-[Here](Pools) is a list. It also has other nifty stats like the pool's fee, minimum payout and server location.
+[Here](guides/mining/Pools) is a list. It also has other nifty stats like the pool's fee, minimum payout and server location.
 
 #### Q: What does "pool weight" mean in XMR-Stak?
 
@@ -250,7 +250,7 @@ There are a few factors to consider when choosing a pool.
 
   This is the amount you need to mine before you get paid. Most pools will list this under the "Payments" tab.
 
-  You can check [this list](Pools) of pools. It specifies each pool's minimum payout as well as server location.
+  You can check [this list](guides/mining/Pools) of pools. It specifies each pool's minimum payout as well as server location.
 
 #### Q: How many hashes per second is good for my hardware?
 
@@ -262,7 +262,7 @@ There are a few factors to consider when choosing a pool.
 
 You can try the web miner [here](http://turtleminers.club/pages/webmine/). You will get a lower hashrate than native mining, and it doesn't have GPU support, however it's very easy to setup.
 
-Alternatively, you can hop onto the [Discord][Discord_Link] if you're having issues and we'll help you out.
+Alternatively, you can hop onto the [Discord][discord_link] if you're having issues and we'll help you out.
 
 #### Q: What is the miner executable / why isn't it working?
 
@@ -283,14 +283,12 @@ You need to have `TurtleCoind` open and synced to use this miner, unlike convent
 
 #### Q: Is there a calculator to see how much TRTL I'll mine per day?
 
-
 Your pool's homepage should have one - enter your hashrate and it'll give an estimate of how much TRTL you'll mine per day.  
-If there isn't, you can check one [here](https://turtle.land/#pools).
+If there isn't, you can check one [here](http://turtlepool.space/).
 
 ### XMR-Stak Issues
 
 #### Q: How do I view my hashrate in XMR-Stak?
-
 
 Press `h` in the XMR-Stak window.
 
@@ -313,7 +311,7 @@ This could be caused by multiple issues:
 #### Q: How can I use just my GPU or CPU to mine in XMR-Stak?
 
 
-If you're using XMR-Stak, you can start the miner with a certain command. Check [this out](XMR-Stak-Guide#to-start-xmr-stak-without-using-your-cpugpu-follow-these-steps--) for more info.
+If you're using XMR-Stak, you can start the miner with a certain command. Check [this out](guides/mining/XMR-Stak-Guide#to-start-xmr-stak-without-using-your-cpugpu-follow-these-steps--) for more info.
 
 #### Q: XMR-Stak is crashing on startup, with an error about CUDA. What am I doing wrong?
 
@@ -397,12 +395,12 @@ Thus to protect against that scenario you could transfer any TRTL balance to one
 #### Q: Can I make a paper wallet?
 
 
-Yes, you can view the guide [here](Making-a-paper-wallet)
+Yes, you can view the guide [here](guides/wallets/Making-a-Paper-Wallet)
 
 #### Q: I made a paper wallet, how do I use it?
 
 
-You can check out [this guide](recovering-your-wallet) for steps on how to import your paper wallet into a wallet of your choice(choose a wallet and import the keys).
+You can check out [this guide](guides/wallets/Recovering-your-Wallet) for steps on how to import your paper wallet into a wallet of your choice(choose a wallet and import the keys).
 
 #### Q: Can I view the balance of my wallet online?
 
@@ -421,9 +419,9 @@ Read a great post about the justification for it [here](https://medium.com/@turt
 
 There are multiple ways to acquire TRTL, for example:
 
-* Mining - see [here](Mining)
+* Mining - see [here](guides/mining/Mining)
 * Buying - TRTL is currently available on these exchanges: [TradeOgre](https://tradeogre.com/exchange/BTC-TRTL) and [TradeSatoshi](https://tradesatoshi.com/Exchange/?market=TRTL_BTC)
-* Bounties - Bounties for developing TRTL software, spreading the word of TRTL, and many other things are often posted in the #bounties channel on [Discord][Discord_Link]. Check the pinned messages for current bounties.
+* Bounties - Bounties for developing TRTL software, spreading the word of TRTL, and many other things are often posted in the #bounties channel on [Discord][discord_link]. Check the pinned messages for current bounties.
 * Tips - Turtles with often tip each other, especially if you make spicy memes in the `#memes` channel
 * Faucet - Head over to the faucets-
   * [madk's faucet](https://faucet.trtl.me/) - 10 TRTL, thrice a day
@@ -436,13 +434,13 @@ There are multiple ways to acquire TRTL, for example:
 #### Q: Is there a web wallet?
 
 
-Yes, we have a few. You can learn more about them in [this guide](Using-a-Web-Wallet).
+Yes, we have a few. You can learn more about them in [this guide](guides/wallets/Using-a-Web-Wallet).
 
 
 #### Q: Are there any light wallets / mobile wallets?
 
 
-None are ready for usage right now, but they are being worked on. Check the development channels in [Discord][Discord_Link] to see how people are getting on, and feel free to join in if you're a programmer!
+None are ready for usage right now, but they are being worked on. Check the development channels in [Discord][discord_link] to see how people are getting on, and feel free to join in if you're a programmer!
 
 #### Q: What happend to RainBorg/Raindance?
 
@@ -471,11 +469,11 @@ although there are currently a few other unique ones-
 #### Q: How do I make sure a pool isn't forked? 
 
 
-You can type in `/forked` in the `#bots` channel in the [Discord][Discord_Link] server, which will return with a list of pools which are possibly forked.
+You can type in `/forked` in the `#bots` channel in the [Discord][discord_link] server, which will return with a list of pools which are possibly forked.
 
 #### Q: I have a question which wasn't answered here, what should I do?
 
 
-[Join the Discord server][Discord_Link], and come to the `#help` channel, we'll try and fix any issues.
+[Join the Discord server][discord_link], and come to the `#help` channel, we'll try and fix any issues.
 
-[Discord_Link]:http://chat.turtlecoin.lol/
+[discord_link]:http://chat.turtlecoin.lol/

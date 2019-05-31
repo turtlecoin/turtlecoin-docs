@@ -28,19 +28,15 @@ XMRig is a little bit different to XMR-Stak, you need to download a CPU and GPU 
 
 Please follow [this guide](XMRIG-Guide) to start mining TurtleCoin with XMRig.
 
-### 3. Cloud Mining
-
-Please follow [this guide](Cloud-Mining) to mine with the cloud.
-
-### 4. SBC/Raspberry Pi Mining
+### 3. SBC/Raspberry Pi Mining
 
 Please follow [this guide](Mining-with-SBC) to mine with a SBC/Rasperry Pi.
 
-### 5. Mobile Mining
+### 4. Mobile Mining
 
 **Please note:** Using your mobile to mine TurtleCoin is not effective and should only be done for the lulz. It may also cause the phone to overheat and result in premature silicon degradation, shortening the lifespan of your phone.
 
-Please follow [this guide](Mining-with-Phone) to mine with your mobile phone.
+Please follow [this guide](mobile-mining/Mining-with-Phone) to mine with your mobile phone.
 
 ## Pools
 

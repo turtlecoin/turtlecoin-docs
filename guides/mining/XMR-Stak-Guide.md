@@ -97,7 +97,7 @@ Enter `cryptonight_turtle`
 
 4.  `- Username (Wallet address or pool login):`  
 
-    If you have not yet downloaded and ran the TurtleCoin core software to sync the blockchain and create a wallet, you can make a [paper wallet](Making-a-paper-wallet) to start mining towards now, and import the wallet later.
+    If you have not yet downloaded and ran the TurtleCoin core software to sync the blockchain and create a wallet, you can make a [paper wallet](../wallets/Making-a-Paper-Wallet) to start mining towards now, and import the wallet later.
 
 5.  `- Password (mostly empty or x):`  
 
