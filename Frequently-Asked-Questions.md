@@ -362,7 +362,7 @@ If a reboot doesn't help, then press `Win` + `R` to open up the run box, then ty
 
 Navigate to the directory shown in the image, and ensure `Lock pages in memory` is turned on for your user account(`horia`, in this case, is a user account).
 
-![largepages](images/valloc.png)
+![largepages](assets/valloc.png)
 
 
 #### Q: I'm missing the file `vcruntime140.dll`. Where can I get this?

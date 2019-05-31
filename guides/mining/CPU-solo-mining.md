@@ -17,7 +17,7 @@ Go to your folder that has `miner.exe` in it and start a cmd prompt.
 
 - This can easily be done by moving to the `TurtleCoind` directory in Windows Explorer, then typing `cmd` in the search bar and hitting enter:
 
-![Opening cmd](../wallets/images/opening-cmd.png)
+![Opening cmd](../wallets/../../assets/opening-cmd.png)
 
 When it opens, type:  
 `miner --address TRTL.. --threads 4 --scan-time 1 --log-level 3`

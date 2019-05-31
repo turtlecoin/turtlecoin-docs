@@ -17,7 +17,7 @@
 - First, open a command prompt in the same directory as TurtleCoind.
 - This can easily be done by moving to the TurtleCoind directory in Windows Explorer, then typing `cmd` in the search bar and hitting enter:
 
-![Opening cmd](images/opening-cmd.png)
+![Opening cmd](../../assets/opening-cmd.png)
 - Finally, type `TurtleCoind.exe --load-checkpoints checkpoints.csv` in the command prompt.
 
 ### Linux, Mac
@@ -26,7 +26,7 @@
 - You can use the `cd` command to change to this directory. For example, `cd Downloads/turtlecoin-v0.5.0`
 - Alternatively, your file manager may provide the ability to open a terminal in your current directory. Navigate to the folder with TurtleCoind in, and try right clicking, to see if you can open a terminal there:
 
-![Opening terminal](images/open-term.png)
+![Opening terminal](../../assets/open-term.png)
 
 - Finally, type `./TurtleCoind --load-checkpoints checkpoints.csv` in the terminal.
 

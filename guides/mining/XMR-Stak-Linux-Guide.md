@@ -86,7 +86,7 @@ To compile from source, see the build instructions for your system [here](https:
 
 11. If you see something like this, that means it’s working!
 
-![workubuntu](images/xmrstak-ubuntuwork.png)
+![workubuntu](../../assets/xmrstak-ubuntuwork.png)
 
 ## XMR-Stak Setup and Configuration<a name="setup-and-config"></a>
 

@@ -30,7 +30,7 @@ The miner should now start mining, and the stats displayed show start updating, 
 
 You can tap the question marks on the right if you're unsure of what each value means
 
-![phone-mining](images/tony-monero-miner.png)
+![phone-mining](../../../assets/tm-miner.png)
 
 Congratulations! You're now mining with your phone!
 

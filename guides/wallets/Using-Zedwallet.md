@@ -4,7 +4,7 @@
 
 Here's a quick image of zedwallet in action:
 
-![zedwallet](images/screenshot_zedwallet.png)
+![zedwallet](../../assets/screenshot_zedwallet.png)
 
 ## Downloading
 
@@ -238,7 +238,7 @@ Depending on the amount you transfer, you may need to wait a while for confirmat
 
 Example:
 
-![transfer](images/transfer-simple.png)
+![transfer](../../assets/transfer-simple.png)
 
 
 #### Optimizing your Wallet
@@ -258,7 +258,7 @@ Full optimization completed!
 
 When it is completed, it will print out a green message `Full optimization completed!`
 
-![optimize](images/optimize-simple.png)
+![optimize](../../assets/optimize-simple.png)
 
 #### Payment ID<a name="tx-trtl-p-id"></a>
 
@@ -268,7 +268,7 @@ Because transactions on the TurtleCoin blockchain are privatized, in some situat
 
 To send a transaction with a payment ID, enter it when prompted to.
 
-![p-id](images/p-id-simple.png)
+![p-id](../../assets/p-id-simple.png)
 
 Note that typically, the service/recipient will generate and provide the required payment ID.
 
