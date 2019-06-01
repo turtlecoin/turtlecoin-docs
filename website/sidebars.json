@@ -1,23 +1,27 @@
 {
-  "docs":{
-     "My Example Category":[
-        "Home",
-        "guides/Using-trtlbot-plus-plus",
-        {
+  "Guides":{ 
+     "Mining":[
+      "guides/mining/Mining",
+      "guides/mining/XMR-Stak-Guide",
+      "guides/mining/XMR-Stak-Linux-Guide",
+      "guides/mining/XMRIG-Guide",
+      "guides/mining/Pools",
+      "guides/mining/Mining-with-SBC",
+      {
            "type":"subcategory",
-           "label":"Wallets",
+           "label":"Mobile Mining",
            "ids":[
-              "guides/wallets/Making-a-Wallet",
-              "guides/wallets/Using-Zedwallet"
+              "guides/mining/mobile-mining/Mining-with-Phone",
+              "guides/mining/mobile-mining/Using-AA-Miner",
+              "guides/mining/mobile-mining/Using-Termux",
+              "guides/mining/mobile-mining/Using-Tony-Monero"
            ]
         },
         {
            "type":"subcategory",
            "label":"Mining",
            "ids":[
-              "guides/mining/Mining",
-              "guides/mining/Mining-with-SBC",
-              "guides/mining/Pools"
+              
            ]
         },
         "README",
