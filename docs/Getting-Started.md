@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-# Getting Started with TurtleCoin
+<!-- # Getting Started with TurtleCoin -->
 
 ## What is TurtleCoin? 
 
