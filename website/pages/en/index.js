@@ -96,7 +96,7 @@ class Index extends React.Component {
       </Container>
     );
 
-    const Features = () => (
+    const QuickNav = () => (
       <Block layout="fourColumn">
         {[
           {
@@ -127,7 +127,7 @@ class Index extends React.Component {
       </Block>
     );
     
-    const LearnHow = () => (
+    const About1 = () => (
       <Block background="light">
         {[
           {
@@ -140,20 +140,20 @@ class Index extends React.Component {
       </Block>
     );
 
-    const TryOut = () => (
-      <Block id="try">
+    const About2 = () => (
+      <Block>
         {[
           {
             content: '',
             image: `${baseUrl}img/undraw_fun.svg`,
             imageAlign: 'left',
-            title: "One of TurtleCoin's main goals is to make things as simple and as accessible as possible for everyday people, creating a cryptocurrency which is inviting, fun and friendly.",
+            title: "One of TurtleCoin's main goals is to make things as simple and as accessible as possible for everyday people, creating a cryptocurrency which is inviting, fun, and friendly.",
           },
         ]}
       </Block>
     );
 
-    const Description = () => (
+    const About3 = () => (
       <Block background="light">
         {[
           {
@@ -167,19 +167,14 @@ class Index extends React.Component {
       </Block>
     );
 
-    const Showcase = () => {
-      return null;
-    };
-
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          <QuickNav />
+          <About1 />
+          <About2 />
+          <About3 />
         </div>
       </div>
     );

@@ -9,7 +9,7 @@
 // site configuration options.
 
 const siteConfig = {
-  title: 'TurtleCoin Wiki', // Title for your website.
+  title: 'TurtleCoin Docs', // Title for your website.
   tagline: 'Documentation for all things TurtleCoin',
   url: 'https://turtlecoin.github.io', // Your website URL
   baseUrl: '/turtlecoin-docs/', // Base URL for your project 
