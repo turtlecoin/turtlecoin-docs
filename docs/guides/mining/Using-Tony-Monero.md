@@ -34,6 +34,4 @@ You can tap the question marks on the right if you're unsure of what each value 
 
 Congratulations! You're now mining with your phone!
 
-
-
 Feeling the lagginess yet? ;)
