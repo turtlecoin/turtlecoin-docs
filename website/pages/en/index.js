@@ -126,27 +126,13 @@ class Index extends React.Component {
         ]}
       </Block>
     );
-
-    //const FeatureCallout = () => (
-      /*<Block>
-        {[
-          {
-            content: 'Information on contributing to TurtleCoin',
-            image: `${baseUrl}img/undraw_community.svg`,
-            imageAlign: 'top',
-            title: `<a href=${docUrl("about/Contributing")}>Contributing</a>`,
-          }
-        ]}
-      </Block>*/
-      //return null
-    //);
     
     const LearnHow = () => (
       <Block background="light">
         {[
           {
             content: '',
-            image: `${baseUrl}img/undraw_private.svg`,
+            image: `${baseUrl}img/undraw_money.svg`,
             imageAlign: 'right',
             title: 'TurtleCoin is a fast, easy and private cryptocurrency which allows you to send money to friends and businesses.',
           },
