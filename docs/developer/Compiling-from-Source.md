@@ -1,4 +1,6 @@
-# Compiling from Source
+---
+title: Compiling from Source
+---
 
 The instructions in the [README.md](https://github.com/turtlecoin/turtlecoin/blob/development/README.md) cover common platforms for compiling from source, it would be impractical to include them all.  
 Thus, this page exists to capture the other platforms/distros that TurtleCoin has been successfully compiled on.  

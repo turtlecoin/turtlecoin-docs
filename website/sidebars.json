@@ -1,31 +1,57 @@
 {
-  "Guides":{ 
-     "Mining":[
-      "guides/mining/Mining",
-      "guides/mining/XMR-Stak-Guide",
-      "guides/mining/XMR-Stak-Linux-Guide",
-      "guides/mining/XMRIG-Guide",
-      "guides/mining/Pools",
-      "guides/mining/Mining-with-SBC",
-      {
-           "type":"subcategory",
-           "label":"Mobile Mining",
-           "ids":[
-              "guides/mining/mobile-mining/Mining-with-Phone",
-              "guides/mining/mobile-mining/Using-AA-Miner",
-              "guides/mining/mobile-mining/Using-Termux",
-              "guides/mining/mobile-mining/Using-Tony-Monero"
-           ]
-        },
-        {
-           "type":"subcategory",
-           "label":"Mining",
-           "ids":[
-              
-           ]
-        },
-        "README",
-        "Contributors"
-     ]
-  }
-}
+   "intro": {
+      "Intro": [
+         "Getting-Started",
+         "Frequently-Asked-Questions"
+      ]
+   },
+   "guides": {
+      "About": [
+         "about/About-TurtleCoin",
+         "about/Background-and-History",
+         "about/Community",
+         "about/Contributing",
+         "about/Technical-Data",
+         "about/Timeline"
+      ],
+      "Mining": [
+         "guides/mining/Mining",
+         "guides/mining/Pools",
+         "guides/mining/XMR-Stak-Guide",
+         "guides/mining/XMR-Stak-Linux-Guide",
+         "guides/mining/XMRIG-Guide",
+         "guides/mining/CPU-Solo-Mining",
+         "guides/mining/Mining-with-SBC",
+         "guides/mining/Optimizing-RPi-TurtleCoin-Mining",
+         "guides/mining/Mining-with-Phone",
+         "guides/mining/Using-AA-Miner",
+         "guides/mining/Using-Termux",
+         "guides/mining/Using-Tony-Monero"
+      ],
+      "Wallets": [
+         "guides/wallets/Making-a-Wallet",
+         "guides/wallets/Making-a-Paper-Wallet",
+         "guides/wallets/Using-zedwallet",
+         "guides/wallets/Using-Checkpoints",
+         "guides/wallets/Using-Remote-Nodes",
+         "guides/wallets/Using-Shellnet",
+         "guides/wallets/Recovering-your-Wallet"
+      ],
+      "CryptoCurrency Fundamentals": [
+         "guides/crypto-funda/Smart-Contract"
+      ],
+      "Misc": [
+         "guides/Using-trtlbot-plus-plus"
+      ]
+   },
+   "devs": {
+      "For Developers": [
+         "developer/Resources",
+         "developer/Running-TurtleCoind-on-Pi",
+         "developer/TurtleCoind-behind-HAProxy",
+         "developer/Local-Testnet",
+         "developer/Compiling-From-Source",
+         "developer/Forking-TurtleCoin"
+      ]
+   }
+ }

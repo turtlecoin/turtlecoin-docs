@@ -8,7 +8,7 @@
 const React = require('react');
 
 class Footer extends React.Component {
-  docUrl(doc, language) {
+  docUrl(doc, language='') {
     const baseUrl = this.props.config.baseUrl;
     const docsUrl = this.props.config.docsUrl;
     const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
@@ -22,6 +22,7 @@ class Footer extends React.Component {
   }
 
   render() {
+    const repoUrl = `https://github.com/turtlecoin/turtlecoin-docs`
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
@@ -37,30 +38,22 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
+            <a href={this.docUrl('Getting-Started')}>
+              Getting Started
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
+            <a href={this.docUrl('guides/Using-trtlbot-plus-plus.html')}>
+              Guides
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
+            <a href={this.docUrl('developer/Resources.html')}>
+              Developer Resources
             </a>
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
+            <a href="http://chat.turtlecoin.lol/">Discord Chat</a>
+            <a href="https://reddit.com/r/trtl/">Reddit</a>
             <a
-              href="https://stackoverflow.com/questions/tagged/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Stack Overflow
-            </a>
-            <a href="https://discordapp.com/">Project Chat</a>
-            <a
-              href="https://twitter.com/"
+              href="https://twitter.com/_turtlecoin"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
@@ -68,13 +61,13 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://blog.turtlecoin.lol/">Blog</a>
+            <a href="https://github.com/turtlecoin">GitHub</a>
             <a
               className="github-button"
-              href={this.props.config.repoUrl}
+              href="https://github.com/turtlecoin/turtlecoin-docs"
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
+              data-count-href={`${repoUrl}/stargazers`}
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
@@ -83,19 +76,11 @@ class Footer extends React.Component {
           </div>
         </section>
 
-        <a
-          href="https://opensource.facebook.com/"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="fbOpenSource">
-          <img
-            src={`${this.props.config.baseUrl}img/oss_logo.png`}
-            alt="Facebook Open Source"
-            width="170"
-            height="45"
-          />
-        </a>
-        <section className="copyright">{this.props.config.copyright}</section>
+        <div>
+          <section className="copyright">{this.props.config.copyright1}</section>
+          <section className="copyright">{this.props.config.copyright2} <a href="https://opensource.org/licenses/MIT">MIT License</a></section>
+          <section className="copyright">{this.props.config.copyright3} <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public V3 License</a></section>
+        </div>
       </footer>
     );
   }

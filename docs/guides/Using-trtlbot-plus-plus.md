@@ -1,4 +1,6 @@
-# Using trtlbot++
+---
+title: Using trtlbot++
+---
 
 ## Registering your Wallet
 

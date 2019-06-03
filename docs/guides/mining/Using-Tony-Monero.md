@@ -1,4 +1,6 @@
-# Using Tony Monero
+---
+title: Mining with Tony Monero
+---
 
 ### Please note: Using your mobile to mine TurtleCoin is not effective and should only be done for the lulz. It may also cause the phone to overheat and result in premature silicon degradation, shortening the lifespan of your phone.
 
@@ -7,11 +9,11 @@
 3. Read through the agreement and accept/decline (the `EXIT` button). To use it, you will have to accept the agreement.
 4. Press the play button on the top right and wait for the application to test your device
 5. If your device is supported, you will be brought to a screen with a success message.
-6. Check [Tony Monero Configuration](#tony-xmr-config)
+6. Check [Tony Monero Configuration](#tony-monero-configuration)
 
 *You should note that by using the Tony Monero app, you will be contributing 10% of your hashpower to the developer's wallet (while you are mining)*
 
-## Tony Monero Configuration<a name="tony-xmr-config"></a>
+## Tony Monero Configuration
 
 1. Leave `Profile selection` as default for now.
 2. Enter your TurtleCoin wallet address
@@ -26,11 +28,9 @@
 
 The miner should now start mining, and the stats displayed show start updating, displaying your hashrate and the like(it may take a few minutes to update)
 
-### Tony Monero
-
 You can tap the question marks on the right if you're unsure of what each value means
 
-![phone-mining](../../../assets/tm-miner.png)
+![phone-mining](../../assets/tm-miner.png)
 
 Congratulations! You're now mining with your phone!
 

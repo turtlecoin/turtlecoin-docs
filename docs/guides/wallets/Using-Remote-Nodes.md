@@ -1,3 +1,7 @@
+---
+title: Using a Remote Node
+---
+
 # Using Remote Nodes
 
 In case you don't want to download the blockchain and verify it everytime, you can instead use a Remote Node to quickly sync the blockchain.

@@ -1,4 +1,6 @@
-# TurtleCoin Community
+---
+title: TurtleCoin Community
+---
 
 Come and socialize with us! You can come on over and chill with some other turtles at a ton of places!
 

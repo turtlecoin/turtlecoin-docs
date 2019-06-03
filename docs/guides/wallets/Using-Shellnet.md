@@ -1,4 +1,6 @@
-# Using Shellnet
+---
+title: Using Shellnet
+---
 
 ## Screenshot
 
@@ -66,7 +68,7 @@ To send Turtlecoin; under `Send Transaction` on the home screen:
 
 - Enter the amount of TRTL you want to send
 
-- Enter the payment ID if the recipient has provided one. Check the [payment ID section](#tx-trtl-p-id) if you're not sure when/how to use it
+- Enter the payment ID if the recipient has provided one. Check the [payment ID section](#payment-id) if you're not sure when/how to use it
 
 After that, click `SEND`
 
@@ -79,7 +81,7 @@ Example:
 ![transfer](../../assets/ss-transfer.png)
 ![confirm](../../assets/ss-confirm.png)
 
-#### Payment ID<a name="tx-trtl-p-id"></a>
+#### Payment ID
 
 Because transactions on the TurtleCoin blockchain are privatized, in some situations a payment ID is necessary for the recipient to be able to determine where the payment came from, for instance when depositing to an exchange or other service.
 

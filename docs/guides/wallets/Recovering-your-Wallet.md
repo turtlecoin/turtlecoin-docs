@@ -1,4 +1,6 @@
-# Recovering your Wallet
+---
+title: Recovering your Wallet
+---
 
 In case you have lost your wallet, but still have either your private spend and view keys *or* your 25 word mnemonic seed, you can still recover it. Below are the guides for various types of wallets.
 
@@ -14,7 +16,7 @@ View [this guide](Using-zedwallet#private-spend-and-view-keys) for steps on reco
 
 Guide coming soon!
 
-<!--#### Nest Wallet<a name="keys-nest-wallet"></a>
+<!--#### Nest Wallet
 
 View [this guide](Using-nest-wallet#private-view-and-spend-keys) for steps on recovering your wallet with your private view and spend keys with Nest Wallet.
 -->
@@ -33,7 +35,7 @@ Guide coming soon!
 
 Guide coming soon!
 
-<!--#### Nest Wallet<a name="25-nest-wallet"></a>
+<!--#### Nest Wallet
 
 View [this guide](Using-nest-wallet#25-word-mnemonic-seed) for steps on recovering your wallet with your 25 word mnemonic seed with Nest wallet.
 -->

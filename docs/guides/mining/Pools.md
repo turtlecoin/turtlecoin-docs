@@ -1,6 +1,10 @@
-﻿# List of Mining Pools
+---
+title: Mining Pools
+---
 
-Unless you want to solo mine, which is unfeasible for many people, you will need a pool to mine towards. Make sure to choose the one closest to you!
+Unless you want to [solo mine](CPU-Solo-Mining), which is unfeasible for many people, you will need a pool to mine towards. Make sure to choose the one closest to you!
+
+**Note**: While efforts are made to keep this table up-to-date, the most reliable source of pools will always be availble at [the explorer](https://explorer.turtlecoin.lol/pools.html)
 
 Here are some of the TurtleCoin mining pools (arranged alphabetically):
 

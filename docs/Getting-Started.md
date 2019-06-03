@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-<!-- # Getting Started with TurtleCoin -->
+![TurtleCoin Logo](assets/turtlecoin_logo.png) 
 
 ## What is TurtleCoin? 
 
@@ -18,7 +18,7 @@ There are multiple types of wallets you can use with TurtleCoin.
 
 To view a list of them, their interface and a brief description, as a well as guides on how to use them, you can check [this guide](guides/wallets/Making-a-Wallet).
 
-## 2. Start Mining TurtleCoin<a name="mining"></a>
+## 2. Start Mining TurtleCoin
 
 Mining is essentially the process of using your computer to help verify and secure a cryptocurrency network, in our case, it is the TurtleCoin network. By doing this, you will be rewarded with TurtleCoin.
 
@@ -26,7 +26,7 @@ If you want to learn about cryptocurrencies, mining is a great place to start!
 
 To view an in-depth guide on how to mine TurtleCoin, you can view [this guide](guides/mining/Mining)
 
-## 3. Socialize!<a name="socialize"></a>
+## 3. Socialize!
 
 We have an awesome community and would love for you to join in!
 

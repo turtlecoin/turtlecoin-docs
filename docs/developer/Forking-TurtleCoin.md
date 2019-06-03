@@ -1,4 +1,6 @@
-# Forking TurtleCoin
+---
+title: Forking TurtleCoin
+---
 
 ### **NB:** While efforts are made to keep this guide up-to-date, the most recent one will always be available [here](https://turtlecoin.github.io/fork/)
 

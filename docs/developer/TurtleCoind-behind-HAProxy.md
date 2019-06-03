@@ -1,3 +1,7 @@
+---
+title: TurtleCoind behind HAProxy
+---
+
 From polar-it on Discord
 
 There is a lot to add to this to fill details, however this is enough for people familar to get going ;)

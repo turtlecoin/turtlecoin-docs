@@ -1,7 +1,8 @@
-# Developer Resources
+---
+title: Developer Resources
+---
 
 Technical resources to start building on TurtleCoin.
-
 
 ## RPC API Clients
 

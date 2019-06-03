@@ -1,14 +1,16 @@
-# How to Mine TurtleCoin with an SBC
+---
+title: Mining with a SBC
+---
 
-The following guide will show you how to compile a CPU miner (xmrig) for SBCs like the Raspberry Pi.
+The following guide will show you how to compile a CPU miner (XMRig) for SBCs like the Raspberry Pi.
 
-If you're using a rpi3 or rpi3b+, check out [this guide](Optimizing-RPi-TurtleCoin-Mining) for a more optimized setup.
+If you're using a RPi3 or RPi3B+, check out [this guide](Optimizing-RPi-TurtleCoin-Mining) for a more optimized setup.
 
-What are the benefits of compiling xmrig from scratch?
-  - You'll have the most up-to-date version of xmrig
-  - You can optimize xmrig for specific SBCs (improves hash rate)
-  - You can compile xmrig with different releases of GCC (may improve hash rate)
-  - It's possible to disable certain features of xmrig ([more info](https://github.com/xmrig/xmrig/wiki/Ubuntu-Build#additional-cmake-options))
+What are the benefits of compiling XMRig from scratch?
+  - You'll have the most up-to-date version of XMRig
+  - You can optimize XMRig for specific SBCs (improves hash rate)
+  - You can compile XMRig with different releases of GCC (may improve hash rate)
+  - It's possible to disable certain features of XMRig ([more info](https://github.com/xmrig/xmrig/wiki/Ubuntu-Build#additional-cmake-options))
   
 ## Setup
 
@@ -24,9 +26,9 @@ After that's done, we're going to install some tools that are important for the 
 sudo apt-get install git build-essential cmake make libuv1-dev libmicrohttpd-dev gcc g++ automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev
 ```
 
-## Compiling xmrig
+## Compiling XMRig
 
-At this step we'll obtain the latest binaries of xmrig and create a directory called `build`:
+At this step we'll obtain the latest binaries of XMRig and create a directory called `build`:
 
 ```
 cd ~
@@ -34,7 +36,7 @@ git clone https://github.com/xmrig/xmrig.git
 cd xmrig && mkdir build && cd build
 ```
 
-Now we specify the build flags to optimize xmrig for your SBC in particular. You'll have to **only choose one of these**:
+Now we specify the build flags to optimize XMRig for your SBC in particular. You'll have to **only choose one of these**:
 
 * for any SBC:
 ```
@@ -68,9 +70,9 @@ make
 
 To speed up the compilation you can add `-j [amount_of_CPU_cores]`. On a Raspberry Pi 2/3 this would be `make -j 4` for example.
 
-## Configuring and Running xmrig
+## Configuring and Running XMRig
 
-First we need to copy `config.json` to the same directory the xmrig executable is located:
+First we need to copy `config.json` to the same directory the XMRig executable is located:
 
 ```
 cp ~/xmrig/src/config.json config.json
@@ -84,7 +86,7 @@ nano config.json
 
 Your terminal should display the contents of `config.json`. 
 
-* In order to mine TurtleCoin, we tell xmrig what algorithm you want to mine. Look out for the `"algo":` setting and change it to `"algo": "cryptonight-pico/trtl",`
+* In order to mine TurtleCoin, we tell XMRig what algorithm you want to mine. Look out for the `"algo":` setting and change it to `"algo": "cryptonight-pico/trtl",`
 
 * In place of `"url": "donate.v2.xmrig.com:3333",` you'll need to choose a pool to mine towards. Make sure to choose the right port. You can check the full list of pools [here](https://github.com/turtlecoin/turtlecoin/wiki/pools).
 

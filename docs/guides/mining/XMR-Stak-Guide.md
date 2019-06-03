@@ -1,4 +1,6 @@
-# How to Set Up XMR-Stak
+---
+title: Mining with XMR-Stak
+---
 
 XMR-Stak is a unified miner, which means the same program will be used to mine with both your CPU and your GPU. It will automatically detect your hardware and adjust the settings accordingly.
 
@@ -8,7 +10,7 @@ XMR-Stak is a unified miner, which means the same program will be used to mine w
 2. Make a folder called `TurtleCoin Miner` on your Desktop and unzip the files you just downloaded for XMR-Stak in there.
 3. Double-click on `xmr-stak.exe`.
 
-    #### To start XMR-Stak without using your CPU/GPU, follow these steps <a name= "#xmr-stak-no-cpu-gpu"> </a>
+    ### To start XMR-Stak without using your CPU/GPU, follow these steps
 
     - Open Command Prompt
 
@@ -22,7 +24,7 @@ XMR-Stak is a unified miner, which means the same program will be used to mine w
     **If you want to use both your CPU and your GPU, ignore these steps. Just launch `xmr-stak.exe`**
 
 4. Click `Yes` when it asks if you want to run as Administrator. This is so that the program can see what hardware you're running.
-5. Check [XMR-Stak Setup and Configuration](#setup-and-config)
+5. Check [XMR-Stak Setup and Configuration](#xmr-stak-setup-and-configuration)
 
 ## Downloading and Installing for Mac
 
@@ -36,7 +38,7 @@ View [this guide](XMR-Stak-Linux-Guide) to get started with XMR-Stak on Linux.
 
 
 
-## XMR-Stak Setup and Configuration<a name="setup-and-config"></a>
+## XMR-Stak Setup and Configuration
 
 Upon first launching XMR-Stak, the software will ask you several setup and configuration questions.
 

@@ -1,5 +1,6 @@
-
-# Contributing to TurtleCoin
+---
+title: Contributing
+---
 
 To help contribute and improve the TurtleCoin project, you can:
 

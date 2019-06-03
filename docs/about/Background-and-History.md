@@ -1,4 +1,8 @@
-# How and Why was TurtleCoin Created?
+---
+title: Background and History
+---
+
+## How and Why was TurtleCoin Created?
 
 TurtleCoin was created on December 9th, 2017 by RockSteady and Bebop.
 
@@ -10,7 +14,7 @@ We have a strong belief in our no-funding strategy; if we make a cool product, t
 
 TurtleCoin was created with **No** Pre-Mine, **No** ICO, and **No** Shenanigans.
 
-# Our Background
+## Our Background
 
 Most of us are full-time developers on other projects, and this is our way to give back to the community with something fun.
 

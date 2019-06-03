@@ -1,4 +1,6 @@
-# Using Termux
+---
+title: Mining with Termux
+---
 
 ### Please note: Using your mobile to mine TurtleCoin is not effective and should only be done for the lulz. 
 It may also cause the phone to overheat and result in premature silicon degradation, shortening the lifespan of your phone.

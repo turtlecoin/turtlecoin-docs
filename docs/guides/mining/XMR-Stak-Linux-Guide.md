@@ -1,10 +1,14 @@
-# How to Set Up XMR-Stak on Linux
+---
+title: Mining with XMR-Stak on Linux
+---
 
 Native binaries may be available for your distribution's package manager.
 
 Precompiled binaries are available [here](https://github.com/fireice-uk/xmr-stak/releases)
 
 To compile from source, see the build instructions for your system [here](https://github.com/fireice-uk/xmr-stak/blob/master/doc/compile_Linux.md)
+
+## Compiling
 
 *Guide sponsored by Monerise*
 
@@ -82,13 +86,14 @@ To compile from source, see the build instructions for your system [here](https:
 
     `./xmr-stak`
 
-10. Check [XMR-Stak Setup and Configuration](#setup-and-config)
+- [Compiling](#compiling)
+- [XMR-Stak Setup and Configuration](#xmr-stak-setup-and-configuration)
 
 11. If you see something like this, that means it’s working!
 
 ![workubuntu](../../assets/xmrstak-ubuntuwork.png)
 
-## XMR-Stak Setup and Configuration<a name="setup-and-config"></a>
+## XMR-Stak Setup and Configuration
 
 Upon first launching XMR-Stak, the software will ask you several setup and configuration questions.
 

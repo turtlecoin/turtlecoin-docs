@@ -1,3 +1,7 @@
+---
+title: Wallet Intro
+---
+
 # Making a TurtleCoin Wallet
 
 There are multiple different types of wallets you can choose to use for TurtleCoin, paper wallets, CLI wallets, GUI wallets and Web Wallets.
@@ -24,12 +28,18 @@ WalletShell, is a wallet written in Javascript which handles all of your needs a
 
 If you would like to use WalletShell, you can download it [here](https://github.com/turtlecoin/turtle-wallet-electron)
 
-## Web Wallet
+# Shellnet (Web Wallet)
 
-- [Shellnet](https://shellnet.pw)
-- [TurtleWallet.lol](https://turtlewallet.lol)
-<!--- [TRTLFun](https://trtlfun.com)-->
+Shellnet is a web wallet made by dsanon, and supports all the basic features you'd want in a TurtleCoin wallet, including exporting your keys
 
-## Mobile Wallet
+If you would like to use it, check out the guide [here](Using-Shellnet)
+
+# TurtleWallet (Web Wallet)
+
+TurtleWallet is a multi-featured web wallet made by Fexra, and includes features such as price charts, a dark mode, notifications, multiple accounts, as well as more.
+
+A guide is coming very soon for it!
+
+## TonChan
 
 TurtleCoin has a mobile wallet called [TonChan](https://play.google.com/store/apps/details?id=com.tonchan&hl=en) for Android devices. You can download the wallet from the Google Play store.

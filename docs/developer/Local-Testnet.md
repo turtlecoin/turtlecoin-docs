@@ -1,4 +1,6 @@
-# Setting up a local testnet
+---
+title: Local Testnet
+---
 
 Setting up a testnet using just one PC is very easy, and lets you test things out with very minimal setup.
 

@@ -1,4 +1,6 @@
-# Using Checkpoints to Sync Blockchain Faster
+---
+title: Using Checkpoints to Sync Faster
+---
 
 **Note**: You can presently only use checkpoints with zedwallet; the command-line wallet.  
 

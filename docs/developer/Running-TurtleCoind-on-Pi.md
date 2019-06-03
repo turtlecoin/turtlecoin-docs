@@ -1,4 +1,6 @@
-# How To Run a TurtleCoin Node on a Raspberry Pi
+---
+title: Running a Node on a Pi
+---
 
 This guide is going to walk you through the process of installing and setting up a 64 bit OS, downloading the TurtleCoin ARM binaries and syncing your node on a Raspberry Pi. ARM builds just recently got fixed, so this is great news for anyone that has been wanting to run a node on one.
 

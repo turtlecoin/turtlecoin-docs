@@ -1,4 +1,6 @@
-# Using Zedwallet
+---
+title: Using zedwallet
+---
 
 ## Screenshot
 
@@ -214,7 +216,7 @@ Total balance: 1100.00 TRTL
 [TRTL trtl]:
 ```
 
-### Sending TurtleCoin Transactions<a name="tx-trtl"></a>
+### Sending TurtleCoin Transactions
 
 To send Turtlecoin; at the Zedwallet menu:
 
@@ -226,7 +228,7 @@ To send Turtlecoin; at the Zedwallet menu:
 
 - Press `enter` to use the default fee of 0.1 TRTL (or set it higher if you're sending a large amount of TRTL)
 
-- Enter the payment ID if the recipient has provided one. Check the [payment ID section](#tx-trtl-p-id) if you're not sure when/how to use it
+- Enter the payment ID if the recipient has provided one. Check the [payment ID section](#payment-id) if you're not sure when/how to use it
 
 - If you make a mistake or need to stop the transaction, type `cancel` at any time
 
@@ -260,7 +262,7 @@ When it is completed, it will print out a green message `Full optimization compl
 
 ![optimize](../../assets/optimize-simple.png)
 
-#### Payment ID<a name="tx-trtl-p-id"></a>
+#### Payment ID
 
 Because transactions on the TurtleCoin blockchain are privatized, in some situations a payment ID is necessary for the recipient to be able to determine where the payment came from, for instance when depositing to an exchange or other service.
 
@@ -291,7 +293,7 @@ Bye.
 
 ### Recovering your Wallet
 
-#### Private Spend and View Keys<a name="recover-spend-view-keys"></a>
+#### Private Spend and View Keys
 
 To restore a wallet using spend and view keys; at the menu type `key_restore` and press `enter`:
 

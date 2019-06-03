@@ -1,4 +1,6 @@
-# Setting Up a Paper Wallet
+---
+title: Making a Paper Wallet
+---
 
 The main purpose of a paper wallet is to quickly create a wallet to start receiving funds.
 

@@ -1,6 +1,8 @@
-![TurtleCoin Logo](assets/turtlecoin_logo.png)
+---
+title: Welcome to the TurtleCoin Wiki
+---
 
-# :turtle: :turtle: :turtle: Welcome to the TurtleCoin Wiki :turtle: :turtle: :turtle:
+![TurtleCoin Logo](assets/turtlecoin_logo.png) 
 
 This wiki is the main source of documentation for newcomers to the TurtleCoin project. If this is your first time hearing about TurtleCoin, check out the [TurtleCoin website](https://turtlecoin.lol/).
 

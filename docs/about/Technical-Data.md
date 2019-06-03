@@ -1,4 +1,6 @@
-# Technical Data
+---
+title: Technical Data
+---
 
 Name: TurtleCoin  
 
