@@ -11,15 +11,15 @@
 const siteConfig = {
   title: 'TurtleCoin Wiki', // Title for your website.
   tagline: 'Documentation for all things TurtleCoin',
-  url: 'https://testturtle123sajo8.netlify.com', // Your website URL
-  baseUrl: '/', // Base URL for your project 
+  url: 'https://sajo8.github.io', // Your website URL
+  baseUrl: '/turtlecoin-docs/', // Base URL for your project 
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
   projectName: 'turtlecoin-docs',
-  organizationName: 'turtlecoin',
+  organizationName: 'sajo8',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -40,9 +40,10 @@ const siteConfig = {
   favicon: 'img/fav.png',
 
   /* Colors for website */
+  // See Brand Manual for more info on these
   colors: {
-    primaryColor: '#00853D',
-    secondaryColor: '#212721',
+    primaryColor: '#00853D', // green
+    secondaryColor: '#212721', // black
   },
 
   /* Custom fonts for website */
@@ -68,28 +69,22 @@ const siteConfig = {
   scripts: ['https://buttons.github.io/buttons.js'],
 
   // On page navigation for the current documentation page.
+  // Basically the ToC
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
 
-  // Open Graph and Twitter card images.
-  ogImage: 'img/undraw_online.svg',
-  twitterImage: 'img/undraw_tweetstorm.svg',
-
+  // Collapse categories
   docsSideNavCollapsible: true,
-  cname: 'docs.turtlecoin.lol',
+  //cname: 'docs.turtlecoin.lol',
+  // `.lol/docs/guides` -> `.lol/guides/`
   docsUrl: '',
+  // Shows "jump to top" button
   scrollToTop: true,
-
-  // Show documentation's last contributor's name.
-  // enableUpdateBy: true,
 
   // Show documentation's last update time.
   enableUpdateTime: true,
 
-  // You may provide arbitrary config keys to be used as needed by your
-  // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
 };
 
 module.exports = siteConfig;
