@@ -77,7 +77,7 @@ const siteConfig = {
   // Collapse categories
   docsSideNavCollapsible: true,
   // custom url
-  cname: 'docs.turtlecoin.lol',
+  //cname: 'docs.turtlecoin.lol',
   // `.lol/docs/guides` -> `.lol/guides/`
   docsUrl: '',
   // Shows "jump to top" button
