@@ -19,15 +19,12 @@
          "guides/mining/Mining",
          "guides/mining/Pools",
          "guides/mining/XMR-Stak-Guide",
-         "guides/mining/XMR-Stak-Linux-Guide",
          "guides/mining/XMRIG-Guide",
          "guides/mining/CPU-Solo-Mining",
          "guides/mining/Mining-with-SBC",
          "guides/mining/Optimizing-RPi-TurtleCoin-Mining",
-         "guides/mining/Mining-with-Phone",
-         "guides/mining/Using-AA-Miner",
          "guides/mining/Using-Termux",
-         "guides/mining/Using-Tony-Monero"
+         "guides/mining/Using-Crypto-Miner"
       ],
       "Wallets": [
          "guides/wallets/Making-a-Wallet",
