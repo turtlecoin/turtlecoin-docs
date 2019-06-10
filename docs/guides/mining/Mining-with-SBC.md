@@ -30,7 +30,7 @@ sudo apt-get install git build-essential cmake make libuv1-dev libmicrohttpd-dev
 
 At this step we'll obtain the latest binaries of XMRig and create a directory called `build`:
 
-```
+```bash
 cd ~
 git clone https://github.com/xmrig/xmrig.git
 cd xmrig && mkdir build && cd build
@@ -44,17 +44,17 @@ cmake ..
 ```
 
 * for the Raspberry Pi 2:
-```
+```bash
 cmake .. -DCMAKE_C_FLAGS="-mcpu=cortex-a7 -mtune=cortex-a7" -DCMAKE_CXX_FLAGS="-mcpu=cortex-a7 -mtune=cortex-a7"
 ```
 
 * for the Raspberry Pi 3:
-```
+```bash
 cmake .. -DCMAKE_C_FLAGS="-mcpu=cortex-a53 -mtune=cortex-a53" -DCMAKE_CXX_FLAGS="-mcpu=cortex-a53 -mtune=cortex-a53"
 ```
 
 * for the Asus Tinker Board:
-```
+```bash
 cmake .. -DCMAKE_C_FLAGS="-march=armv7-a" -DCMAKE_CXX_FLAGS="-march=armv7-a"
 
 ```
@@ -86,9 +86,9 @@ nano config.json
 
 Your terminal should display the contents of `config.json`. 
 
-* In order to mine TurtleCoin, we tell XMRig what algorithm you want to mine. Look out for the `"algo":` setting and change it to `"algo": "cryptonight-pico/trtl",`
+* In order to mine TurtleCoin, we tell XMRig what algorithm you want to mine. Look out for the `"algo":` setting and change it to `"algo": "cryptonight-pico",`
 
-* In place of `"url": "donate.v2.xmrig.com:3333",` you'll need to choose a pool to mine towards. Make sure to choose the right port. You can check the full list of pools [here](https://github.com/turtlecoin/turtlecoin/wiki/pools).
+* In place of `"url": "donate.v2.xmrig.com:3333",` you'll need to choose a pool to mine towards. Make sure to choose the right port. You can learn more about choosing a pool [here](Pools).
 
 * Instead of `"user": "YOUR_WALLET_ADDRESS",` simply paste your TurtleCoin wallet address.
 
@@ -106,4 +106,4 @@ Then start the miner:
 
 After entering this command, the miner will start scanning your hardware and begin to mine.
 
-[Congratulations](https://www.youtube.com/watch?v=SC4xMk98Pdc)! You did it! :)
+Congratulations! You did it! :)

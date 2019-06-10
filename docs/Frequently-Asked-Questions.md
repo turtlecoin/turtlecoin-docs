@@ -317,7 +317,7 @@ If you're using XMR-Stak, you can start the miner with a certain command. Check 
 ### Q: XMR-Stak is crashing on startup, with an error about CUDA. What am I doing wrong?
 
 
-If you are using a nVidia card, try opening `nvidia.txt` in the same directory as `XMR-Stak.exe`, and lowering the value of `threads` until it stops crashing.
+If you are using a Nvidia card, try opening `nvidia.txt` in the same directory as `XMR-Stak.exe`, and lowering the value of `threads` until it stops crashing.
 
 ### Q: I get a socket error when connecting to a pool in XMR-Stak. What am I doing wrong?
 

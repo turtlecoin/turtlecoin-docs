@@ -2,35 +2,37 @@
 title: Optimizing Mining on a RPi
 ---
 
-## Notes
+### Notes
 
 Looking for a more general SBC setup guide? Check out [this guide](Mining-with-SBC).
 
-# Overview
+## Overview
 
 To maximize your hashrate, it is very important that you select a 64-bit OS image, a quality miner and the most current compiler that you can.
 
-# OS Image
+## OS Image
 The 64-bit Ubuntu Server for Raspberry Pi3 is a good choice:
 
 http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.2-preinstalled-server-arm64+raspi3.img.xz
 
-You will need to write this image to an SD card with a utility such as Etcher (https://www.balena.io/etcher). Once your OS is written, insert your SD Card and boot your Pi.
+You will need to write this image to an SD card with a utility such as [Etcher](https://www.balena.io/etcher). Once your OS is written, insert your SD Card and boot your Pi.
 
 Once you've got it booted, you'll be asked for a username and password. These are both `ubuntu`.
 
 Once you've logged in, you'll be asked to change the password. For the current password, enter `ubuntu` again. Then, enter a new password, and confirm it.
 
-# Get the Latest Compiler
+## Get the Latest Compiler
 
 You will need to edit your sources.list file and add the debian testing repository in order to install gcc-8 and g++-8 on your system:
 
-``` 
+```
 sudo nano /etc/apt/sources.list
 ```
 Add this line to the end of the file:
 
-`deb http://ftp.us.debian.org/debian testing main contrib non-free`
+```
+deb http://ftp.us.debian.org/debian testing main contrib non-free
+```
 
 Then save it with `Ctrl-x` and then the following:
 
@@ -39,7 +41,7 @@ sudo apt-get update
 sudo apt-get install gcc-8 g++-8
 ```
 
-# Download Compile, and Configure Your Miner
+## Download Compile, and Configure Your Miner
 
 Now you need to install the required dependencies and the latest release of the xmrig miner and compile it with gcc-8.
 
@@ -60,7 +62,7 @@ cd ~
 sudo nano config.json.trtl
 ```
 
-Populate your configuration file with something similar to the code below. Make sure that "url", "pass", and "miner" are populated with the your own unique and proper values.
+Populate your configuration file with something similar to the code below. Make sure that `url`, `user`, and `pass` are populated with the your own unique and proper values.
 
 ```json
 {
@@ -80,7 +82,7 @@ Populate your configuration file with something similar to the code below. Make 
     "threads": null,
     "pools": [
         {
-            "url": "trtl.muxdux.com:4444",
+            "url": "YOUR_POOL_URL_PLUS_PORT_GOES_HERE",
             "user": "YOUR_TURTLE_ADDRESS_GOES_HERE",
             "pass": "YOUR_MINER_NAME_GOES_HERE",
             "keepalive": true,
@@ -117,7 +119,7 @@ Now you can start the miner using the start script:
 ./mineturtle
 ```
 
-# Conclusion
+## Conclusion
 
 Happy mining and make sure to support small pools and keep TurtleCoin mining decentralized.
 

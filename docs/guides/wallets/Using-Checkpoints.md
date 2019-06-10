@@ -19,7 +19,7 @@ title: Using Checkpoints to Sync Faster
 - First, open a command prompt in the same directory as TurtleCoind.
 - This can easily be done by moving to the TurtleCoind directory in Windows Explorer, then typing `cmd` in the search bar and hitting enter:
 
-![Opening cmd](../../assets/opening-cmd.png)
+![Opening cmd](../../assets/opening-win-cmd.png)
 - Finally, type `TurtleCoind.exe --load-checkpoints checkpoints.csv` in the command prompt.
 
 ### Linux, Mac
