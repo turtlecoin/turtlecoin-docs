@@ -88,7 +88,7 @@ After downloading the AppImage file, you'll need to mark it as an executable so 
 
 After completing one of the two above steps, you can launch the wallet simply by double clicking the AppImage file. I recommend moving the AppImage file into a dedicated folder inside your home directory for AppImages. A good location would be `/home/your_username/Apps`
 
-### Using Proton Wallet
+## Using Proton Wallet
 
 Upon opening Proton Wallet for the first time, you will see this splash screen:
 
