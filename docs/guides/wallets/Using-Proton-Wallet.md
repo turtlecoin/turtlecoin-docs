@@ -1,5 +1,5 @@
 ---
-title: How to Use Proton Wallet
+title: Using Proton Wallet
 ---
 
 ![Screenshot of Proton Wallet running](../../assets/screenshot-proton-wallet.png)
