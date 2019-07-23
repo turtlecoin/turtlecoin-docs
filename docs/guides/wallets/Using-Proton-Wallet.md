@@ -160,7 +160,7 @@ If you don't know what height to start scanning from, that's OK, just leave this
 
 After this, your wallet will automatically open. Add a password if desired by navigating to Wallet > Password in the top menu. You've now finished importing your wallet into Proton Wallet and are ready to start using it!
 
-### <span style="color:red">IMPORTANT: Make Sure Your Funds are Safe</span>
+### IMPORTANT: Make Sure Your Funds are Safe
 
 Each TurtleCoin™ wallet is essentially just a pair of keys (the *view key* and *spend key*) from which the public address is derived.
 It is **very** important to export these keys and back them up somewhere that is safe and secure (meaning somewhere reliable/permanent that no one else can access).
