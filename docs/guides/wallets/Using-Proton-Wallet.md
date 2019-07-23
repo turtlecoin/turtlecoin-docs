@@ -2,33 +2,7 @@
 title: How to Use Proton Wallet
 ---
 
-## Table of Contents
-
-- [Table of Contents](#Table-of-Contents)
-- [Downloading](#Downloading)
-- [Installing](#Installing)
-  - [Installing on Windows](#Installing-on-Windows)
-    - [Why do we have to do this anyway? Is it safe?](#Why-do-we-have-to-do-this-anyway-Is-it-safe)
-  - [Installing on Mac](#Installing-on-Mac)
-    - [Why do we have to do this anyway? Is it safe?](#Why-do-we-have-to-do-this-anyway-Is-it-safe-1)
-  - [Installing on Linux](#Installing-on-Linux)
-    - [Using the GUI](#Using-the-GUI)
-    - [Using the Command Line](#Using-the-Command-Line)
-  - [Using Proton Wallet](#Using-Proton-Wallet)
-  - [Creating a Wallet](#Creating-a-Wallet)
-  - [Opening a Wallet](#Opening-a-Wallet)
-  - [Restoring a Wallet from Seed or Keys](#Restoring-a-Wallet-from-Seed-or-Keys)
-    - [Private Spend and View Keys](#Private-Spend-and-View-Keys)
-    - [Mnemonic Seed](#Mnemonic-Seed)
-  - [IMPORTANT: Make Sure Your Funds are Safe](#IMPORTANT-Make-Sure-Your-Funds-are-Safe)
-  - [Viewing Wallet Address](#Viewing-Wallet-Address)
-  - [Viewing Wallet Balance](#Viewing-Wallet-Balance)
-  - [Sending Transactions](#Sending-Transactions)
-  - [Payment IDs and How to Use Them](#Payment-IDs-and-How-to-Use-Them)
-  - [Exiting the Wallet](#Exiting-the-Wallet)
-  - [Getting Help](#Getting-Help)
-
-![Proton wallet releases location](../../assets/screenshot-proton-wallet.png)
+![Screenshot of Proton Wallet running](../../assets/screenshot-proton-wallet.png)
 
 ## Downloading
 
