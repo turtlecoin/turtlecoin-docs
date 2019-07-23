@@ -2,35 +2,39 @@
 title: Using Proton Wallet
 ---
 
-## Screenshot
-
-Here'es a quick image of Proton Wallet:
-
-![protonwalletss](../../assets/screenshot-proton-wallet.png)
+![Proton wallet releases location](../../assets/screenshot-proton-wallet.png)
 
 ## Downloading
 
-Binary distributions can be found [here](https://github.com/turtlecoin/turtle-wallet-proton/releases/latest)
+The installers can be found [here](https://github.com/turtlecoin/turtle-wallet-proton/releases/latest) Download the appropriate file for your computer. The files are located under the "Assets" tag, just scroll down to the bottom of the latest release.
 
-Select the appropriate file for the target platform (Windows, Mac, Linux).
+![Screenshot of Proton Wallet](../../assets/proton-releases-location.png)
 
-Binaries are provided in a `.exe` file for Windows, a `.dmg` file for Mac, and either a `.AppImage` or `.snap` for Linux.  
+Just in case you're not sure what to download, here is a list of the files and what operating systems they go to:
+
+* **Windows** - `.exe` file
+* **Mac** - `.dmg` file
+* **Linux** - `.AppImage` file
+
+If you're on a snap-enabled Linux distribution, you can also install Proton Wallet through the snap store or through the command line utility by using `sudo snap install proton-wallet`.
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/proton-wallet)
 
 ## Installing 
 
 ### Installing on Windows
 
-Run the setup file you downloaded and follow the steps.
+After downloading the .exe file, navigate to the folder you downloaded it to and double-click it. You'll be greeted with an installer screen. Click through the options and install the program. After it is completed installing, you can launch it by double-clicking the icon on your desktop or navigating to Proton Wallet in the start menu.
+
+![Screenshot of the installer utility for windows](../../assets/proton-windows-installer.png)
 
 ### Installing on Mac
 
-Double click the .dmg file to run the app
+Double click the .dmg file, and then drag the icon into your home directory to install the program. 
 
 ### Installing on Linux
 
-**AppImage**
-
-After downloading, either:
+After downloading the AppImage file, either:
 
 - make it an executabe through chmod :`chmod +x proton-wallet.....AppImage`
 
@@ -40,19 +44,6 @@ After downloading, either:
   - And click `Allow executing file as program`  
   ![protonexecutelinux](../../assets/proton-linux-appimage.png)
 
-**Snap file**
-
-*Note*: This is not recommended. If you'd like to install it through snap, simply run `snap install proton-wallet`
-
-- Ensure [Snap is installed](https://docs.snapcraft.io/installing-snapd)
-- Open up a terminal (Ctrl + Shift + T)
-- `cd` to where you downloaded the file
-- Run `snap install proton-wallet.....snap`
-
-## Using ProtonWallet
-
-Open the wallet, either by running the executable or looking for it in your start menu.
-
 ### First Boot
 
 Upon opening Proton Wallet for the first time, you will see a splash screen.
@@ -61,7 +52,7 @@ Upon opening Proton Wallet for the first time, you will see a splash screen.
 
 This will appear only once, after this, the wallet will auto-open the last wallet opened, and opening other wallets or creating new ones will have to be done through the menu bar.
 
-You have the following options, click on the links to jump to associated guides.
+You have the following options, click on the link to jump to right section of this guide.
 
 - [Open an Existing Wallet](#Opening-a-Wallet)
 - [Create a New Wallet](#Creating-a-Wallet)
