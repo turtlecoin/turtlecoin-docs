@@ -2,6 +2,8 @@
 title: Using Proton Wallet
 ---
 
+Proton Wallet is a cross-platform GUI wallet that is written using JavaScript and the Electron framework together with React. The UI was inspired by Electrum's QT client. It's simple, easy to use, and utilizes the latest in backend technologies from the TurtleCoin™ development team.
+
 ![Screenshot of Proton Wallet running](../../assets/screenshot-proton-wallet.png)
 
 ## Downloading
