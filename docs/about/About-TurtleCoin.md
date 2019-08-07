@@ -33,7 +33,7 @@ To learn more about us, check out our other various articles, describing:
 
 - [Our Community](Community)
 
-- [How to Contribute](Contributing)
+- [How to Contribute](Contributiing)
 
 - [its Technical Data](Technical-Data)
 
