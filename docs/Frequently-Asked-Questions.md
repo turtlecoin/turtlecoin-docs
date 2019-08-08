@@ -490,7 +490,7 @@ Read a great post about the justification for it [here](https://medium.com/@turt
 There are multiple ways to acquire TRTL, for example:
 
 * Mining - see [here](guides/mining/Mining)
-* Buying - TRTL is currently available on these exchanges: [TradeOgre](https://tradeogre.com/exchange/BTC-TRTL) and [TradeSatoshi](https://tradesatoshi.com/Exchange/?market=TRTL_BTC)
+* Buying - You can buy TRTL at a couple of exchanges; check out [this link](https://www.coingecko.com/en/coins/turtlecoin?utm_content=turtlecoin&utm_medium=search_coin&utm_source=coingecko) for more info
 * Bounties - Bounties for developing TRTL software, spreading the word of TRTL, and many other things are often posted in the #bounties channel on [Discord][discord_link]. Check the pinned messages for current bounties.
 * Tips - Turtles with often tip each other, especially if you make spicy memes in the `#memes` channel
 * Faucet - Head over to the faucets-
