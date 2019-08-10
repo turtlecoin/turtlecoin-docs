@@ -179,7 +179,7 @@ Information taken from [here](https://github.com/fireice-uk/xmr-stak/blob/master
 ### CPU tweaks
 
 There is some explanation of what each setting does at the top of the `cpu.txt` file, (`low_power_mode`, `no_prefetch`, `affine_to_cpu`), but it's pretty vague and confusing to most.  
-Here some options will be discussed then have been seen to be benefitial/have a performance increase. However, results vary per system and this may not be work for every system perfectly.
+Here some options will be discussed then have been seen to be beneficial/have a performance increase. However, results vary per system and this may not be work for every system perfectly.
 
 The `cpu.txt` file is where you will set your cores, threads, and a few other settings. When you open the file you will see something like this
 
