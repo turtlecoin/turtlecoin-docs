@@ -268,9 +268,8 @@ Example hashrate: 3 KH/s
 
 For CPU's with hyperthreading(ex: 4 cores and 8 threads), you would add another line as you did before. However, take care with the `"affine_to_cpu"` part. Check out the notes at the top of the `cpu.txt` file for information on adjusting that.
 
-Next, we'll tweak the `"low_power_mode"` option.   
-My impression of this setting is that it increases the cache used - depending on the setting - by 2x, 3x, etc. (false - 5x) which can increase speeds.  
-For CN/Pico or cryptonight-turtle, `"true"` or `2` seems to be the sweet spot (for CPU's with enough cache). No increase has been seen for higher values.  
+Next, we'll tweak the `"low_power_mode"` option.     
+For CN/Pico or cryptonight-turtle, `"true"` or `2` seems to be the sweet spot (for CPU's with enough cache). No increase has been seen for higher values ( 5 is max ).  
 (Note: `"true"` and `2` are, in this case, the same value )
 
 Example hashrate: ~5.2 KH/s; about 1.1 KH/s per core
@@ -434,7 +433,7 @@ These settings on the example GPU yield 62c and ~30% fan speeds at 8.2 KH/s
 *Note*: This guide explains the GUI Windows version, Non-XL version  
 [This program](https://github.com/Eliovp/amdmemorytweak/releases/tag/0.2.3)
 
-BIOS mods can be scary; they can permanently brick a card and can be confusing and compicated for the non-initiated. But the benefits can be enticing. So let's talk about something I just begain to play with.
+BIOS mods can be scary; they can permanently brick a card and can be confusing and compicated for the non-initiated. But the benefits can be enticing. So let's talk about an option besides flashing your bios.
 
 AmdMemoryTweaker is similar to "The Ethlargement Pill" Nvidia GPU's use for Ethereum mining. It adjusts memory timing straps on the fly, meaning we can adjust the parts of a BIOS that help us acheive higher speeds without having to flash the BIOS.  
 
@@ -449,7 +448,7 @@ Memory strap timings are different depending on the style of memory onboard your
 
 You can use [GPU-Z](https://www.techpowerup.com/gpuz/) to see the memory style on your GPU
 
-From my experience using this program, I have gotten a stock BIOS RX 580 8GB Samsung mem (MSI OC Armor) from 6.2 KH/s to 8.1 KH/s, with just some minor tweaks and little to no change in power consumption and temps of the gpu. 
+From my experience using this program, in this example a stock BIOS RX 580 8GB Samsung memory (MSI OC Armor) can go from 6.2 KH/s to 8.1 KH/s, with just some minor tweaks and little to no change in power consumption and temps of the gpu. 
 
 When you open the Amd Memory Tweaker program it will load up the idle state of the GPU and start the miner. After it's been running for a few seconds, and reached up to full usage/speed, you can now "refresh" the readings. (Click the refresh icon in the bottom right)
 
@@ -496,8 +495,8 @@ Once you get a setting that works and is stable, you can export it, save it, and
 
 Crash warnings - 
 
-- a tRFC setting below 130 would make my GPU would fail, stop hashing, and sometimes lock up the rig. (would sometimes take 5 minutes of running till it crashed)
-- a tRC setting below 67 would cause my GPU would fail, and stop hashing.
+- a tRFC setting below 130 would make the example gpu fail, stop hashing, and sometimes lock up the rig. (would sometimes take 5 minutes of running till it crashed)
+- a tRC setting below 67 would cause the example GPU would fail, and stop hashing.
 - REF 0-100 didn't crash anything
 
 There is a command line version of Amd Memory Tweaker that can be used to change these settings during launch of the miner. If you are comfortable with that, you can utilize it to achieve some sort of automational and simplify your mining
