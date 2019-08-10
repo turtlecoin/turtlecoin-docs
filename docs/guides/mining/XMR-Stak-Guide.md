@@ -433,7 +433,7 @@ These settings on the example GPU yield 62c and ~30% fan speeds at 8.2 KH/s
 *Note*: This guide explains the GUI Windows version, Non-XL version  
 [This program](https://github.com/Eliovp/amdmemorytweak/releases/tag/0.2.3)
 
-BIOS mods can be scary; they can permanently brick a card and can be confusing and compicated for the non-initiated. But the benefits can be enticing. Either way, let's talk about some alternative options.
+BIOS mods can be scary; they can permanently brick a card and can be confusing and compicated for the non-initiated. But the benefits can be enticing. Either way, let's talk about an alternative option.
 
 AmdMemoryTweaker is similar to "The Ethlargement Pill" Nvidia GPU's use for Ethereum mining. It adjusts memory timing straps on the fly, meaning we can adjust the parts of a BIOS that help us acheive higher speeds without having to flash the BIOS.  
 
