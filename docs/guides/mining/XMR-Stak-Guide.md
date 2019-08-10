@@ -433,7 +433,7 @@ These settings on the example GPU yield 62c and ~30% fan speeds at 8.2 KH/s
 *Note*: This guide explains the GUI Windows version, Non-XL version  
 [This program](https://github.com/Eliovp/amdmemorytweak/releases/tag/0.2.3)
 
-BIOS mods can be scary; they can permanently brick a card and can be confusing and compicated for the non-initiated. But the benefits can be enticing. So let's talk about an option besides flashing your bios.
+BIOS mods can be scary; they can permanently brick a card and can be confusing and compicated for the non-initiated. But the benefits can be enticing. Either way, let's talk about some alternative options.
 
 AmdMemoryTweaker is similar to "The Ethlargement Pill" Nvidia GPU's use for Ethereum mining. It adjusts memory timing straps on the fly, meaning we can adjust the parts of a BIOS that help us acheive higher speeds without having to flash the BIOS.  
 
@@ -448,7 +448,7 @@ Memory strap timings are different depending on the style of memory onboard your
 
 You can use [GPU-Z](https://www.techpowerup.com/gpuz/) to see the memory style on your GPU
 
-From my experience using this program, in this example a stock BIOS RX 580 8GB Samsung memory (MSI OC Armor) can go from 6.2 KH/s to 8.1 KH/s, with just some minor tweaks and little to no change in power consumption and temps of the gpu. 
+As an example, a stock BIOS RX 580 8GB GPU with Samsung memory (MSI OC Armor) can go from 6.2 KH/s to 8.1 KH/s, with just some minor tweaks and little to no change in power consumption and temps of the GPU. 
 
 When you open the Amd Memory Tweaker program it will load up the idle state of the GPU, now start the miner. After it's been running for a few seconds, and reached up full usage/speed, you can now "refresh" the readings. (Click the refresh icon in the bottom right)
 
