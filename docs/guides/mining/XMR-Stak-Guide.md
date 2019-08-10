@@ -450,14 +450,14 @@ You can use [GPU-Z](https://www.techpowerup.com/gpuz/) to see the memory style o
 
 From my experience using this program, in this example a stock BIOS RX 580 8GB Samsung memory (MSI OC Armor) can go from 6.2 KH/s to 8.1 KH/s, with just some minor tweaks and little to no change in power consumption and temps of the gpu. 
 
-When you open the Amd Memory Tweaker program it will load up the idle state of the GPU and start the miner. After it's been running for a few seconds, and reached up to full usage/speed, you can now "refresh" the readings. (Click the refresh icon in the bottom right)
+When you open the Amd Memory Tweaker program it will load up the idle state of the GPU, now start the miner. After it's been running for a few seconds, and reached up full usage/speed, you can now "refresh" the readings. (Click the refresh icon in the bottom right)
 
 This will give you the ACTIVE timings for the frequency it is at, at that time. This is where you will mine, so this is where you will change your settings.
 
 There are a lot of fields to look at, all with labels that make little sense straight away. Don't worry; if you hover your cursor over a field or title it will give a small explination of what it is.
 
 For this guide we will be ignoring most options, and only adjust a few to show how to start tuning your GPU.  
-There are a lot of settings to change, and there is an "XL" version of this program that gives even MORE options. I cannot go over all of them here, and there are only a few that I have seen to be beneficial and easily adjusted.
+There are a lot of settings to change, and there is an "XL" version of this program that gives even MORE options. We cannot go over all of them here, and there are only a few that have been beneficial and easily adjusted.
 
 When tweaking values, then always make SMALL CHANGES. Then apply, check speeds, check stability, and then continue tweaking further if needed.
 
