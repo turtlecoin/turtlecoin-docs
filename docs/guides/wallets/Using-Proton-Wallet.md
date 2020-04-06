@@ -102,7 +102,7 @@ You have the following options, and clicking each button will take you to the co
 - [Create a New Wallet](#Creating-a-Wallet)
 - [Import from Keys or Seed](#Restoring-your-Wallet-from-Seed-or-Keys)
 
-Once you've created a wallet through one of these options, it will automatically open in future, so you can always open your wallet up with one click when you need to send money.
+Once you've created a wallet through one of these options, it will automatically open in the future, so you can always open your wallet up with one click when you need to send money.
 
 ### Creating a Wallet
 
