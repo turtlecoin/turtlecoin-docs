@@ -55,9 +55,9 @@ Please follow [this guide](Mining-with-SBC) to mine with a SBC/Rasperry Pi.
 #### [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en_US)
 
 Termux is a mobile CLI app; if you want to use it, you will have to download and compile XMRig on your phone (covered in the guide).
-It is NOT a GUI app, and you will need to manually type/paste in commands
+It is NOT a GUI app, and you will need to manually type/paste in commands.
 
-If you'd like to use it, check out [this guide](Using-Termux)
+If you'd like to use it, check out [this guide](Using-Termux).
 
 ## Pools
 
