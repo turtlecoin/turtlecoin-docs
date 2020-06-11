@@ -301,7 +301,7 @@ There are multiple ways to acquire TRTL, for example:
 
 * Mining - see [here](guides/mining/Mining)
 * Bounties - Bounties for developing TRTL software, spreading the word of TRTL, and many other things are often posted in the #bounties channel on [Discord][discord_link]. Check the pinned messages for current bounties.
-* Tips - Turtles with often tip each other, especially if you make spicy memes in the `#memes` channel
+* Tips - Turtles with often tip each other, especially if you make spicy memes in the `#trtl-memes` channel
 * Faucet - Head over to the faucets-
   * [polar-it's faucet](https://turtlecoin-faucet.xhub.cloud/) - 20 TRTL, every 120 minutes
   * [fipsi's faucet](https://trtlfaucet.de.cool/) - 100 TRTL, after every 500 turtles use it
