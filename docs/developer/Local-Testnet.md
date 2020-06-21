@@ -15,7 +15,7 @@ You can block the p2p port of your daemon with `ufw`, or another firewall progra
 We need to apply this to each daemon p2p port we launch.
 
 ```
-sufo ufw enable
+sudo ufw enable
 sudo ufw deny 10000;
 sudo ufw deny 10001;
 sudo ufw deny 10002;
