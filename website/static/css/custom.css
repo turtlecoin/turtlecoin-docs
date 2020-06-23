@@ -7,6 +7,9 @@
 }
 
 @media only screen and (max-width: 1023px) {
+	.docsContainer .wrapper .post .postHeader:before, .docsContainer .wrapper .post .postHeaderTitle:before {
+		margin-top: -190px;
+	}
 }
 
 @media only screen and (min-width: 1400px) {
@@ -28,4 +31,8 @@ article iframe {
   height: 150px;
 
   object-fit:scale-down
+}
+
+.fixedHeaderContainer header img {
+	max-width: 20px;
 }

@@ -41,7 +41,7 @@ const siteConfig = {
   },
 
   /* path to images for header/footer */
-  headerIcon: 'img/logo.png',
+  headerIcon: 'img/turtlecoin_logo.svg',
   footerIcon: 'img/fav.png',
   favicon: 'img/fav.ico',
 
