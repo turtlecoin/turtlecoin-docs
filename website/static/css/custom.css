@@ -1,6 +1,12 @@
 /* your custom css */
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+	.onPageNav .toc-headings>li>a.active {
+		font-size: 16px;
+	}
+	.onPageNav .toc-headings>li>a {
+		font-size: 14px;
+	}
 }
 
 @media only screen and (min-width: 1024px) {
