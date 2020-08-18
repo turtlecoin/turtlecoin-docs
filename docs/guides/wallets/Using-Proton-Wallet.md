@@ -18,10 +18,6 @@ Just in case you're not sure what to download, here is a list of the files and w
 - **Mac*- - `.dmg` file
 - **Linux*- - `.AppImage` file
 
-If you're on a snap-enabled Linux distribution, you can also install Proton Wallet through the snap store or through the command line utility by using `sudo snap install proton-wallet`.
-
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/proton-wallet)
-
 ## Installing
 
 ### Installing on Windows
