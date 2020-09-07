@@ -1,5 +1,5 @@
 ---
-title: Using trtlbot++
+title: Using TIPBOT
 ---
 
 ## Registering your Wallet
@@ -16,7 +16,7 @@ For example, you would type-
 
 After your wallet address has been registered, type `.deposit` in the `#bots` channel, then:
 
-* Check for a new direct message from trtlbot++
+* Check for a new direct message from TIPBOT
 * Copy the line of code he gives (excluding the `Integrated Address:`) and enter that as the address of the recipient  
 
 **No Payment ID!**
@@ -48,7 +48,7 @@ When the bot receives the payment, it will send you a PM letting you know. Now y
 
 Before you can tip, you need to know your balance. Your balance is the amount of TRTL you have in your tipjar wallet to tip to others.
 
-To check your balance, type `.balance`. trtlbot++ will PM you with how much balance you have remaining in your tipjar wallet.
+To check your balance, type `.balance`. TIPBOT will PM you with how much balance you have remaining in your tipjar wallet.
 
 ![balance](../assets/balance.png)
 
@@ -175,25 +175,9 @@ However, you can redirect tips that you receive from others with `.redirecttips`
 
 - If you try to tip someone who isn't registered, the bot will react with :sos: and PM them with instructions on how to register their wallet and tip.
 
-## Security of trtlbot++'s tipjar (wallet)
-
-trtlbot++ was created by [@krruzic](https://github.com/krruzic)(@madk#1044  in the chat) and then rewritten by [@BrandonT42](https://github.com/BrandonT42)(@Canti#6146), but hosted by krruzic still. When he was asked about the security of trtlbot++'s wallet, he said-
-
-> the wallet is pretty secure. All ports are closed except 80, whatever minecraft is and my SSH port. The SSH has no root login and only two valid keys. ~~One of the keys is for an account that has no permissions to go anywhere but one folder (I may revoke this key)~~ *[This key has since been revoked]*. There are other security features but I don't want to reveal any possible attack surfaces by accident.
-
-and follows up with-
-
-> And if the wallet gets hacked I will refund people's coins.
-
-and ends it with-
-
-> I'm not gonna up and run with the tipjar like the doge tipbot guy either :)
-
-So rest assured, trtlbot++'s wallet is extremely secure, and in the rare occasion that anything *does* happen, you can relax knowing that you'll get it back ;)
-
 ## Other Commands
 
-trtlbot++ isn't just a tip bot, it's so much more! Here's a table of it's other commands, what each of them do, and how to use them (which aren't explained above).
+TIPBOT isn't just a tip bot, it's so much more! Here's a table of it's other commands, what each of them do, and how to use them (which aren't explained above).
 
 | Name | Usage |  Description |
 |:-:|:-:|:-:|
