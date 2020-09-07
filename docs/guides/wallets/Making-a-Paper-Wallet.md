@@ -56,7 +56,7 @@ To use it, follow these steps:
 
 - After you're done mashing your keyboard, press `Generate Wallet`
 
-- The letters and numbers in the green box, starting with `TRTL`, is your public address. You can share it freely. We recommend [registering it with trtlbot++](../Using-trtlbot-plus-plus#registering-your-wallet) in the [Discord server](http://chat.turtlecoin.lol/) so that you can access it easily(you can also get tips!).
+- The letters and numbers in the green box, starting with `TRTL`, is your public address. You can share it freely. We recommend [registering it with TIPBOT](../Using-tipbot#registering-your-wallet) in the [Discord server](http://chat.turtlecoin.lol/) so that you can access it easily(you can also get tips!).
 
 - Save the `Seed Phrase`, the 25 words in the red box, safely.  
 **DO NOT SHARE IT WITH ANYONE**.  

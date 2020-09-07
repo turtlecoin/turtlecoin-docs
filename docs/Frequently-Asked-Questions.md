@@ -325,7 +325,7 @@ None are ready for usage right now, but they are being worked on. Check the deve
 
 #### Q: How do I register my wallet on Discord?
 
-  A: You can check out this guide [here](guides/Using-trtlbot-plus-plus#registering-your-wallet).
+  A: You can check out this guide [here](guides/Using-tipbot#registering-your-wallet).
 
 #### Q: Where is the blockchain stored?
 
