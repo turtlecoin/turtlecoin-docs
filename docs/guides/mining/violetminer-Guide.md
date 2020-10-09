@@ -1,5 +1,5 @@
 ---
-title: Mining with violetminer 
+title: Mining with violetminer
 ---
 
 ## Downloading and Installing for Windows, Linux, Mac, or ARM
@@ -10,7 +10,7 @@ violetminer can be downloaded from its [GitHub Page](https://github.com/turtleco
 
 ## violetminer Setup and Configuration
 
-1. If on Windows, unzip the file into a new folder. There should be an executable, violetminer.exe, in this folder.  
+1. If on Windows, unzip the file into a new folder. There should be an executable, violetminer.exe, in this folder.
 If on Linux, Mac, or ARM, untar the file into a new folder. (`tar -xf violetminer-linux.tar.gz` for example).
 
 ### Guided Setup
@@ -66,7 +66,7 @@ If you use command line launching, you must specify all of the following flags.
 | `--rigid`         | String   | Specifies a custom rig ID to use with the pool specified                                |
 
 
-If the `config` option is specified, any other command line options will be **ignored**.    
+If the `config` option is specified, any other command line options will be **ignored**.
 I repeat, **do *not* mix command line options and config files**, use just one or the other.
 
 Example launch command:
@@ -185,12 +185,14 @@ If you specify multiple pools, the pools will be tried in order of their priorit
 | `rigID`     | `String`  | Allows you to specify a custom rig ID for the pool. If the pool supports this field, it should allow you to distinguish between each mining rig you have on the same pool, to see the hashrate per rig, for example.                                              |
 | `ssl`       | `Boolean` | Whether to use SSL with this pool. Only use this option if the pool says the port you are using is an SSL port.                                                                                                                                                   |
 | `username`  | `String`  | The username to use with this pool. Usually is your TurtleCoin address.                                                                                                                                                                                           |
+| `disableAutoAlgoSelect` | `Boolean` | Whether we should respect the "algo" field given by the pool jobs. This allows us to automatically use the correct algorithm even if the user enters it incorrectly, and auto switch algorithms upon network forks. If the pool is providing an incorrect algorithm and you are getting rejected shares, you may want to try enabling this to force the use of the algorithm entered in the config file.
+                                                                                  |
 
 ## Notes
 
-* The development fee is 1%. This means it will mine for the developer 1 minute out of every 100 minutes.  
-* Found a bug? Can't get something working? Start by visiting the [TurtleCoin discord](http://chat.turtlecoin.lol) and asking in the `#mining` channel, or open an issue on [the repo](https://github.com/turtlecoin/violetminer/issues).  
-* Want to compile yourself? Visit [here](https://github.com/turtlecoin/violetminer#compiling) for instructions.  
-* Want more info? Visit the [github page](https://github.com/turtlecoin/violetminer).  
+* The development fee is 1%. This means it will mine for the developer 1 minute out of every 100 minutes.
+* Found a bug? Can't get something working? Start by visiting the [TurtleCoin discord](http://chat.turtlecoin.lol) and asking in the `#mining` channel, or open an issue on [the repo](https://github.com/turtlecoin/violetminer/issues).
+* Want to compile yourself? Visit [here](https://github.com/turtlecoin/violetminer#compiling) for instructions.
+* Want more info? Visit the [github page](https://github.com/turtlecoin/violetminer).
 
 Happy mining!
