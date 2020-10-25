@@ -190,7 +190,6 @@ If you specify multiple pools, the pools will be tried in order of their priorit
 
 ## Notes
 
-* The development fee is 1%. This means it will mine for the developer 1 minute out of every 100 minutes.
 * Found a bug? Can't get something working? Start by visiting the [TurtleCoin discord](http://chat.turtlecoin.lol) and asking in the `#mining` channel, or open an issue on [the repo](https://github.com/turtlecoin/violetminer/issues).
 * Want to compile yourself? Visit [here](https://github.com/turtlecoin/violetminer#compiling) for instructions.
 * Want more info? Visit the [github page](https://github.com/turtlecoin/violetminer).
