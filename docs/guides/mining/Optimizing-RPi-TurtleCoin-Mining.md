@@ -13,7 +13,7 @@ To maximize your hashrate, it is very important that you select a 64-bit OS imag
 ## OS Image
 The 64-bit Ubuntu Server for Raspberry Pi3 is a good choice:
 
-http://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.3-preinstalled-server-arm64+raspi3.img.xz
+https://ubuntu.com/download/raspberry-pi
 
 You will need to write this image to an SD card with a utility such as [Etcher](https://www.balena.io/etcher). Once your OS is written, insert your SD Card and boot your Pi.
 
