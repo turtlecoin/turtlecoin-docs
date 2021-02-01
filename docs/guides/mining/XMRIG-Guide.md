@@ -38,7 +38,7 @@ Needs to be compiled. Instructions [here](https://github.com/xmrig/xmrig/wiki/OS
 2. Open the `config.json` file with Notepad
 3. Find and change the following lines:
 
-* `"algo: "chukwa"`
+* `"algo: "argon2/chukwav2"`
 * `"url: "[pool address]"`
 * `"user: "[wallet address]"`
 
