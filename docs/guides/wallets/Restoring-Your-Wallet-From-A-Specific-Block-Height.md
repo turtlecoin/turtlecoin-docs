@@ -2,6 +2,7 @@
 title: Restoring A TurtleCoin Wallet From A Specific Block Height
 ---
 
+
 If you find yourself waiting what seems like forever to sync your wallet and you've started syncing from 0, you can probably speed things up by utilizing the scan height feature of the wallet software. This will save you quite a bit of time during the syncing process. Below is a quick guide on how to use the scan height feature of the wallet software.
 
 ## Step 1: Find The Estimated Block Height When You Created Your Wallet
