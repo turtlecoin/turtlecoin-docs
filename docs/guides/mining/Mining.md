@@ -40,7 +40,9 @@ Please follow [this guide](XMRIG-Guide) to start mining TurtleCoin with XMRig.
 
 ### Solo Mining
 
-Solo Mining is where you, alone, try to solve a block. It is extremely difficult and not recommended. If you'd like to give it a hand regardless see [this guide](CPU-Solo-Mining)
+Solo Mining is where you, alone, try to solve a block. It is extremely difficult and not recommended. 
+
+If you'd like to give it a go regardless see [this guide](CPU-Solo-Mining)
 
 ## SBC/Raspberry Pi Mining
 
