@@ -4,7 +4,7 @@ title: Mining with CryptoDredge
 
 ## Downloading and Installing for Windows or Linux
 
-CryptoDredge can be downloaded from the [GitHub page](https://github.com/technobyl/CryptoDredge/releases)
+CryptoDredge can be downloaded from the [GitHub page.](https://github.com/technobyl/CryptoDredge/releases)
 
 ## CryptoDredge Setup and Configuration
 
