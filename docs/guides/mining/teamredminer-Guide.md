@@ -17,7 +17,7 @@ Teamredminer can be downloaded from the [GitHub page.](https://github.com/todxx/
 
 4.  Save the file and
   * start `start_trtl_chukwa.bat` for Windows
-  *  or `./start_trtl_chukwa` for Linux
+  *  or `./start_trtl_chukwa.sh` for Linux
 
 That's it! You should be mining away now! :)
 
