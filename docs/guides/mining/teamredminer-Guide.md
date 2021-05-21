@@ -22,3 +22,5 @@ Teamredminer can be downloaded from the [GitHub page.](https://github.com/todxx/
 That's it! You should be mining away now! :)
 
 ![teamredminer-working](../../assets/teamredminer-working.png)
+
+## Troubleshooting
