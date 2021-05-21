@@ -1,0 +1,44 @@
+/* your custom css */
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+	.onPageNav .toc-headings>li>a.active {
+		font-size: 16px;
+	}
+	.onPageNav .toc-headings>li>a {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+	.docsContainer .wrapper .post .postHeader:before, .docsContainer .wrapper .post .postHeaderTitle:before {
+		margin-top: -190px;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+article p img,
+article iframe {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.imageAlignTop .blockImage {
+  max-width: 70%;
+  height: 150px;
+
+  object-fit:scale-down
+}
+
+.fixedHeaderContainer header img {
+	max-width: 20px;
+}

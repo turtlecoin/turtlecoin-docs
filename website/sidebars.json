@@ -1,0 +1,77 @@
+{
+   "getting-started": {
+      "Getting Started": [
+         "Getting-Started"
+      ]
+   },
+   "faq": {
+      "Frequently Asked Questions": [
+         "Frequently-Asked-Questions"
+      ]
+   },
+   "about": {
+      "About": [
+         "about/About-TurtleCoin",
+         "about/Background-and-History",
+         "about/Community",
+         "about/Contributing",
+         "about/Technical-Data",
+         "about/Timeline",
+         "Contributors"
+      ]
+   },
+   "guides": {
+      "Mining": [
+         "guides/mining/Mining",
+         "guides/mining/Pools",
+         "guides/mining/NinjaRig-Guide",
+         "guides/mining/violetminer-Guide",
+         "guides/mining/XMRIG-Guide",
+         "guides/mining/CPU-Solo-Mining",
+         "guides/mining/Mining-with-SBC",
+         "guides/mining/Optimizing-RPi-TurtleCoin-Mining",
+         "guides/mining/Using-Termux",
+         "guides/mining/Using-Crypto-Miner"
+      ],
+      "Wallets": [
+         "guides/wallets/Making-a-Wallet",
+         "guides/wallets/Making-a-Paper-Wallet",
+         "guides/wallets/Using-Proton-Wallet",
+         "guides/wallets/Using-zedwallet",
+         "guides/wallets/Using-Checkpoints",
+         "guides/wallets/Using-Remote-Nodes",
+         "guides/wallets/Using-Shellnet",
+         "guides/wallets/Recovering-your-Wallet"
+      ],
+      "CryptoCurrency Fundamentals": [
+         "guides/crypto-funda/Smart-Contract"
+      ],
+      "Misc": [
+         "guides/Using-tipbot"
+      ],
+      "Config": [
+         "guides/config/config"
+      ]
+   },
+   "devs": {
+      "For Developers": [
+         "developer/Resources",
+         "developer/Running-TurtleCoind-on-Pi",
+         "developer/TurtleCoind-behind-HAProxy",
+         "developer/Local-Testnet",
+         "developer/Compiling-From-Source",
+         "developer/Forking-TurtleCoin",
+         {
+            "type": "subcategory",
+            "label": "API Documentation",
+            "ids": [
+               "developer/api/Daemon-JSON-RPC-API",
+               "developer/api/Daemon-HTTP-RPC-API",
+               "developer/api/Wallet-RPC-API",
+               "developer/api/Legacy-Wallet-RPC-API",
+               "developer/api/RPC-API-Error-Conditions"
+            ]
+         }
+      ]
+   }
+ }
