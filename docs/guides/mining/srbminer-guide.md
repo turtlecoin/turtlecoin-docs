@@ -17,7 +17,7 @@ SRBMiner can be downloaded from the [GitHub page.](https://github.com/doktor83/S
 
 4.  Save the file and
   * start `start-mining-turtlecoin.bat` for Windows
-  *  or `./start-mining-turtlecoin` for Linux
+  *  or `./start-mining-turtlecoin.sh` for Linux
 
 That's it! You should be mining away now! :)
 
