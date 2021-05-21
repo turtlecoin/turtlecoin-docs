@@ -12,10 +12,8 @@ Teamredminer can be downloaded from the [GitHub page.](https://github.com/todxx/
 2. Edit the batch file named "start_trtl_chukwa.bat".
 3. Find and change the following lines:
 
-* `-o stratum+tcp://turtlecoin.....` keep the `-o` but replace the pool address with a pool of your choice.
+* `-o stratum+tcp://turtlecoin.....` keep the `-o` but replace the pool address with a pool of your choice. You can learn more about them [here](Pools).
 * `-u TRTL......` keep the `-u` but replace the one in the file with your own TurtleCoin address.
-
-In place of `[pool address]`, you'll need to choose a pool to mine towards. You can learn more about them [here](Pools).
 
 4.  Save the file and
   * start `start_trtl_chukwa.bat` for Windows
