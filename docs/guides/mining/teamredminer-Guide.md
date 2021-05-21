@@ -24,3 +24,5 @@ That's it! You should be mining away now! :)
 ![teamredminer-working](../../assets/teamredminer-working.png)
 
 ## Troubleshooting
+Most issues are usually because of out-of-date GPU drivers, if the miner doesnt work or cannot detect your GPU, try updating to the latest drivers!
+
