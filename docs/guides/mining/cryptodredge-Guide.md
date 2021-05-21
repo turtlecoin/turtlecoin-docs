@@ -18,7 +18,7 @@ CryptoDredge can be downloaded from the [GitHub page](https://github.com/technob
 - Instead of `[wallet address]`, simply paste your TurtleCoin wallet's address. Make sure to keep the quotes `"`!
   - If you don't have one yet, you can find out how to create a wallet [here](../wallets/Making-a-Wallet)
 
-- In place of `[pool address]`, you'll need to choose a pool to mine towards. You can learn more about them [here](Pools). Again make sure to keep the `"`s!
+- In place of `[pool address]`, you'll need to choose a pool to mine towards. You can learn more about them [here](Pools). Again make sure to keep the quotes `"`!
 
 4.  Save the file and
   * start `CryptoDredge.exe` for Windows
@@ -26,15 +26,4 @@ CryptoDredge can be downloaded from the [GitHub page](https://github.com/technob
 
 That's it! You should be mining away now! :)
 
-![ninjarig-working](../../assets/ninjarig-working.png)
-
-If you want to read more about the project then head over to the project's [README.md](https://github.com/turtlecoin/ninjarig/blob/master/README.md)
-
-
-## Troubleshooting
-
-### Start then stops, no errors
-
-![ninjarig-not-working](../../assets/ninjarig-not-working.png)
-
-If you're getting something like the above screenshot, check your AV software, it might have deleted a bunch of files...
+![cryptodredge-working](../../assets/cryptodredge-working.png)
