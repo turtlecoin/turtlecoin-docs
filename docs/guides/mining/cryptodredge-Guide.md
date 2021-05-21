@@ -22,7 +22,7 @@ CryptoDredge can be downloaded from the [GitHub page.](https://github.com/techno
 
 4.  Save the file and
   * start `CryptoDredge.exe` for Windows
-  *  or `./CryptoDredge` for Linux
+  *  or `./CryptoDredge.sh` for Linux
 
 That's it! You should be mining away now! :)
 
