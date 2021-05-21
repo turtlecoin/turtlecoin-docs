@@ -20,11 +20,11 @@ There are currently a few different ways in which you can start mining TurtleCoi
 
 ## Desktop Mining
 
-### [NinjaRig](https://github.com/turtlecoin/ninjarig)
+### [XMRig](https://github.com/xmrig/xmrig)
 
-NinjaRig is an all in one CPU and GPU miner, modified from xmrig by a TurtleCoin community member.
+XMRig currently only supports CPU mining for TurtleCoin.
 
-Please follow [this guide](NinjaRig-Guide) to start mining TurtleCoin with NinjaRig.
+Please follow [this guide](XMRIG-Guide) to start mining TurtleCoin with XMRig.
 
 ### [violetminer](https://github.com/turtlecoin/violetminer)
 
@@ -32,11 +32,23 @@ violetminer is a CPU and NVIDIA GPU miner, made from scratch by a TurtleCoin com
 
 Please follow [this guide](violetminer-Guide) to start mining TurtleCoin with violetminer.
 
-### [XMRig](https://github.com/xmrig/xmrig)
+### [CryptoDredge](https://github.com/technobyl/CryptoDredge)
 
-XMRig comes as a CPU and GPU miner separately and run two separate instances in your computer. One will use your CPU and the other one will use your GPU.
+CryptoDredge is a NVIDIA GPU miner.
 
-Please follow [this guide](XMRIG-Guide) to start mining TurtleCoin with XMRig.
+Please follow [this guide](cryptodredge-Guide) to start mining TurtleCoin with CryptoDredge.
+
+### [Teamredminer](https://github.com/todxx/teamredminer)
+
+Teamredminer is a optimized miner for AMD GPUs.
+
+Please follow [this guide](teamredminer-Guide) to start mining TurtleCoin with Teamredminer.
+
+### [SRBMiner](https://github.com/doktor83/SRBMiner-Multi)
+
+SRBMiner-Multi is a CPU and AMD GPU miner.
+
+Please follow [this guide](srbminer-Guide) to start mining TurtleCoin with SRBMiner-Multi.
 
 ### Solo Mining
 
