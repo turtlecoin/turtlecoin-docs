@@ -22,3 +22,8 @@ SRBMiner can be downloaded from the [GitHub page.](https://github.com/doktor83/S
 That's it! You should be mining away now! :)
 
 ![srbminer-working](../../assets/srbminer-working.png)
+
+## Troubleshooting
+Most issues are usually because of out-of-date GPU drivers, if the miner doesnt work or cannot detect your GPU, try updating to the latest drivers!
+
+* Older GPU cards in Linux - Sometimes with older AMD cards the miners will not detect the GPU. You can try reinstalling the drivers with `sudo ./amdgpu-pro-install --opencl=legacy -y`  
